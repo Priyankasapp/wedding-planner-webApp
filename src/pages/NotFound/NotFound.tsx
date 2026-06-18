@@ -11,17 +11,17 @@ const NotFound = () => {
 
         {/* 404 */}
        <div className="flex items-end justify-center">
-  <span className="font-serif text-[110px] md:text-[160px] leading-none text-[#2F2522]">
+  <span className="font-serif text-[90px] md:text-[70px] leading-none text-[#2F2522] mx-2">
     4
   </span>
 
-  <span className="font-serif text-[90px] md:text-[130px] leading-none text-[#2F2522] mx-1">
+  <span className="font-serif text-[90px] md:text-[60px] leading-none text-[#2F2522] mx-1">
     <sup>0</sup>
   </span>
 
   
 
-  <span className="font-serif text-[110px] md:text-[160px] leading-none text-[#2F2522]">
+  <span className="font-serif text-[90px] md:text-[70px] leading-none text-[#2F2522] mx-2">
     4
   </span>
 </div>
