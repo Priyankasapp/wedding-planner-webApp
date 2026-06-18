@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Begin = () => {
   return (
-    <section className="bg-[#F8F6F2] py-24 lg:py-32">
+    <section className="bg-[#3A241F] text-[#F7F1EB] py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
-        <div className="border-y border-[#D9D1C8] py-16">
+        <div className=" py-16">
 
           <div className="grid lg:grid-cols-12 gap-12">
 
@@ -17,7 +17,7 @@ const Begin = () => {
                 Begin
               </p>
 
-              <h2 className="font-serif text-[#3B2A24] text-4xl md:text-6xl font-light leading-tight">
+              <h2 className="font-serif  text-4xl md:text-6xl font-light leading-tight">
                 When you're ready,
                 <br />
                 we'd love to listen.
@@ -39,12 +39,13 @@ const Begin = () => {
                 className="
                   mt-10
                   inline-flex
+                  bg-[#ffffff]
                   items-center
                   justify-center
                   px-10
                   py-5
                   border
-                  border-[#43342F]
+                  border-[#43342F]  
                   uppercase
                   tracking-[5px]
                   text-xs
