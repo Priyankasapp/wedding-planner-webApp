@@ -1,65 +1,49 @@
-// import heroImage from "../../assets/images/photo_1.jpg";
-// import {Link} from "react-router-dom";
-
-// const Hero = () => {
-//   return (
-//     <div>
-//       {/* Background Image  */}
-//       <img src={heroImage} alt="Luxury Wedding" className="absolute inset-0 h-full w-full object-cover" />
-
-//       {/* Overlay */} <div className="absolute inset-0 bg-black/30"></div>
-
-//       {/* Content */}
-//       <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center ">
-
-//         <div className="max-w-3xl">
-//           <p className="uppercase tracking-[6px] text-sm text-[#E8D7B0] mb-6"> Wedding Atelier · Est. 2008 </p>
-
-//           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-white">Weddinngs, <span>composed</span> like a love letter.</h1>
-
-//          <div className="flex flex-wrap gap-4 mt-10">
-
-//             <Link
-//             className="px-8 py-4 bg-[#FFFFFF] text-black  uppercase tracking-[4px] text-xs hover:opacity-90 transition"
-//             >BEGIN YOUR STORY</Link>
-//             <Link
-//             className="px-8 py-4 border border-white text-white uppercase tracking-[4px] text-xs hover:bg-white hover:text-black transition">VIEW OUR WEDDING</Link>
-//           </div>
-//         </div>
-        
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Hero
-
-
 import { Link } from "react-router-dom";
 import hero from "../../assets/images/photo_1.jpg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Small delay for smoother effect
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative h-screen overflow-hidden">
 
-      {/* Background */}
+      {/* Background with zoom animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={hero}
+          alt=""
+          className={`
+            h-full w-full object-cover
+            transition-transform duration-[4000ms] ease-out
+            ${isLoaded ? 'scale-[1.08]' : 'scale-[1.15]'}
+          `}
+          style={{
+            transformOrigin: 'center 60%', // Slightly off-center for more dynamic feel
+          }}
+        />
+      </div>
 
-      <img
-        src={hero}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-
-      {/* Overlay */}
-
+      {/* Overlay with subtle fade */}
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* Content */}
-
+      {/* Content with fade-in */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-center">
-
-        <div>
-
+        <div
+          className={`
+            transition-all duration-[1500ms] ease-out
+            ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+          `}
+        >
           <p className="uppercase tracking-[8px] text-[#D4B06A] text-xs md:text-sm mb-6">
             Wedding Atelier · Est. 2008
           </p>
@@ -80,7 +64,6 @@ const Hero = () => {
           </h1>
 
           <div className="flex flex-wrap gap-4 mt-12">
-
             <Link
               to="/contact"
               className="
@@ -116,11 +99,8 @@ const Hero = () => {
             >
               View Our Weddings
             </Link>
-
           </div>
-
         </div>
-
       </div>
 
     </section>
