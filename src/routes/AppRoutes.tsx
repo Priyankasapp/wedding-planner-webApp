@@ -1,4 +1,6 @@
-import { Route,Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
+import Layout from "../components/layout/Layout";
 
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
@@ -10,27 +12,25 @@ import JournalDetails from "../pages/journal/JournalDetails";
 import Contact from "../pages/Contact/Contact";
 import NotFound from "../pages/NotFound/NotFound";
 
-
 const AppRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home/>}/>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
 
-        <Route path="/about" element={<About/>}/>
+      <Route path="portfolio/:slug" element={<PortfolioDetails />} />
 
-        <Route path="/services" element={<Services/>}/>
+      <Route path="journal/:slug" element={<JournalDetails />} />
 
-        <Route path="portfolio" element={<Portfolio/>}/>
-        <Route path="portfolio/:slug" element={<PortfolioDetails/>}/>
-
-        <Route path="/journal" element={<Journal/>}/>
-        <Route path="journal/:slug" element={<JournalDetails/>}/>
-
-        <Route path="contact" element={<Contact/>}/>
-        <Route path="*" element={<NotFound/>}/>
-        
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
-}
+};
 
-export default AppRoutes
+export default AppRoutes;
