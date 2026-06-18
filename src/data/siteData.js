@@ -3,7 +3,7 @@
 // ============================================================
 export const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'Atelier', path: '/atelier' },
+  { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Portfolio', path: '/portfolio' },
   { label: 'Journal', path: '/journal' },
