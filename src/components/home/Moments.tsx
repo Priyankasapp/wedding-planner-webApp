@@ -75,21 +75,18 @@ const Moments = () => {
 
             <div
               key={index}
-            className={index % 2 !== 0 ? "md:pt-0" : ""}
+            className={index % 2 !== 0 ? "md:pt-20" : ""}
             >
 
               <img
                 src={image}
                 alt="Wedding moment"
-               className={`
-          w-full
-          object-cover
-          ${
-            index % 2 === 0
-              ? "h-[380px]"
-              : "h-[220px]"
-          }
-        `}
+                className="
+                  w-full
+                  h-[220px]
+                  md:h-[280px]
+                  object-cover
+                "
               />
 
             </div>
