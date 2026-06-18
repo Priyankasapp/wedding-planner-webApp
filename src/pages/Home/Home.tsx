@@ -9,6 +9,8 @@ import Gallery from "../../components/home/Gallery";
 import CTA from "../../components/home/CTA";
 import Hero from "../../components/home/Hero";
 import FeaturedWeddings from "../../components/home/FeaturedWeddings";
+import Moments from "../../components/home/Moments";
+
 const Home = () => {
   return (
      <>
@@ -20,6 +22,7 @@ const Home = () => {
       <Stats />
       <Process />
       <Testimonial />
+     <Moments/>
       <Gallery />
       <CTA />
     </>
