@@ -1,8 +1,9 @@
+import { Hero } from "../../components/journal/Hero"
 
 const Journal = () => {
   return (
     <div>
-      Journal
+      <Hero/>
     </div>
   )
 }
