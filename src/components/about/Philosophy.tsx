@@ -64,12 +64,12 @@ const Philosophy = () => {
               — Philosophy
             </p>
 
-            <h1
+            <h2
               style={serifStyle} 
-              className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide max-w-lg"
+              className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide max-w-lg"
             >
               What we <br /> believe.
-            </h1>
+            </h2>
           </div>
 
           {/* Right Column: Animates with a slight 300ms delay */}
