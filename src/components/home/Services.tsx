@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
-import img1 from "../../assets/images/photo_2.jpg"
-import img2 from "../../assets/images/photo_1.jpg"
-import img3 from "../../assets/images/photo_3.jpg"
-import img4 from "../../assets/images/photo_4.jpg"
+import img1 from "../../assets/images/photo_2.jpg";
+import img2 from "../../assets/images/photo_1.jpg";
+import img3 from "../../assets/images/photo_3.jpg";
+import img4 from "../../assets/images/photo_4.jpg";
 
 interface ServiceItem {
   image: string;
   number: string;
   title: string;
   description: string;
+  path: string; 
 }
 
 const services: ServiceItem[] = [
@@ -17,33 +18,32 @@ const services: ServiceItem[] = [
     image: img1,
     number: "01",
     title: "Full Wedding Planning",
-    description:
-      "End-to-end orchestration of every detail, from concept to last dance.",
+    description: "End-to-end orchestration of every detail, from concept to last dance.",
+    path: "/services",
   },
   {
     image: img2,
     number: "02",
     title: "Destination Weddings",
-    description:
-      "Curated celebrations in Europe's most romantic estates and coastlines.",
+    description: "Curated celebrations in Europe's most romantic estates and coastlines.",
+    path: "/services",
   },
   {
     image: img3,
     number: "03",
     title: "Decor & Floral Styling",
-    description:
-      "Bespoke design direction with editorial florals and tactile textures.",
+    description: "Bespoke design direction with editorial florals and tactile textures.",
+    path: "/services",
   },
   {
     image: img4,
     number: "04",
     title: "Venue Management",
-    description:
-      "Sourcing, negotiation, and stewardship of unforgettable settings.",
+    description: "Sourcing, negotiation, and stewardship of unforgettable settings.",
+    path: "/services",
   },
 ];
 
-// FIX: Explicitly type your layout animation configuration objects as Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -55,7 +55,6 @@ const containerVariants: Variants = {
   },
 };
 
-// FIX: Explicitly type as Variants to satisfy strict cubic-bezier ease signatures
 const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
@@ -129,18 +128,7 @@ const Services = () => {
             <Link
               to="/services"
               style={sansStyle}
-              className="
-                mt-8
-                lg:mt-0
-                uppercase
-                tracking-[0.15em]
-                text-xs
-                flex
-                items-center
-                gap-4
-                group
-                font-normal
-              "
+              className="mt-8 lg:mt-0 uppercase tracking-[0.15em] text-xs flex items-center gap-4 group font-normal"
             >
               <span className="w-10 h-px bg-[#2B2623] group-hover:w-16 transition-all duration-300"></span>
               All Services
@@ -164,8 +152,8 @@ const Services = () => {
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Card Image Wrapper */}
-              <div className="overflow-hidden relative rounded-sm shadow-sm">
+              {/* Card Image Wrapper wrapped inside Link anchor context */}
+              <Link to={service.path} className="block overflow-hidden relative rounded-sm shadow-sm cursor-pointer">
                 <motion.img
                   src={service.image}
                   alt={service.title}
@@ -175,7 +163,7 @@ const Services = () => {
                 />
                 
                 {/* Subtle Image Mask Hover Overlay */}
-                <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.02] transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.03] transition-colors duration-300 pointer-events-none" />
                 
                 {/* Graphic absolute number signature overlay */}
                 <span 
@@ -184,7 +172,7 @@ const Services = () => {
                 >
                   {service.number}
                 </span>
-              </div>
+              </Link>
 
               {/* Meta Content Metadata area */}
               <div className="mt-6">
@@ -195,12 +183,14 @@ const Services = () => {
                   {service.number}
                 </p>
 
-                <h3 
-                  style={serifStyle}
-                  className="mt-2 text-2xl lg:text-3xl text-[#2B2623] tracking-wide"
-                >
-                  {service.title}
-                </h3>
+                <Link to={service.path} className="inline-block group-hover:text-[#B2964D] transition-colors duration-300">
+                  <h3 
+                    style={serifStyle}
+                    className="mt-2 text-2xl lg:text-3xl text-[#2B2623] tracking-wide inherit-color"
+                  >
+                    {service.title}
+                  </h3>
+                </Link>
 
                 <p 
                   style={sansStyle}
