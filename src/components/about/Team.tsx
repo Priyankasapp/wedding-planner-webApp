@@ -1,10 +1,17 @@
-// import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, type Variants} from "framer-motion";
 import img1 from "../../assets/images/photo_7.jpg"
 import img2 from "../../assets/images/photo_8.jpg"
 import img3 from "../../assets/images/photo_9.jpg"
 
-const teams = [
+// 1. Explicitly define an interface for your data structure
+interface TeamMember {
+  image: string;
+  title: string;
+  role: string;
+  description: string;
+}
+
+const teams: TeamMember[] = [
   {
     image: img1,
     title: "Lior Amari",
@@ -25,8 +32,8 @@ const teams = [
   },
 ];
 
-// Animation variants
-const containerVariants = {
+// Animation variants explicitly typed as Variants
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -37,7 +44,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 40,
@@ -49,7 +56,8 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      // FIX: Changed from string "cubic-bezier" to a valid TypeScript number array array format
+      ease: [0.22, 1, 0.36, 1], 
     },
   },
 };
@@ -74,13 +82,13 @@ const Team = () => {
           className="flex flex-col mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div>
             <motion.p 
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="uppercase tracking-[0.25em]  text-[#C2A677]"
+              className="uppercase tracking-[0.25em] text-[#C2A677]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -123,7 +131,7 @@ const Team = () => {
                   alt={member.title}
                   className="w-full h-[500px] object-cover object-center"
                   whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                 />
                 
                 {/* Subtle refined overlay on hover */}
