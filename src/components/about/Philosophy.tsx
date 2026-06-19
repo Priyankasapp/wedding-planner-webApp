@@ -1,4 +1,4 @@
-import Services from "../home/Services"
+// import Services from "../home/Services"
 
 
 const Philosophy = () => {
