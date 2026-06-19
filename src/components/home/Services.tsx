@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import img1 from "../../assets/images/photo_2.jpg"
 import img2 from "../../assets/images/photo_1.jpg"
 import img3 from "../../assets/images/photo_3.jpg"
 import img4 from "../../assets/images/photo_4.jpg"
 
-const services = [
+interface ServiceItem {
+  image: string;
+  number: string;
+  title: string;
+  description: string;
+}
+
+const services: ServiceItem[] = [
   {
     image: img1,
     number: "01",
@@ -36,8 +43,8 @@ const services = [
   },
 ];
 
-// Animation variants
-const containerVariants = {
+// FIX: Explicitly type your layout animation configuration objects as Variants
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -48,7 +55,8 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+// FIX: Explicitly type as Variants to satisfy strict cubic-bezier ease signatures
+const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 40,
@@ -66,14 +74,23 @@ const itemVariants = {
 };
 
 const Services = () => {
-  return (
-    <section className="bg-[#f7f2f0] py-24 lg:py-32">
+  const serifStyle = { 
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300 
+  };
 
+  const sansStyle = { 
+    fontFamily: '"Montserrat", sans-serif',
+    fontWeight: 300
+  };
+
+  return (
+    <section className="bg-[#FAF6EE] py-24 lg:py-32 text-[#2B2623]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
-        {/* Heading with animation */}
+        {/* Heading Area */}
         <motion.div 
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -81,23 +98,25 @@ const Services = () => {
         >
           <div>
             <motion.p 
-              className="uppercase tracking-[8px] text-xs text-[#C6A15B]"
+              style={{ ...sansStyle, fontWeight: 400 }}
+              className="uppercase tracking-[0.25em] text-xs text-[#C2A677]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              What We Do
+              — What We Do
             </motion.p>
 
             <motion.h2 
-              className="font-serif text-[#3B2A24] text-4xl md:text-6xl font-light mt-5"
+              style={serifStyle}
+              className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Services tailored to your <br /> story.
+              Services tailored to your <br /> <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#B2964D]">story.</span>
             </motion.h2>
           </div>
 
@@ -109,26 +128,27 @@ const Services = () => {
           >
             <Link
               to="/services"
+              style={sansStyle}
               className="
                 mt-8
                 lg:mt-0
                 uppercase
-                tracking-[5px]
+                tracking-[0.15em]
                 text-xs
-                text-[#3B2A24]
                 flex
                 items-center
                 gap-4
                 group
+                font-normal
               "
             >
-              <span className="w-10 h-px bg-[#3B2A24] group-hover:w-16 transition-all duration-300"></span>
+              <span className="w-10 h-px bg-[#2B2623] group-hover:w-16 transition-all duration-300"></span>
               All Services
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Grid Layout */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"
           variants={containerVariants}
@@ -144,72 +164,51 @@ const Services = () => {
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Image */}
-              <div className="overflow-hidden relative">
+              {/* Card Image Wrapper */}
+              <div className="overflow-hidden relative rounded-sm shadow-sm">
                 <motion.img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-[450px] object-cover"
-                  whileHover={{ scale: 1.08 }}
+                  className="w-full h-[450px] object-cover object-center"
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 />
                 
-                {/* Overlay on hover */}
-                <motion.div 
-                  className="absolute inset-0 bg-[#3B2A24]/0"
-                  whileHover={{ backgroundColor: 'rgba(59, 42, 36, 0.15)' }}
-                  transition={{ duration: 0.3 }}
-                />
+                {/* Subtle Image Mask Hover Overlay */}
+                <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.02] transition-colors duration-300 pointer-events-none" />
                 
-                {/* Decorative number overlay */}
-                <motion.span 
-                  className="absolute bottom-4 right-4 text-white/20 font-serif text-7xl font-light"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
+                {/* Graphic absolute number signature overlay */}
+                <span 
+                  style={serifStyle}
+                  className="absolute bottom-4 right-4 text-white/20 text-7xl select-none pointer-events-none"
                 >
                   {service.number}
-                </motion.span>
+                </span>
               </div>
 
-              {/* Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <motion.p 
-                  className="mt-5 text-[#C6A15B] tracking-[4px] text-xs"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                  viewport={{ once: true }}
+              {/* Meta Content Metadata area */}
+              <div className="mt-6">
+                <p 
+                  style={{ ...sansStyle, fontWeight: 400 }}
+                  className="text-[#C2A677] tracking-[0.15em] text-xs uppercase"
                 >
                   {service.number}
-                </motion.p>
+                </p>
 
-                <motion.h3 
-                  className="mt-3 font-serif text-3xl text-[#3B2A24]"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.4 }}
-                  viewport={{ once: true }}
+                <h3 
+                  style={serifStyle}
+                  className="mt-2 text-2xl lg:text-3xl text-[#2B2623] tracking-wide"
                 >
                   {service.title}
-                </motion.h3>
+                </h3>
 
-                <motion.p 
-                  className="mt-4 text-[#6E615A] leading-7"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
-                  viewport={{ once: true }}
+                <p 
+                  style={sansStyle}
+                  className="mt-3 text-[#5A5450] text-sm md:text-base leading-relaxed"
                 >
                   {service.description}
-                </motion.p>
-              </motion.div>
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

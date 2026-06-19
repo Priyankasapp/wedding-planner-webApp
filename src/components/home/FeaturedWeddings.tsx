@@ -128,7 +128,7 @@ const FeaturedWeddings = () => {
                 {/* Overlay */}
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-t from-[#3B2A24]/0 via-transparent to-transparent"
-                  whileHover={{ from: '#3B2A24/20' }}
+                  whileHover={{ backgroundColor: 'rgba(59,42,36,0.2)' }}
                   transition={{ duration: 0.3 }}
                 />
 

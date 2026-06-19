@@ -1,40 +1,41 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const process = [
+interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const processSteps: ProcessStep[] = [
   {
     number: "I",
     title: "Discovery",
-    description:
-      "An unhurried conversation to learn your story, taste, and dream.",
+    description: "An unhurried conversation to learn your story, taste, and dream.",
   },
   {
     number: "II",
     title: "Design",
-    description:
-      "Moodboards, palette, paper goods, and a full creative direction.",
+    description: "Moodboards, palette, paper goods, and a full creative direction.",
   },
   {
     number: "III",
     title: "Curation",
-    description:
-      "We assemble the right vendors, venues, and craftspeople for you.",
+    description: "We assemble the right vendors, venues, and craftspeople for you.",
   },
   {
     number: "IV",
     title: "Production",
-    description:
-      "Detailed run-of-show, rehearsals, and on-site orchestration.",
+    description: "Detailed run-of-show, rehearsals, and on-site orchestration.",
   },
   {
     number: "V",
     title: "Celebration",
-    description:
-      "You are present. We hold every thread so you don't have to.",
+    description: "You are present. We hold every thread so you don't have to.",
   },
 ];
 
-// Animation variants
-const containerVariants = {
+// FIX: Explicitly type your animation configurations as Variants
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -45,7 +46,8 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+// FIX: Explicitly type as Variants to satisfy the nested cubic-bezier array checks
+const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 30,
@@ -57,18 +59,28 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1], // TypeScript now validates this correctly as a fixed ease tuple array
     },
   },
 };
 
 const Process = () => {
+  const serifStyle = { 
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300 
+  };
+
+  const sansStyle = { 
+    fontFamily: '"Montserrat", sans-serif',
+    fontWeight: 300
+  };
+
   return (
-    <section className="bg-[#F8F6F2] py-24 lg:py-32 relative overflow-hidden">
+    <section className="bg-[#FAF6EE] py-24 lg:py-32 relative overflow-hidden text-[#2B2623]">
       
-      {/* Decorative background elements */}
+      {/* Decorative background element */}
       <motion.div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#C6A15B]/5"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#C2A677]/5"
         initial={{ scale: 0.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -77,7 +89,7 @@ const Process = () => {
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
-        {/* Heading with animation */}
+        {/* Heading Area */}
         <motion.div 
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -86,35 +98,36 @@ const Process = () => {
           viewport={{ once: true }}
         >
           <motion.p 
-            className="uppercase tracking-[8px] text-xs text-[#C6A15B]"
+            style={{ ...sansStyle, fontWeight: 400 }}
+            className="uppercase tracking-[0.25em] text-xs text-[#C2A677]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            The Process
+            — The Process
           </motion.p>
 
           <motion.h2 
-            className="font-serif text-4xl md:text-6xl text-[#3B2A24] font-light mt-5"
+            style={serifStyle}
+            className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Five movements, gently composed.
+            Five movements, gently <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#B2964D]">composed.</span>
           </motion.h2>
 
-          {/* Decorative underline */}
           <motion.div 
-            className="mx-auto mt-6 w-0 h-px bg-[#C6A15B]"
+            className="mx-auto mt-6 w-0 h-px bg-[#C2A677]"
             whileInView={{ width: 60 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           />
         </motion.div>
 
-        {/* Timeline */}
+        {/* Timeline Matrix Layout */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 border-y border-[#D8D0C8] relative"
           variants={containerVariants}
@@ -122,16 +135,16 @@ const Process = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {/* Animated connecting line */}
+          {/* Connecting line */}
           <motion.div 
-            className="hidden xl:block absolute top-1/2 left-0 right-0 h-px bg-[#C6A15B]/20"
+            className="hidden xl:block absolute top-1/2 left-0 right-0 h-px bg-[#C2A677]/20"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
             viewport={{ once: true }}
           />
 
-          {process.map((step, index) => (
+          {processSteps.map((step, index) => (
             <motion.div
               key={index}
               className="
@@ -150,93 +163,59 @@ const Process = () => {
                 transition: { duration: 0.2 }
               }}
             >
-              {/* Step number with circular background */}
-              <motion.div 
-                className="relative inline-block"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-              >
+              {/* Step indicator context design */}
+              <div className="relative inline-block">
                 <motion.div 
-                  className="absolute inset-0 rounded-full bg-[#C6A15B]/10"
+                  className="absolute inset-0 rounded-full bg-[#C2A677]/10"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                   viewport={{ once: true }}
                 />
-                <i className="
-                  text-[#C6A15B]
-                  font-serif
-                  text-3xl
-                  relative
-                  z-10
-                ">
+                <i 
+                  style={serifStyle}
+                  className="text-[#C2A677] text-3xl relative z-10 not-italic block px-3 py-1"
+                >
                   {step.number}
                 </i>
-              </motion.div>
+              </div>
 
-              <motion.h3 
-                className="
-                  font-serif
-                  text-2xl
-                  text-[#3B2A24]
-                  mt-6
-                "
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
-                viewport={{ once: true }}
+              <h3 
+                style={serifStyle}
+                className="text-2xl text-[#2B2623] mt-6 tracking-wide"
               >
                 {step.title}
-              </motion.h3>
+              </h3>
 
-              <motion.p 
-                className="
-                  mt-5
-                  text-[#6E615A]
-                  leading-7
-                "
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
-                viewport={{ once: true }}
+              <p 
+                style={sansStyle}
+                className="mt-4 text-[#5A5450] text-sm md:text-base leading-relaxed"
               >
                 {step.description}
-              </motion.p>
+              </p>
 
-              {/* Decorative line below title */}
-              <motion.div 
-                className="mt-3 w-0 h-px bg-[#C6A15B]/50"
-                whileInView={{ width: 30 }}
-                transition={{ duration: 0.6, delay: index * 0.1 + 0.6 }}
-                viewport={{ once: true }}
-              />
+              <div className="mt-4 w-8 h-px bg-[#C2A677]/40 group-hover:w-14 transition-all duration-300" />
 
-              {/* Step number indicator (mobile) */}
-              <motion.div 
-                className="xl:hidden absolute top-4 right-4 text-[#C6A15B]/10 font-serif text-6xl"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                viewport={{ once: true }}
+              {/* Step number signature accent (mobile layout) */}
+              <div 
+                style={serifStyle}
+                className="xl:hidden absolute top-4 right-4 text-[#C2A677]/10 text-6xl pointer-events-none select-none"
               >
                 {index + 1}
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom decorative text */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-[#6E615A] text-sm tracking-[6px] uppercase">
+        {/* Footer Note Accent */}
+        <div className="text-center mt-16">
+          <p 
+            style={sansStyle}
+            className="text-[#5A5450] text-xs tracking-[0.25em] uppercase"
+          >
             — Every detail, thoughtfully orchestrated —
           </p>
-        </motion.div>
+        </div>
 
       </div>
     </section>
