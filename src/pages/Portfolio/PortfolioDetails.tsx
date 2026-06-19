@@ -4,6 +4,9 @@ import elenaHero from "../../assets/images/photo_5.jpg";
 import sophiaHero from "../../assets/images/photo_4.jpg";
 import gallery1 from "../../assets/images/photo_1.jpg";
 import gallery2 from "../../assets/images/photo_2.jpg";
+import img1 from "../../assets/images/photo_3.jpg";
+import img2 from "../../assets/images/photo_11.jpg";
+
 import type { TimelineItem } from "../../components/portfolio/ProjectTimelineSection";
 import ProjectHeroSection from "../../components/portfolio/ProjectHeroSection";
 import ProjectStorySection from "../../components/portfolio/ProjectStorySection";
@@ -40,7 +43,7 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "16:00", title: "Ceremony", description: "Vows under a cypress arch at the water’s edge." },
       { time: "20:00", title: "Dinner", description: "Six-course tasting menu, candlelit long tables." }
     ],
-    images: [gallery1, gallery2, gallery1, gallery2]
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
   },
   "sophia-james": {
     title: "Sophia & James",
@@ -56,7 +59,7 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "12:00", title: "Pre-wedding pool lunch", description: "Fresh lavender cocktails and organic seasonal bites." },
       { time: "17:00", title: "Chateau vows courtyard", description: "Exchange of rings backed by historic classical masonry." }
     ],
-    images: [gallery2, gallery1, gallery2, gallery1]
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
   },
   // FIX: Converted key to URL slug match format "amara-noah"
   "amara-noah": {
@@ -73,7 +76,7 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "16:30", title: "Cliffside Guest Welcome", description: "Chilled signature mocktails with panoramic volcanic views." },
       { time: "18:00", title: "Sunset Vows", description: "An intimate dynamic exchange right against the horizon line." }
     ],
-    images: [gallery1, gallery1, gallery2, gallery2] // Using gallery image pool
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
   },
   // FIX: Converted key to URL slug match format "isla-rhys"
   "isla-rhys": {
@@ -90,7 +93,7 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "10:00", title: "Morning Garden Walk", description: "Earl grey tea reception amidst wild estate florals." },
       { time: "14:30", title: "Orangery Ceremony", description: "Exchanging rings under historic crystal chandeliers." }
     ],
-    images: [gallery2, gallery1, gallery1, gallery2] // Alternated order for gallery look variance
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
   }
 };
 
