@@ -65,10 +65,7 @@ export function Hero() {
         
       </div>
       <hr />
-
-      <div>
-        <img src="" alt="" />
-      </div>
+      
     </section>
   );
 }
