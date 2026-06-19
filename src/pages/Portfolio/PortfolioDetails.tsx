@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 
-
-// Example Asset Imports (replace paths with your setup local references)
-import elenaHero from "../../assets/images/elena-cover.jpg";
-import sophiaHero from "../../assets/images/sophia-cover.jpg";
+import elenaHero from "../../assets/images/photo_5.jpg";
+import sophiaHero from "../../assets/images/photo_4.jpg";
 import gallery1 from "../../assets/images/photo_1.jpg";
 import gallery2 from "../../assets/images/photo_2.jpg";
 import type { TimelineItem } from "../../components/portfolio/ProjectTimelineSection";
@@ -59,6 +57,40 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "17:00", title: "Chateau vows courtyard", description: "Exchange of rings backed by historic classical masonry." }
     ],
     images: [gallery2, gallery1, gallery2, gallery1]
+  },
+  // FIX: Converted key to URL slug match format "amara-noah"
+  "amara-noah": {
+    title: "Amara & Noah",
+    location: "Santorini, Greece",
+    year: "2024",
+    heroImage: gallery1, // Swapped unique layout cover using existing image values
+    tagline: "“Bougainvillea, sea breeze, and gold hour.”",
+    storyText: "Perched beautifully over the Aegean cliffs, this architectural layout balanced pristine whitewashed minimalist backdrops with vibrant, sprawling structural floral expressions.",
+    venue: "Rocabella Santorini",
+    guests: "60 invited",
+    duration: "Sunset soirée",
+    timeline: [
+      { time: "16:30", title: "Cliffside Guest Welcome", description: "Chilled signature mocktails with panoramic volcanic views." },
+      { time: "18:00", title: "Sunset Vows", description: "An intimate dynamic exchange right against the horizon line." }
+    ],
+    images: [gallery1, gallery1, gallery2, gallery2] // Using gallery image pool
+  },
+  // FIX: Converted key to URL slug match format "isla-rhys"
+  "isla-rhys": {
+    title: "Isla & Rhys",
+    location: "Cotswolds, England",
+    year: "2024",
+    heroImage: gallery2, // Swapped unique layout cover using existing image values
+    tagline: "“An English garden in full bloom.”",
+    storyText: "A quintessential country weekend focusing on nostalgic charm, custom canvas pavilions, artisanal table elements, and locally foraged seasonal wild flora compositions.",
+    venue: "Euridge Manor",
+    guests: "95 invited",
+    duration: "Weekend stay",
+    timeline: [
+      { time: "10:00", title: "Morning Garden Walk", description: "Earl grey tea reception amidst wild estate florals." },
+      { time: "14:30", title: "Orangery Ceremony", description: "Exchanging rings under historic crystal chandeliers." }
+    ],
+    images: [gallery2, gallery1, gallery1, gallery2] // Alternated order for gallery look variance
   }
 };
 

@@ -22,9 +22,10 @@ const AppRoutes = () => {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="portfolio/:slug" element={<PortfolioDetails />} />
       </Route>
 
-      <Route path="portfolio/:slug" element={<PortfolioDetails />} />
+      
 
       <Route path="journal/:slug" element={<JournalDetails />} />
 
