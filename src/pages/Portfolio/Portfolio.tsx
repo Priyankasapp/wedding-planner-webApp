@@ -1,8 +1,11 @@
-
-
+import { Hero } from "../../components/portfolio/Hero"
+import { PortfolioGrid } from "../../components/portfolio/PortfolioGrid"
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <div>
+      <Hero/>
+      <PortfolioGrid/>
+    </div>
   )
 }
 
