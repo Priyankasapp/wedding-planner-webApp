@@ -98,7 +98,7 @@ const Services = () => {
           <div>
             <motion.p 
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="uppercase tracking-[0.25em] text-xs text-[#C2A677]"
+              className="uppercase tracking-[0.25em] text-xs text-[#493718]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -115,7 +115,7 @@ const Services = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Services tailored to your <br /> <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#B2964D]">story.</span>
+              Services tailored to your <br /> <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#493718]">story.</span>
             </motion.h2>
           </div>
 
@@ -178,7 +178,7 @@ const Services = () => {
               <div className="mt-6">
                 <p 
                   style={{ ...sansStyle, fontWeight: 400 }}
-                  className="text-[#C2A677] tracking-[0.15em] text-xs uppercase"
+                  className="text-[#5F4B2B] tracking-[0.15em] text-xs uppercase"
                 >
                   {service.number}
                 </p>

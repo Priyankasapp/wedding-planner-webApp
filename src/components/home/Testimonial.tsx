@@ -65,7 +65,7 @@ const Testimonial = () => {
           uppercase
           tracking-[5px]
           text-xs
-          text-[#C6A15B]
+          text-[#8B6B2E]
         ">
           — Elena & Marco, Lake Como
         </p>

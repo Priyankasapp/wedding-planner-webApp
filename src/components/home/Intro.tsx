@@ -36,7 +36,7 @@ const Intro = () => {
             <motion.h2 
               className="
                 font-serif
-    text-[#3B2A24]
+    text-[#352021]
     text-3xl
     md:text-5xl
     lg:text-6xl
@@ -57,7 +57,7 @@ const Intro = () => {
             <motion.p 
               className="
                 mt-10
-                text-[#7B6B63]
+                text-[#795757]
                 italic
                 text-lg
               "

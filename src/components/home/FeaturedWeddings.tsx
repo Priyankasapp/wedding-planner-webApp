@@ -109,7 +109,7 @@ const FeaturedWeddings = () => {
                 {/* Gold location tag header row */}
                 <p 
                   style={sansStyle} 
-                  className="text-[#C2A677] text-[10px] tracking-[0.2em] uppercase font-medium mb-2.5"
+                  className="text-[#B89154] text-[10px] tracking-[0.2em] uppercase font-medium mb-2.5"
                 >
                   {wedding.location}
                 </p>

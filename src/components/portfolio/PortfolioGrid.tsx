@@ -176,7 +176,7 @@ export function PortfolioGrid() {
                       className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-2 flex items-center gap-2"
                     >
                       <span className="text-[#8B6B2E]">{item.category}</span>
-                      <span className="opacity-40">•</span>
+                      <span className=" text-[#8B6B2E]">•</span>
                       <span className="text-[#8B6B2E]">{item.year}</span>
                     </div>
 
