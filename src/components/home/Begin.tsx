@@ -72,7 +72,7 @@ const Begin = () => {
               <motion.p
                 style={{ ...sansStyle, fontWeight: 400 }}
                 variants={slideUpWithDelay(0.1)}
-                className="uppercase tracking-[0.25em] text-xs text-[#C6A15B] mb-6"
+                className="uppercase tracking-[0.25em] text-xs text-[#F0E8E2]mb-6"
               >
                 — Begin
               </motion.p>
@@ -98,7 +98,7 @@ const Begin = () => {
               <motion.p
                 style={sansStyle}
                 variants={slideUpWithDelay(0.4)}
-                className="text-[#D3C7BF] text-base md:text-lg leading-relaxed max-w-md"
+                className="text-[#E2C48A] text-base md:text-lg leading-relaxed max-w-md"
               >
                 We accept a small number of weddings each year.
                 Tell us about yours.

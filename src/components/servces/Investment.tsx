@@ -90,7 +90,7 @@ const Investment = () => {
         <div className="mb-16 lg:mb-20">
           <p
             style={{ ...sansStyle, fontWeight: 400 }}
-            className="text-xs tracking-[0.25em] text-[#C2A677] uppercase mb-4"
+            className="text-xs tracking-[0.25em] text-[#8B6B2E] uppercase mb-4"
           >
             — Investment
           </p>
@@ -115,20 +115,20 @@ const Investment = () => {
               <motion.div
                 key={tier.number}
                 variants={cardVariants}
-                className={`
-                  p-10 lg:p-14 flex flex-col justify-between min-h-[580px] rounded-[2px] transition-transform duration-300 hover:-translate-y-1
-                  ${tier.isDarkHighlighted 
-                    ? "bg-[#33241F] text-[#FAF6EE] shadow-xl" 
-                    : "bg-white text-[#2B2623] shadow-[0_4px_30px_rgba(0,0,0,0.015)]"
-                  }
-                `}
+                  className={`
+                    p-10 lg:p-14 flex flex-col justify-between min-h-[580px] rounded-[2px] transition-transform duration-300 hover:-translate-y-1
+                    ${tier.isDarkHighlighted 
+                      ? "bg-[#33241F] text-[#FAF6EE] shadow-xl" 
+                      : "bg-white text-[#2B2623] shadow-[0_4px_30px_rgba(0,0,0,0.015)]"
+                    }
+                  `}
               >
                 <div>
                   {/* Card Number */}
                   <span
                     style={{ ...sansStyle, fontWeight: 400 }}
                     className={`text-xs tracking-widest block mb-6 ${
-                      tier.isDarkHighlighted ? "text-[#C2A677]" : "text-[#C2A677]"
+                      tier.isDarkHighlighted ? "text-[#C2A677]" : "text-[#8B6B2E]"
                     }`}
                   >
                     {tier.number}

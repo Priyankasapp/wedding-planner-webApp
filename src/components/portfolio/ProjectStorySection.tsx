@@ -44,7 +44,7 @@ const ProjectStorySection = ({
               style={sansStyle} 
               className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase font-medium flex items-center gap-2"
             >
-              <span className="inline-block w-4 h-px bg-[#C2A677]"></span>
+              <span className="inline-block w-4 h-px bg-[#8B6B2E]"></span>
               The Story
             </p>
           </div>
@@ -63,7 +63,7 @@ const ProjectStorySection = ({
             {/* Detailed Body Copy Narrative */}
             <p 
               style={sansStyle} 
-              className="text-[#6E615A] text-sm md:text-base leading-relaxed tracking-wide font-light max-w-3xl opacity-90"
+              className="text-[#795757] text-sm md:text-base leading-relaxed tracking-wide font-light max-w-3xl opacity-90"
             >
               {storyText}
             </p>

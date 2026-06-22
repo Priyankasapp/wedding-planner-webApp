@@ -92,16 +92,16 @@ export function JournalFeatured() {
               style={sansStyle}
               className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-4 flex items-center gap-2.5 font-medium"
             >
-              <span>{post.category}</span>
-              <span className="opacity-40 font-light">—</span>
-              <span className="text-[#8B7A72]">{post.date}</span>
+              <span className="text-[#8B6B2E]">{post.category}</span>
+              <span className="opacity-40 text-[#8B6B2E]">—</span>
+              <span className="text-[#795757]">{post.date}</span>
             </div>
 
             {/* Post Title */}
             <Link to={`/journal/${post.slug}`} className="group inline-block">
               <h2
                 style={serifStyle}
-                className="text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.15] text-[#2B2623] tracking-wide mb-5 group-hover:text-[#B2964D] transition-colors duration-300 font-light"
+                className="text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.15] text-[#352021] tracking-wide mb-5 group-hover:text-[#B2964D] transition-colors duration-300 font-light"
               >
                 {post.title}
               </h2>
@@ -110,7 +110,7 @@ export function JournalFeatured() {
             {/* Excerpt / Subheading description */}
             <p
               style={sansStyle}
-              className="text-[#6E615A] text-sm md:text-base leading-relaxed mb-8 font-light max-w-md opacity-90"
+              className="text-[#795757] text-sm md:text-base leading-relaxed mb-8 font-light max-w-md opacity-90"
             >
               {post.excerpt}
             </p>
@@ -122,13 +122,13 @@ export function JournalFeatured() {
                 style={sansStyle}
                 className="
                   inline-flex items-center gap-2.5
-                  text-[10px] font-normal uppercase tracking-[0.25em] text-[#C2A677]
+                  text-[10px] font-normal uppercase tracking-[0.25em] text-[#8B6B2E]
                   hover:text-[#2B2623] transition-colors duration-300 group
                 "
               >
                 Read
                 <span className="text-[#8B7A72] opacity-50 font-light">—</span>
-                <span className="text-[#8B7A72] group-hover:text-[#2B2623] transition-colors duration-300">
+                <span className="text-[#352021] group-hover:text-[#2B2623] transition-colors duration-300">
                   {post.readTime}
                 </span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-xs">

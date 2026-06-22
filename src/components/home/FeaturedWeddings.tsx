@@ -60,7 +60,7 @@ const FeaturedWeddings = () => {
           viewport={{ once: true }}
         >
           <div>
-            <p style={sansStyle} className="uppercase tracking-[0.25em] text-xs text-[#C2A677]">
+            <p style={sansStyle} className="uppercase tracking-[0.25em] text-xs text-[#8B6B2E]">
               — Featured Weddings
             </p>
             <h2 style={serifStyle} className="text-5xl md:text-6xl text-[#2B2623] mt-4">

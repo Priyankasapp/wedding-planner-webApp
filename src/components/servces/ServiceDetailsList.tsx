@@ -62,14 +62,14 @@ const servicesData: ServiceBlock[] = [
     image: img6,
   },
   {
-    number: "07", // FIX: Updated numbering chain sequence
+    number: "07", 
     title: "Photography Coordination",
     tagline: "We pair you with photographers whose eye matches your story.",
     description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img7,
   },
   {
-    number: "08", // FIX: Updated numbering chain sequence
+    number: "08", 
     title: "Venue Management",
     tagline: "Sourcing, negotiation, and stewardship of unforgettable settings.",
     description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
@@ -149,7 +149,7 @@ const ServiceSections = () => {
                   {/* Service Number Accent */}
                   <span
                     style={{ ...sansStyle, fontWeight: 400 }}
-                    className="text-sm tracking-[0.25em] text-[#C2A677] mb-6 block"
+                    className="text-sm tracking-[0.25em] text-[#8B6B2E] mb-6 block"
                   >
                     {service.number}
                   </span>
@@ -157,7 +157,7 @@ const ServiceSections = () => {
                   {/* Primary Heading */}
                   <h2
                     style={serifStyle}
-                    className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#3B2A24] tracking-wide mb-8 font-light"
+                    className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#352021] tracking-wide mb-8 font-light"
                   >
                     {service.title}
                   </h2>
@@ -165,7 +165,7 @@ const ServiceSections = () => {
                   {/* Tagline / Sub-description */}
                   <p
                     style={sansStyle}
-                    className="text-[#6E615A] text-base md:text-lg leading-relaxed mb-6 font-normal opacity-90 max-w-xl"
+                    className="text-[#795757] text-base md:text-lg leading-relaxed mb-6 font-normal opacity-90 max-w-xl"
                   >
                     {service.tagline}
                   </p>
@@ -173,7 +173,7 @@ const ServiceSections = () => {
                   {/* Secondary Body Paragraph */}
                   <p
                     style={sansStyle}
-                    className="text-[#8B7A72] text-sm md:text-base leading-relaxed max-w-xl"
+                    className="text-[#795757] text-sm md:text-base leading-relaxed max-w-xl"
                   >
                     {service.description}
                   </p>

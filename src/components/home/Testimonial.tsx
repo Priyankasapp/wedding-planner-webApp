@@ -2,8 +2,12 @@ import bgImage from "../../assets/images/photo_3.jpg";
 import { FaStar } from "react-icons/fa";
 
 const Testimonial = () => {
+  const serifStyle = {
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300,
+  };
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden">
+    <section className="relative py-28 lg:py-36 overflow-hidden ">
 
       {/* Background */}
 
@@ -18,7 +22,7 @@ const Testimonial = () => {
 
       {/* Blur Layer */}
 
-      <div className="absolute inset-0 backdrop-blur-sm bg-black/45" />
+      <div className="absolute inset-0 backdrop-blur-none bg-[#F8F6F2]/70" />
 
       {/* Content */}
 
@@ -38,13 +42,15 @@ const Testimonial = () => {
 
         {/* Quote */}
 
-        <blockquote className="
-          font-serif
-          text-white
+        <blockquote 
+        
+        style={{...serifStyle, fontStyle:"italic"}}
+        className="
+          
           text-3xl
-          md:text-5xl
-          leading-[1.4]
-          font-light
+          md:text-4xl
+          leading-[1.1]
+          
         ">
           “Maison Lior turned our wedding into a piece of art.
           Every detail felt considered, every moment intentional.
@@ -54,11 +60,12 @@ const Testimonial = () => {
         {/* Author */}
 
         <p className="
+
           mt-10
           uppercase
           tracking-[5px]
           text-xs
-          text-[#E5D5B8]
+          text-[#C6A15B]
         ">
           — Elena & Marco, Lake Como
         </p>

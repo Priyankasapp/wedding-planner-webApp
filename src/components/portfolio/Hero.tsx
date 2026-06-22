@@ -42,7 +42,7 @@ export function Hero() {
           <motion.p
             variants={itemVariants}
             style={{ ...sansStyle, fontWeight: 400 }}
-            className="text-xs md:text-sm tracking-[0.25em] text-[#C2A677] uppercase mb-6"
+            className="text-xs md:text-sm tracking-[0.25em] text-[#8B6B2E] uppercase mb-6"
           >
             — PORTFOLIO
           </motion.p>
@@ -55,7 +55,7 @@ export function Hero() {
             A quiet archive of {" "}
             <span
               style={{ ...serifStyle, fontStyle: "italic" }}
-              className="text-[#B2964D]"
+              className="text-[#8B6B2E]"
             >
               love.
             </span>{" "}

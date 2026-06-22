@@ -45,7 +45,7 @@ export function ContactHero() {
             <motion.p
               variants={itemVariants}
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="text-xs md:text-sm tracking-[0.25em] text-[#C2A677] uppercase mb-6"
+              className="text-xs md:text-sm tracking-[0.25em] text-[#8B6B2E] uppercase mb-6"
             >
               — ENQUIRIES
             </motion.p>
@@ -53,12 +53,12 @@ export function ContactHero() {
             <motion.h1
               variants={itemVariants}
               style={serifStyle}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] tracking-wide text-[#2B2623]"
+              className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] tracking-wide text-[#352021]"
             >
               We'd{" "}
               <span
                 style={{ ...serifStyle, fontStyle: "italic" }}
-                className="text-[#B2964D]"
+                className="text-[#8B6B2E]"
               >
                 love
               </span>{" "}
@@ -73,7 +73,7 @@ export function ContactHero() {
           >
             <p
               style={sansStyle}
-              className="text-[#6E615A] text-sm md:text-base leading-relaxed opacity-90 max-w-sm"
+              className="text-[#795757] text-sm md:text-base leading-relaxed opacity-90 max-w-sm"
             >
               Tell us a little about yourselves and your wedding. We respond to every enquiry personally, within three days.
             </p>

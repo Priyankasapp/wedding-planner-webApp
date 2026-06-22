@@ -21,13 +21,13 @@ const Footer = () => {
     threshold: 0.1,
   });
 
-  // Images appear one by one with speed
+ //image
   const imageContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08, // Fast staggered appearance
+        staggerChildren: 0.08, 
         delayChildren: 0.2,
       },
     },
@@ -66,7 +66,11 @@ const imageItemVariants = {
             </h3>
 
             <div className="mt-6 sm:mt-8 flex border-b border-white/20 pb-3">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+              </label>
               <input
+               id="newsletter-email"
                 type="email"
                 placeholder="your@email.com"
                 className="flex-1 bg-transparent outline-none placeholder:text-white/40 text-sm sm:text-base"

@@ -23,11 +23,12 @@ const AppRoutes = () => {
         <Route path="/journal" element={<Journal />} />
         <Route path="contact" element={<Contact />} />
         <Route path="portfolio/:slug" element={<PortfolioDetails />} />
+        <Route path="journal/:slug" element={<JournalDetails />} />
       </Route>
 
       
 
-      <Route path="journal/:slug" element={<JournalDetails />} />
+      
 
       <Route path="*" element={<NotFound />} />
     </Routes>

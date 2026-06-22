@@ -108,7 +108,7 @@ const Moments = () => {
           <div>
             <p 
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="uppercase tracking-[0.25em] text-xs text-[#C2A677]"
+              className="uppercase tracking-[0.25em] text-xs text-[#8B6A2F]"
             >
               — Moments
             </p>
@@ -116,7 +116,7 @@ const Moments = () => {
               style={serifStyle}
               className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
             >
-              From the <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#B2964D]">lens.</span>
+              From the <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#7A5A2A]">lens.</span>
             </h2>
           </div>
 

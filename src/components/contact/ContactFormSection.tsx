@@ -47,7 +47,7 @@ export function ContactFormSection() {
   };
 
   const inputClass = "w-full bg-transparent border-b border-[#D8D0C8] py-3 text-sm text-[#2B2623] focus:border-[#C2A677] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
-  const labelClass = "block text-[10px] tracking-[0.2em] text-[#C2A677] uppercase mb-1 font-medium";
+  const labelClass = "block text-[10px] tracking-[0.2em] text-[#8B6B2E] uppercase mb-1 font-medium";
 
   return (
     <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32">
@@ -66,8 +66,9 @@ export function ContactFormSection() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <label style={sansStyle} className={labelClass}>First Name *</label>
+                <label htmlFor="firstName" style={sansStyle} className={labelClass}>First Name *</label>
                 <input
+                  id = "firstname"
                   type="text"
                   name="firstName"
                   value={formData.firstName}
@@ -79,8 +80,9 @@ export function ContactFormSection() {
                 />
               </div>
               <div>
-                <label style={sansStyle} className={labelClass}>Partner's Name</label>
+                <label htmlFor="partnerName" style={sansStyle} className={labelClass}>Partner's Name</label>
                 <input
+                  id="partnerName"
                   type="text"
                   name="partnerName"
                   value={formData.partnerName}
@@ -94,8 +96,9 @@ export function ContactFormSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <label style={sansStyle} className={labelClass}>Email *</label>
+                <label htmlFor="email"  style={sansStyle} className={labelClass}>Email *</label>
                 <input
+                id="email"
                   type="email"
                   name="email"
                   value={formData.email}
@@ -107,8 +110,9 @@ export function ContactFormSection() {
                 />
               </div>
               <div>
-                <label style={sansStyle} className={labelClass}>Phone</label>
+                <label htmlFor="phone" style={sansStyle} className={labelClass}>Phone</label>
                 <input
+                id="phone"
                   type="tel"
                   name="phone"
                   value={formData.phone}
@@ -122,8 +126,9 @@ export function ContactFormSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <label style={sansStyle} className={labelClass}>Wedding Date or Season</label>
+                <label htmlFor="dateOrSeason" style={sansStyle} className={labelClass}>Wedding Date or Season</label>
                 <input
+                id="dateOrSeason"
                   type="text"
                   name="dateOrSeason"
                   value={formData.dateOrSeason}
@@ -134,8 +139,9 @@ export function ContactFormSection() {
                 />
               </div>
               <div>
-                <label style={sansStyle} className={labelClass}>Estimated Guests</label>
+                <label htmlFor="estimatedGuests" style={sansStyle} className={labelClass}>Estimated Guests</label>
                 <input
+                id="estimatedGuests"
                   type="text"
                   name="estimatedGuests"
                   value={formData.estimatedGuests}
@@ -148,8 +154,9 @@ export function ContactFormSection() {
             </div>
 
             <div>
-              <label style={sansStyle} className={labelClass}>Where would you like to celebrate?</label>
+              <label htmlFor="celebrationLocation" style={sansStyle} className={labelClass}>Where would you like to celebrate?</label>
               <input
+              id="celebractionLoction"
                 type="text"
                 name="celebrationLocation"
                 value={formData.celebrationLocation}
@@ -161,8 +168,9 @@ export function ContactFormSection() {
             </div>
 
             <div>
-              <label style={sansStyle} className={labelClass}>Tell us about your day *</label>
+              <label htmlFor="aboutYourDay" style={sansStyle} className={labelClass}>Tell us about your day *</label>
               <textarea
+              id="aboutYourDay"
                 name="aboutYourDay"
                 value={formData.aboutYourDay}
                 onChange={handleChange}
@@ -205,7 +213,7 @@ export function ContactFormSection() {
               
               {/* Studio Address */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#C2A677] uppercase mb-2.5 font-medium">
+                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   Studio
                 </h4>
                 <div className="flex items-center gap-3 text-[#2B2623]">
@@ -218,7 +226,7 @@ export function ContactFormSection() {
 
               {/* Telephone */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#C2A677] uppercase mb-2.5 font-medium">
+                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   By Telephone
                 </h4>
                 <a 
@@ -234,7 +242,7 @@ export function ContactFormSection() {
 
               {/* Email */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#C2A677] uppercase mb-2.5 font-medium">
+                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   By Letter
                 </h4>
                 <a 
@@ -250,7 +258,7 @@ export function ContactFormSection() {
 
               {/* Instagram */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#C2A677] uppercase mb-2.5 font-medium">
+                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   Follow
                 </h4>
                 <a 

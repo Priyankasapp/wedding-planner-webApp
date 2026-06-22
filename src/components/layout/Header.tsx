@@ -34,7 +34,7 @@ const Header = () => {
             <h1 className="font-serif text-3xl text-[#43342F]">
               Maison Lior
             </h1>
-            <p className="uppercase tracking-[5px] text-[11px] text-[#C6A15B]">
+            <p className="uppercase tracking-[5px] text-[11px] text-[#8B6B2E]">
               Wedding Atelier
             </p>
           </Link>
@@ -69,6 +69,9 @@ const Header = () => {
           <button
             className="lg:hidden text-[#43342F]"
             onClick={() => setOpen(!open)}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+  aria-expanded={open}
+  aria-controls="mobile-menu"
           >
             {open ? <HiOutlineX size={32} /> : <HiOutlineMenuAlt3 size={32} />}
           </button>

@@ -19,7 +19,7 @@ const Intro = () => {
               uppercase
               tracking-[8px]
               text-xs
-              text-[#C6A15B]
+             text-[#7A5A2A]
             ">
               — A Few Words
             </p>
@@ -36,12 +36,12 @@ const Intro = () => {
             <motion.h2 
               className="
                 font-serif
-                text-[#3B2A24]
-                text-3xl
-                md:text-5xl
-                lg:text-6xl
-                leading-[1.2]
-                font-light
+    text-[#3B2A24]
+    text-3xl
+    md:text-5xl
+    lg:text-6xl
+    leading-[1.2]
+    font-light
               "
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}

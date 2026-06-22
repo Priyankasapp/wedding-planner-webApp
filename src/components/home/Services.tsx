@@ -147,7 +147,7 @@ const Services = () => {
           {services.map((service) => (
             <motion.div 
               key={service.number} 
-              className="group"
+              className="group "
               variants={itemVariants}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}

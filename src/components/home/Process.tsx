@@ -116,7 +116,7 @@ const Process = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Five movements, gently <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#B2964D]">composed.</span>
+            Five movements, gently <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#8B6B2E]">composed.</span>
           </motion.h2>
 
           <motion.div 
@@ -174,7 +174,7 @@ const Process = () => {
                 />
                 <i 
                   style={serifStyle}
-                  className="text-[#C2A677] text-3xl relative z-10 not-italic block px-3 py-1"
+                  className="text-[#8B6B2E] text-3xl relative z-10 not-italic block px-3 py-1"
                 >
                   {step.number}
                 </i>

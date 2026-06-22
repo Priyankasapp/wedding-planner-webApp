@@ -156,7 +156,7 @@ export function PortfolioGrid() {
                   {/* Image Frame Link Wrapper */}
                   <Link
                     to={`/portfolio/${item.slug}`}
-                    className="overflow-hidden aspect-[4/5] w-full rounded-sm relative block bg-[#F0EAE1]"
+                    className="overflow-hidden aspect-[4/5] w-full rounded-sm relative block "
                   >
                     <motion.img
                       src={item.image}
@@ -175,16 +175,16 @@ export function PortfolioGrid() {
                       style={sansStyle}
                       className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-2 flex items-center gap-2"
                     >
-                      <span>{item.category}</span>
+                      <span className="text-[#8B6B2E]">{item.category}</span>
                       <span className="opacity-40">•</span>
-                      <span className="text-[#8B7A72]">{item.year}</span>
+                      <span className="text-[#8B6B2E]">{item.year}</span>
                     </div>
 
                     {/* Couple Names */}
                     <Link to={`/portfolio/${item.slug}`}>
                       <h3
                         style={serifStyle}
-                        className="text-2xl lg:text-3xl text-[#3B2A24] tracking-wide hover:text-[#B2964D] transition-colors duration-300 inline-block font-light"
+                        className="text-2xl lg:text-3xl text-[#352021] tracking-wide hover:text-[#B2964D] transition-colors duration-300 inline-block font-light"
                       >
                         {item.couple}
                       </h3>
@@ -193,7 +193,7 @@ export function PortfolioGrid() {
                     {/* Geographical Location */}
                     <span
                       style={sansStyle}
-                      className="text-xs text-[#8B7A72] mt-1 font-light"
+                      className="text-xs text-[#795757] mt-1 font-light"
                     >
                       {item.location}
                     </span>

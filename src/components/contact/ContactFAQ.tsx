@@ -13,23 +13,23 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Do you travel internationally?",
-    answer: "Yes, we handle destination celebrations worldwide, managing local logistics, language barriers, and vendor curation seamlessly.",
+    answer: "Yes, Roughly half of our weddings take place outside our home studio, primarilly across Europe and Mediterranean.",
   },
   {
     question: "What is your typical investment?",
-    answer: "Our bespoke planning and design collections are tailored per event. Detailed proposal breakdowns are offered following our initial consultation.",
+    answer: "Our full-service celebrations begin at €45,000 in planning fees, with total wedding budgets typically ranging from €150,000 upward.",
   },
   {
     question: "Do you offer partial planning?",
-    answer: "We focus on full-service design, planning, and event production to maintain absolute aesthetic integrity and a stress-free experience for our couples.",
+    answer: "We offer a refined month-of coordination package for couples who have planned independently and need a steady hand for execution.",
   },
   {
     question: "How many weddings do you take per year?",
-    answer: "To guarantee our signature, highly dedicated attention to every detail, we limit our calendar to a selective handful of signature celebrations annually.",
+    answer: "A maximum of twelve. We believe in deep attention over volume.",
   },
   {
     question: "Can you work with our existing vendors?",
-    answer: "Absolutely. While we provide a vetted list of world-class partners, we welcome collaborating with any exceptional creative talent who shares our dedication to perfection.",
+    answer: "Absolutely. We collaborate with vendors you love and supplement with our trusted network where helpful.",
   },
 ];
 
@@ -121,7 +121,7 @@ export function ContactFAQ() {
                         <div className="pb-8 pr-8">
                           <p
                             style={sansStyle}
-                            className="text-[#6E615A] text-xs md:text-sm leading-relaxed font-light opacity-90 max-w-2xl"
+                            className="text-[#795757] text-xs md:text-sm leading-relaxed font-light opacity-90 max-w-2xl"
                           >
                             {item.answer}
                           </p>
