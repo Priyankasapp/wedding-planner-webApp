@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import gridImg2 from "../../assets/images/photo_5.jpg";
+import gridImg3 from "../../assets/images/photo_11.jpg";
+import gridImg4 from "../../assets/images/photo_1.jpg";
+
 
 const ContinueReading = () => {
   const serifStyle = {
@@ -8,25 +12,25 @@ const ContinueReading = () => {
   // Mock data matching your live layout exactly
   const articles = [
     {
-      id: 1,
-      category: "Guides",
+      id: "destination-planning",
+      category: "GUIDES",
       title: "Planning a Destination Wedding Without Losing Yourself",
       slug: "planning-a-destination-wedding-without-losing-yourself",
-      image: "https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=800&auto=format&fit=crop", // Elegant coastal altar setup
+      image:gridImg4,
     },
     {
-      id: 2,
-      category: "Inspiration",
+      id: "elena-marco-real",
+      category: "REAL WEDDINGS",
+      title: "Real Wedding — Elena & Marco at Villa del Balbianello",
+      slug: "real-wedding-elena-marco-at-villa-del-balbianello",
+      image: gridImg2,
+    },
+    {
+      id: "brides-letter",
+      category: "INSPIRATION",
       title: "A Bride's Letter to Herself the Morning Of",
       slug: "a-brides-letter-to-herself-the-morning-of",
-      image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800&auto=format&fit=crop", // Bridal preparation light
-    },
-    {
-      id: 3,
-      category: "Trends",
-      title: "The Rise of the Multi-Day Celebration",
-      slug: "the-rise-of-the-multi-day-celebration",
-      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop", // Indoor reception banquet under string lights
+      image:gridImg3,
     },
   ];
 

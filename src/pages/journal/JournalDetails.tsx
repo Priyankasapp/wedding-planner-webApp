@@ -4,15 +4,96 @@ import { FaXTwitter } from "react-icons/fa6";
 import LeaveAThought from "../../components/journal/LeaveAThought";
 import ContinueReading from "../../components/journal/ContinueReading";
 
-// 1. Centralized Editorial Data Matching Your Screenshots
+import gridImg1 from "../../assets/images/photo_1.jpg";
+import gridImg2 from "../../assets/images/photo_6.jpg";
+import gridImg3 from "../../assets/images/photo_11.jpg";
+import gridImg4 from "../../assets/images/photo_4.jpg";
+import gridImg5 from "../../assets/images/photo_5.jpg";
+
+
+// 1. Centralized Editorial Data Fully Synced with JournalGrid Slugs
 const journalDatabase = {
-  "real-wedding-elena-marco": {
+  "planning-a-destination-wedding-without-losing-yourself": {
+    category: "Guides",
+    date: "March 2026",
+    readTime: "8 min",
+    title: "Planning a Destination Wedding Without Losing Yourself",
+    subtitle: "A modern guide to keeping your peace and creative balance while planning across scenic international borders.",
+    image: gridImg1,
+    imageAlt: "Destination wedding altar overview overlooking the ocean sunset",
+    paragraphs: [
+      "Planning a celebration from thousands of miles away can feel abstract. The key is establishing local production roots early. Trusting regional textures, native floral landscapes, and seasonal Mediterranean lighting structures preserves your peace.",
+      "Rather than forcing external materials onto a pristine landscape, let the geography direct your finishes. It creates a seamless narrative loop for your arriving guests."
+    ],
+    sections: [
+      {
+        heading: "Logistics over looks",
+        text: "Design components are empty without functional structural backup. Micro-coordinate guest transport structures and culinary timing metrics before curating tabletop selections."
+      }
+    ]
+  },
+  "florals-that-feel-like-a-garden-not-a-showroom": {
+    category: "Design",
+    date: "April 2026",
+    readTime: "10 min",
+    title: "Florals That Feel Like a Garden, Not a Showroom",
+    subtitle: "A conversation with our lead floral designer on wildness, asymmetry, and trust.",
+    image: gridImg2,
+    imageAlt: "Organic wild floral design compositions",
+    paragraphs: [
+      "When flora is arranged too perfectly, it loses its heartbeat. We approach floral design as an extension of the local environment, letting branches bend how they naturally grew and prioritizing asymmetry over rigid round structures.",
+      "The secret lies in the spaces between the flowers. Allowing air into the installation gives each bloom room to tell its own dynamic seasonal story."
+    ],
+    sections: [
+      {
+        quote: "Let nature speak through its imperfections; that is where luxury hides."
+      }
+    ]
+  },
+  "a-brides-letter-to-herself-the-morning-of": {
+    category: "Inspiration",
+    date: "December 2025",
+    readTime: "5 min",
+    title: "A Bride's Letter to Herself the Morning Of",
+    subtitle: "A meditative moment of complete stillness captured before the celebratory chaos gracefully unfolds.",
+    image: gridImg3,
+    imageAlt: "Bride preparing in morning sunlight wearing silk attire",
+    paragraphs: [
+      "The quiet moments right before stepping into your dress are incredibly fleeting. This visual and written journal study details the luxury of taking just fifteen solitary minutes alone with your own morning thoughts.",
+      "Write to remember who you were right before this threshold. Keep the sentence structures raw, genuine, and close to your heart."
+    ],
+    sections: [
+      {
+        quote: "Savor the quiet baseline before the symphony starts."
+      }
+    ]
+  },
+  "the-rise-of-the-multi-day-celebration": {
+    category: "Trends",
+    date: "January 2026",
+    readTime: "9 min",
+    title: "The Rise of the Multi-Day Celebration",
+    subtitle: "Why couples are abandoning the single Saturday in favor of slow, layered weekends.",
+    image: gridImg4,
+    imageAlt: "Long candlelit outdoor reception feast tables",
+    paragraphs: [
+      "The classic single evening goes by in a flash. Couples are realizing that true connection with their family and guests requires time. By turning a wedding into a curated three-day weekend, you remove the rush.",
+      "From welcome beach bonfires to post-wedding lazy morning pool brunches, a multi-day timeline lets memories settle organically without strict schedule constraints."
+    ],
+    sections: [
+      {
+        heading: "The pacing architecture",
+        text: "The trick to multi-day events is avoiding exhaustion. Alternate high-energy group dinners with expansive periods of free time where guests can explore local areas independently."
+      }
+    ]
+  },
+  "real-wedding-elena-marco-at-villa-del-balbianello": {
     category: "Real Weddings",
     date: "February 2026",
     readTime: "12 min",
     title: "Real Wedding — Elena & Marco at Villa del Balbianello",
     subtitle: "Three days on Lake Como, cypress lanterns, and the most romantic first dance we've ever witnessed.",
-    image: "https://cdn.sanity.io/images/xfzlvuer/production/8951888ee19c400b63d169efa4c9ee18bb37ee13-1280x1600.jpg?w=1600&q=80&auto=format",
+    image: gridImg5,
     imageAlt: "Elena and Marco real wedding at Villa del Balbianello, Lake Como",
     paragraphs: [
       "There is a question we ask every couple in our first meeting: what do you want your guests to feel when they walk in? The answers are almost never about a centerpiece or a color. They are about a memory, a holiday, a grandparent's kitchen, a song that played in a car twenty years ago.",
@@ -32,55 +113,19 @@ const journalDatabase = {
       }
     ]
   },
-  "planning-a-destination-wedding-without-losing-yourself": {
-    category: "Guides",
-    date: "April 2026",
-    readTime: "8 min",
-    title: "Planning a Destination Wedding Without Losing Yourself",
-    subtitle: "A modern guide to keeping your peace and creative balance while planning across scenic international borders.",
-    image: "https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1600&auto=format&fit=crop",
-    imageAlt: "Destination wedding altar overview overlooking the ocean sunset",
-    paragraphs: [
-      "Planning a celebration from thousands of miles away can feel abstract. The key is establishing local production roots early. Trusting regional textures, native floral landscapes, and seasonal Mediterranean lighting structures preserves your peace.",
-      "Rather than forcing external materials onto a pristine landscape, let the geography direct your finishes. It creates a seamless narrative loop for your arriving guests."
-    ],
-    sections: [
-      {
-        heading: "Logistics over looks",
-        text: "Design components are empty without functional structural backup. Micro-coordinate guest transport structures and culinary timing metrics before curating tabletop selections."
-      }
-    ]
-  },
-  "a-brides-letter-to-herself-the-morning-of": {
-    category: "Inspiration",
-    date: "June 2026",
-    readTime: "5 min",
-    title: "A Bride's Letter to Herself the Morning Of",
-    subtitle: "A meditative moment of complete stillness captured before the celebratory chaos gracefully unfolds.",
-    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=1600&auto=format&fit=crop",
-    imageAlt: "Bride preparing in morning sunlight wearing silk attire",
-    paragraphs: [
-      "The quiet moments right before stepping into your dress are incredibly fleeting. This visual and written journal study details the luxury of taking just fifteen solitary minutes alone with your own morning thoughts.",
-      "Write to remember who you were right before this threshold. Keep the sentence structures raw, genuine, and close to your heart."
-    ],
-    sections: [
-      {
-        quote: "Savor the quiet baseline before the symphony starts."
-      }
-    ]
-  }
 };
 
 const JournalDetails = () => {
-  const { slug } = useParams<{ slug?: keyof typeof journalDatabase }>(); // 2. Grabs the route parameters from the URL slug
+  // Grabs the route parameters from the URL slug dynamically
+  const { slug } = useParams<{ slug?: string }>(); 
+  
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
   };
 
-  // 3. Match URL to dataset, fallback to Elena & Marco if no slug exists yet
-  const article = slug && journalDatabase[slug]
-    ? journalDatabase[slug]
-    : journalDatabase["real-wedding-elena-marco"];
+  // Safe type-guard check. Fallback cleanly to Elena & Marco if no slug matches
+  const currentKey = slug && slug in journalDatabase ? (slug as keyof typeof journalDatabase) : "real-wedding-elena-marco-at-villa-del-balbianello";
+  const article = journalDatabase[currentKey];
 
   return (
     <main className="bg-[#FAF8F5] text-[#3B2A24] min-h-screen selection:bg-[#D4B06A]/20 selection:text-[#3B2A24]">
@@ -128,35 +173,33 @@ const JournalDetails = () => {
         ))}
 
         {article.sections?.map((section, index) => {
-  // 1. Check if it's a quote block
-  if ('quote' in section && section.quote) {
-    return (
-      <blockquote 
-        key={index} 
-        className="border-l-2 border-[#D4B06A] pl-6 my-10 py-1 italic text-xl md:text-2xl text-[#3B2A24] font-serif tracking-wide bg-white/40 shadow-sm rounded-r p-4"
-      >
-        &ldquo;{section.quote}&rdquo;
-      </blockquote>
-    );
-  }
+          if ('quote' in section && section.quote) {
+            return (
+              <blockquote 
+                key={index} 
+                className="border-l-2 border-[#D4B06A] pl-6 my-10 py-1 italic text-xl md:text-2xl text-[#3B2A24] font-serif tracking-wide bg-white/40 shadow-sm rounded-r p-4"
+              >
+                &ldquo;{section.quote}&rdquo;
+              </blockquote>
+            );
+          }
 
-  // 2. TypeScript now safely knows this must be a heading/text block
-  if ('heading' in section && 'text' in section) {
-    return (
-      <div key={index} className="space-y-4">
-        <h2 
-          style={serifStyle}
-          className="text-2xl md:text-3xl text-[#3B2A24] pt-6 font-normal tracking-wide"
-        >
-          {section.heading}
-        </h2>
-        <p>{section.text}</p>
-      </div>
-    );
-  }
+          if ('heading' in section && 'text' in section) {
+            return (
+              <div key={index} className="space-y-4">
+                <h2 
+                  style={serifStyle}
+                  className="text-2xl md:text-3xl text-[#3B2A24] pt-6 font-normal tracking-wide"
+                >
+                  {section.heading}
+                </h2>
+                <p>{section.text}</p>
+              </div>
+            );
+          }
 
-  return null;
-})}
+          return null;
+        })}
 
         {/* Share Section */}
         <div className="border-t border-stone-200 pt-12 mt-16 flex flex-col sm:flex-row justify-between items-center gap-6">
