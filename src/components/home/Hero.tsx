@@ -40,7 +40,7 @@ const Hero = () => {
 
     {/* 2. Unified High-Contrast Overlay Stack */}
     {/* This solid tint darkens the base image slightly */}
-    <div className="absolute inset-0 bg-black/20" />
+    <div className="absolute inset-0 bg-black/30" />
     
     {/* This gradient sits directly underneath your text on the left, pushing contrast over the threshold */}
     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
@@ -62,7 +62,7 @@ const Hero = () => {
           style={serifStyle}
           className="
             font-serif
-            text-white
+            text-[#FEFAF4]
             text-8xl
             md:text-10xl
             lg:text-[60px]
@@ -71,7 +71,7 @@ const Hero = () => {
             max-w-4xl
           "
         >
-         Weddings, <i className="text-[#8B6B2E]">composed</i> like a <br /> love letter.
+         Weddings, <i className="text-[#B89159]">composed</i> like a <br /> love letter.
         </h1>
 
         <div className="flex flex-wrap gap-4 mt-12">

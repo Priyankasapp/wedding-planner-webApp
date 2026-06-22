@@ -56,7 +56,7 @@ const Begin = () => {
   });
 
   return (
-    <section className="bg-[#3A241F] text-[#F7F1EB] py-24 lg:py-32 overflow-hidden">
+    <section className="bg-[#2B2623] text-[#F7F1EB] py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="py-16">
           <div className="grid lg:grid-cols-12 gap-12">
@@ -72,7 +72,7 @@ const Begin = () => {
               <motion.p
                 style={{ ...sansStyle, fontWeight: 400 }}
                 variants={slideUpWithDelay(0.1)}
-                className="uppercase tracking-[0.25em] text-xs text-[#F0E8E2]mb-6"
+                className="uppercase tracking-[0.25em] text-xs text-[#FFFFFF] mb-6"
               >
                 — Begin
               </motion.p>
@@ -80,7 +80,7 @@ const Begin = () => {
               <motion.h2
                 style={serifStyle}
                 variants={slideUpWithDelay(0.2)}
-                className="text-4xl md:text-6xl leading-[1.1] tracking-wide"
+                className="text-4xl md:text-6xl leading-[1.1] tracking-wide text-[#FFFFFF]"
               >
                 When you're ready,
                 <br />

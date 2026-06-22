@@ -46,7 +46,7 @@ const imageItemVariants = {
 };
 
   return (
-    <footer className="bg-[#3A241F] text-[#F7F1EB] overflow-hidden">
+    <footer className="bg-[#2B2623] text-[#F7F1EB] overflow-hidden">
       <div
         ref={ref}
         className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20"

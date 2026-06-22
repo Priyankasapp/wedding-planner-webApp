@@ -99,7 +99,7 @@ const Process = () => {
         >
           <motion.p 
             style={{ ...sansStyle, fontWeight: 400 }}
-            className="uppercase tracking-[0.25em] text-xs text-[#C2A677]"
+            className="uppercase tracking-[0.25em] text-xs text-[#8B6B2E]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -110,7 +110,7 @@ const Process = () => {
 
           <motion.h2 
             style={serifStyle}
-            className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
+            className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5 text-[#352021]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
