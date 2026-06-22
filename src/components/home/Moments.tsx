@@ -11,14 +11,39 @@ import img7 from "../../assets/images/photo_10.jpg";
 import img8 from "../../assets/images/photo_11.jpg";
 
 const moments = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
+  {
+    image:  img1,
+    alt: "Bride holding a bouquet during wedding preparations",
+  },
+  {
+    image: img2,
+    alt: "Wedding reception table styled with candles and florals",
+  },
+  {
+    image: img3,
+    alt: "Couple sharing a quiet moment during their celebration",
+  },
+   {
+    image: img4,
+    alt: "Elegant bridal portrait in natural light",
+  },
+   {
+    image: img5,
+    alt: "Wedding ceremony set within a romantic venue",
+  },
+   {
+    image: img6,
+     alt: "Guests gathered during an outdoor wedding reception",
+  },
+  {
+    image: img7,
+    alt: "Editorial wedding detail featuring florals and décor",
+  },
+  {
+    image: img8,
+    alt: "Newlyweds celebrating together after the ceremony",
+  },
+ 
 ];
 
 const Moments = () => {
@@ -153,7 +178,7 @@ const Moments = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-          {moments.map((image, index) => (
+          {moments.map((moment, index) => (
             <div
               key={index}
               data-image
@@ -170,8 +195,8 @@ const Moments = () => {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={image}
-                  alt="Wedding celebration detail moment"
+                  src={moment.image}
+                  alt={moment.alt}
                   className="
                     w-full
                     h-[240px]
