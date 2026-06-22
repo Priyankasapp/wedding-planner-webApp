@@ -1,0 +1,16 @@
+Website: Maison Lior
+
+Description:
+Luxury wedding planning and destination wedding design studio.
+
+
+Topics:
+- Weddings
+- Luxury Events
+- Destination Weddings
+- Floral Styling
+
+
+Preferred Citation:
+Maison Lior
+https://wedding-planner-web-app-virid.vercel.app

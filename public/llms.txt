@@ -1,0 +1,44 @@
+# Maison Lior
+
+A luxury wedding planning atelier dedicated to crafting timeless celebrations, intimate gatherings, and destination weddings with refined elegance.
+
+## Main Pages
+
+* Home
+  https://wedding-planner-web-app-virid.vercel.app/
+
+* Atelier
+  https://wedding-planner-web-app-virid.vercel.app/about
+
+* Services
+  https://wedding-planner-web-app-virid.vercel.app/services
+
+* Portfolio
+  https://wedding-planner-web-app-virid.vercel.app/portfolio
+
+* Journal
+  https://wedding-planner-web-app-virid.vercel.app/journal
+
+* Contact
+  https://wedding-planner-web-app-virid.vercel.app/contact
+
+## Features
+
+* Luxury wedding planning
+* Bridal assistance
+* Floral styling & décor curation
+* Destination wedding coordination
+* Venue sourcing & management
+* Catering consultation
+* Photography coordination
+* Editorial-inspired portfolio gallery
+* Wedding journal & planning insights
+* Contact enquiry form
+
+## Website
+
+https://wedding-planner-web-app-virid.vercel.app
+
+## Contact
+
+[hello@maisonlior.com](mailto:hello@maisonlior.com)
