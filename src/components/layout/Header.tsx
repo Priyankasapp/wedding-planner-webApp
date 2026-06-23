@@ -25,13 +25,13 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8F6F2]/70 backdrop-blur-xl border-b border-[#DDD8D2]/40">
+    <header className="sticky top-0 z-50 bg-[#F8F6F2]/80 backdrop-contrast-50 border-b border-[#DDD8D2]/40">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="h-20 flex items-center justify-between">
           
           {/* Logo */}
           <Link to="/">
-            <h1 className="font-serif text-3xl text-[#43342F]">
+            <h1 className="font-serif text-xl text-[#43342F]">
               Maison Lior
             </h1>
             <p className="uppercase tracking-[5px] text-[11px] text-[#8B6B2E]">
