@@ -11,7 +11,6 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Small delay for smoother effect
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 100);
@@ -20,102 +19,116 @@ const Hero = () => {
   }, []);
 
   return (
-  <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FAF6EE]">
 
-    {/* 1. Pure Background Image Stage */}
-    <div className="absolute inset-0 overflow-hidden">
-      <img
-        src={hero}
-        alt=""
-        className={`
-          h-full w-full object-cover
-          transition-transform duration-[4000ms] ease-out
-          ${isLoaded ? 'scale-[1.08]' : 'scale-[1.15]'}
-        `}
-        style={{
-          transformOrigin: 'center 60%', 
-        }}
-      />
-    </div>
+      {/* 1. Pure Background Image Stage */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={hero}
+          alt="Maison Lior Wedding Scene"
+          className={`
+            h-full w-full object-cover
+            transition-transform duration-[4000ms] ease-out
+            ${isLoaded ? 'scale-100' : 'scale-[1.05]'}
+          `}
+          style={{
+            transformOrigin: 'center 60%', 
+          }}
+        />
+      </div>
 
-    {/* 2. Unified High-Contrast Overlay Stack */}
-    {/* This solid tint darkens the base image slightly */}
-    <div className="absolute inset-0 bg-black/30" />
-    
-    {/* This gradient sits directly underneath your text on the left, pushing contrast over the threshold */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      {/* 2. Natural Visual Overlay Layer */}
+      {/* Removed the heavy black gradients. Added a minimal bright overlay just to soften the image slightly like the screenshot */}
+      <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />
 
-    {/* 3. Content Layout Layer */}
-    <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-center">
-      <div
-        className={`
-          transition-all duration-[1500ms] ease-out
-          ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-        `}
-      >
-      
-         <p className="uppercase tracking-[8px] text-[#8B6B2E] text-xs md:text-sm mb-6 font-medium">
-          Atelier · Est. 2008
-        </p>
-
-        <h1
-          style={serifStyle}
-          className="
-            font-serif
-            text-[#FEFAF4]
-            text-8xl
-            md:text-10xl
-            lg:text-[60px]
-            leading-[0.9]
-            font-light
-            max-w-4xl
-          "
+      {/* 3. Content Layout Layer */}
+      {/* Moved content to the bottom-left of the screen to precisely match the screenshot placement */}
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-end pb-2 md:pb-32">
+        <div
+          className={`
+            transition-all duration-[1500ms] ease-out
+            ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+          `}
         >
-         Weddings, <i className="text-[#B89159]">composed</i> like a <br /> love letter.
-        </h1>
+        
+          <p 
+          className="uppercase tracking-[6px] text-[#B89150] text-[10px] md:text-xs mb-6 font-medium mix-blend-difference">
+            Wedding Atelier · Est. 2008
+          </p>
 
-        <div className="flex flex-wrap gap-4 mt-12">
-          <Link
-            to="/contact"
-            className="
-              bg-white
-              text-[#3B2A24]
-              px-10
-              py-5
-              uppercase
-              tracking-[5px]
-              text-xs
-              hover:bg-[#D4B06A]
-              transition
-            "
-          >
-            Begin Your Story
-          </Link>
+          <h1
 
-          <Link
-            to="/portfolio"
+           style={{ ...serifStyle, fontWeight: 400 }}
             className="
-              border
-              border-white
+              font-serif
               text-white
-              px-10
-              py-5
-              uppercase
-              tracking-[5px]
-              text-xs
-              hover:bg-white
-              hover:text-[#3B2A24]
-              transition
+              text-5xl
+              sm:text-6xl
+              md:text-7xl
+              lg:text-7xl
+              leading-[1.1]
+              font-light
+              max-w-10xl
+              tracking-wide
             "
           >
-            View Our Weddings
-          </Link>
+            Weddings, <span className="italic text-[#B89150] font-normal">composed</span> like a <br className="hidden md:inline" /> love letter.
+          </h1>
+
+          <div className="flex flex-wrap gap-5 mt-12 items-center">
+            <Link
+              to="/contact"
+              className="
+                bg-white
+                text-[#2B2623]
+                px-8
+                py-4
+                uppercase
+                tracking-[3px]
+                text-[11px]
+                font-light
+                hover:bg-[#2B2623]
+                hover:text-white
+                transition-all
+                duration-300
+                rounded-sm
+              "
+            >
+              Begin Your Story
+            </Link>
+
+            <Link
+              to="/portfolio"
+              className="
+                text-white
+                text-[11px]
+                uppercase
+                tracking-[3px]
+                font-light
+                border-b
+                border-white/40
+                pb-1
+                hover:border-white
+                transition-all
+                duration-300
+                ml-2
+              "
+            >
+              View Our Weddings
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
 
-  </section>
-);
+      {/* Bottom Scroll Indicator from screenshot */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+        <p className="text-[9px] uppercase tracking-[6px] text-white/60 font-light">
+          Scroll
+        </p>
+      </div>
+
+    </section>
+  );
 };
 
 export default Hero;

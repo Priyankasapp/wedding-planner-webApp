@@ -8,8 +8,8 @@ const Header = () => {
     fontWeight: 300 
   };
   const [open, setOpen] = useState(false);
-  const location = useLocation(); // Hook to monitor the current URL path
-
+  const location = useLocation();
+  
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Atelier", path: "/about" },
@@ -19,36 +19,40 @@ const Header = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Gracefully handle clicks on the Enquire button to prevent unnecessary hard reloads
+
   const handleEnquireClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setOpen(false);
     if (location.pathname === "/contact") {
-      e.preventDefault(); // Prevents the link from forcing a route update if already there
-      window.scrollTo({ top: 0, behavior: "smooth" }); // Smoothly scrolls to top instead
+      e.preventDefault(); 
+      window.scrollTo({ top: 0, behavior: "smooth" }); 
     }
   };
 
+  const isHomePage = location.pathname === "/";
+ 
   return (
-    <header className="sticky top-0 z-50 bg-[#FAF6EE]/70 backdrop-contrast-50 border-b border-[#EAE3DA]/40">
-      <div className="max-w-[1200px] mx-auto px-20 ">
-        <div className="h-15 flex items-center justify-between">
+    <header className={`absolute top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        isHomePage ? "bg-[#FAF6EE]/90  border-b border-[#EAE3DA]" : "bg-[#FAF6EE] border-b border-[#EAE3DA]"
+      }`}>
+      <div className="max-w-[1200px] mx-auto  ">
+        <div className="h-18 flex items-center justify-between">
           
           {/* Logo */}
           <Link to="/" className="flex flex-col leading-none">
             <h1
              style={{ ...serifStyle, fontWeight: 400 }}  
-            className="font-serif text-xl text-[#43342F] font-extralight ">
+            className="font-serif text-2xl text-[#43342F] font-extralight ">
               Maison Lior
             </h1>
-            <span className="uppercase tracking-[3px] text-[10px] text-[#B89154]">
+            <span className="uppercase tracking-[3px] text-[12px] text-[#B89154] font-light ">
               Wedding Atelier
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav
-          // style={{fontWeight: 200}}  
-          className="hidden lg:flex gap-8 text-xs   font-light">
+          
+          className="hidden lg:flex gap-11 text-sm   font-light">
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
@@ -69,8 +73,8 @@ const Header = () => {
             to="/contact"
             onClick={handleEnquireClick}
             className="hidden lg:inline-flex items-center border border-[#43342F]
-             px-3 py-1.5
-             text-[10px]
+             px-4 py-2
+             text-[12px]
              tracking-[0.3em]
              uppercase
              hover:bg-[#43342F]
