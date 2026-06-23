@@ -36,7 +36,51 @@
     <lastmod>2026-06-22</lastmod>
     <priority>0.8</priority>
   </url>
-
- 
+   <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/portfolio/elena-marco</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/portfolio/amara-noah</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/portfolio/Sophia-James</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/portfolio/isla-rhys</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/journal/planning-a-destination-wedding</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/journal/florals-that-feel-like-a-garden</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url> 
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/journal/the-rise-of-the-multi-day-celebration</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/journal/a-brides-letter-to-herself</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wedding-planner-web-app-virid.vercel.app/journal/real-wedding-elena-marco</loc>
+    <changefreq>monthly</changefreq>
+<priority>0.7</priority>
+  </url>
+  
 
 </urlset>

@@ -83,7 +83,7 @@ const projectMockDatabase: Record<string, ProjectData> = {
     title: "Isla & Rhys",
     location: "Cotswolds, England",
     year: "2024",
-    heroImage: gallery2, // Swapped unique layout cover using existing image values
+    heroImage: gallery2, 
     tagline: "“An English garden in full bloom.”",
     storyText: "A quintessential country weekend focusing on nostalgic charm, custom canvas pavilions, artisanal table elements, and locally foraged seasonal wild flora compositions.",
     venue: "Euridge Manor",
