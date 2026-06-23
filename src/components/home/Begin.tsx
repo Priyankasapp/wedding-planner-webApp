@@ -1,138 +1,121 @@
+
+
 import { Link } from "react-router-dom";
 import { motion, type Transition, type Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Begin = () => {
+ const serifStyle = { 
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300 
+  };
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
 
-  // Explicit inline typography definitions matching your editorial design style
-  const serifStyle = { 
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300 
-  };
-
-  const sansStyle = { 
-    fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300
-  };
-
-  // FIX: Type this strictly using Framer Motion's 'Transition' type.
-  // The 'ease' curve accepts a fixed array of 4 numbers natively.
   const defaultTransition: Transition = {
     duration: 0.7,
     ease: [0.33, 1, 0.68, 1],
   };
 
-  // FIX: Explicitly type your Framer Motion configuration blocks as 'Variants'
   const slideUpVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: defaultTransition,
-    },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: defaultTransition },
   };
 
-  // FIX: Explicitly return 'Variants' out of the delayed variant function generator
   const slideUpWithDelay = (delay: number): Variants => ({
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ...defaultTransition,
-        delay,
-      },
-    },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { ...defaultTransition, delay } },
   });
 
   return (
-    <section className="bg-[#2B2623] text-[#F7F1EB] py-24 lg:py-32 overflow-hidden">
+    <section className="bg-espresso text-ivory py-24 lg:py-36 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="py-16">
-          <div className="grid lg:grid-cols-12 gap-12">
+        <div className="py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-16 items-end">
             
-            {/* Left Column */}
+            {/* Left Column - Heading Block */}
             <motion.div
               ref={ref}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={slideUpVariants}
-              className="lg:col-span-6"
+              className="lg:col-span-8 space-y-4"
             >
               <motion.p
-                style={{ ...sansStyle, fontWeight: 400 }}
                 variants={slideUpWithDelay(0.1)}
-                className="uppercase tracking-[0.25em] text-xs text-[#FFFFFF] mb-6"
+                className="font-sans uppercase tracking-[0.3em] text-[10px] md:text-xs text-gold/80 font-normal"
               >
                 — Begin
               </motion.p>
 
               <motion.h2
-                style={serifStyle}
+              style={serifStyle}
                 variants={slideUpWithDelay(0.2)}
-                className="text-4xl md:text-6xl leading-[1.1] tracking-wide text-[#FFFFFF]"
+                className="font-serif text-ivory text-4xl sm:text-5xl md:text-6xl lg:text-[76px] leading-[1.1] font-light max-w-3xl tracking-wide"
               >
                 When you're ready,
-                <br />
-                we'd love to <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#C6A15B]">listen.</span>
+                <span className="italic text-gold font-normal ">
+                  we'd love to listen.
+                </span>
               </motion.h2>
             </motion.div>
 
-            {/* Right Column */}
+            {/* Right Column - Subtext & Action Block */}
             <motion.div
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               variants={slideUpWithDelay(0.3)}
-              className="lg:col-span-6 flex flex-col lg:items-start justify-center"
+              className="lg:col-span-4 flex flex-col items-start lg:items-end space-y-10 text-left lg:text-right"
             >
               <motion.p
-                style={sansStyle}
                 variants={slideUpWithDelay(0.4)}
-                className="text-[#E2C48A] text-base md:text-lg leading-relaxed max-w-md"
+                className="font-sans text-ivory/60 text-sm md:text-base font-light leading-relaxed max-w-sm lg:text-right"
               >
-                We accept a small number of weddings each year.
+                We accept a small number of weddings each year. 
                 Tell us about yours.
               </motion.p>
 
               <motion.div
                 variants={slideUpWithDelay(0.5)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                className="w-full sm:w-auto"
               >
                 <Link
                   to="/contact"
-                  style={sansStyle}
                   className="
-                    mt-10
+                    w-full
+                    sm:w-auto
                     inline-flex
-                    bg-[#ffffff]
+                    bg-champagne
+                    text-espresso
                     items-center
-                    justify-center
-                    px-10
-                    py-5
-                    border
-                    border-[#43342F]  
+                    justify-between
+                    sm:justify-center
+                    gap-6
+                    px-8
+                    py-4.5
                     uppercase
-                    tracking-[0.2em]
-                    text-xs
-                    text-[#43342F]
-                    hover:bg-[#43342F]
-                    hover:text-white
-                    transition-colors
+                    tracking-[0.25em]
+                    text-[10px]
+                    md:text-xs
+                    font-light
+                    hover:bg-gold
+                    hover:text-espresso
+                    transition-all
                     duration-300
+                    rounded-sm
+                    shadow-sm
+                    group
                   "
                 >
-                  Make an Enquiry
+                  <span>Make an Enquiry</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </motion.div>
             </motion.div>

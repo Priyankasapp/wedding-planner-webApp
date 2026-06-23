@@ -84,7 +84,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-[#FAF6EE] py-24 lg:py-32 text-[#2B2623]">
+    <section className="bg-champagne-40 py-24 lg:py-32 text-[#2B2623]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* Heading Area */}
@@ -98,7 +98,7 @@ const Services = () => {
           <div>
             <motion.p 
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="uppercase tracking-[0.25em] text-xs text-[#493718]"
+              className="uppercase tracking-[0.25em] text-xs text-[#B89150]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -108,14 +108,14 @@ const Services = () => {
             </motion.p>
 
             <motion.h2 
-              style={serifStyle}
-              className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
+              style={{...serifStyle}}
+              className="text-xl md:text-5xl leading-[1.05] tracking-wide mt-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Services tailored to your <br /> <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#493718]">story.</span>
+              Services tailored to your <br /> story.
             </motion.h2>
           </div>
 
@@ -128,9 +128,18 @@ const Services = () => {
             <Link
               to="/services"
               style={sansStyle}
-              className="mt-8 lg:mt-0 uppercase tracking-[0.15em] text-xs flex items-center gap-4 group font-normal"
+              className=" 
+                text-[11px]
+                uppercase
+                tracking-[3px]
+                font-light
+                border-b
+                pb-1
+                transition-all
+                duration-300
+                ml-2"
             >
-              <span className="w-10 h-px bg-[#2B2623] group-hover:w-16 transition-all duration-300"></span>
+              
               All Services
             </Link>
           </motion.div>
@@ -168,7 +177,7 @@ const Services = () => {
                 {/* Graphic absolute number signature overlay */}
                 <span 
                   style={serifStyle}
-                  className="absolute bottom-4 right-4 text-white/20 text-7xl select-none pointer-events-none"
+                  className="absolute bottom-4 right-4 text-gold text-7xl select-none pointer-events-none"
                 >
                   {service.number}
                 </span>
@@ -178,7 +187,7 @@ const Services = () => {
               <div className="mt-6">
                 <p 
                   style={{ ...sansStyle, fontWeight: 400 }}
-                  className="text-[#5F4B2B] tracking-[0.15em] text-xs uppercase"
+                  className="text-gold tracking-[0.15em] text-xs uppercase"
                 >
                   {service.number}
                 </p>
@@ -186,15 +195,15 @@ const Services = () => {
                 <Link to={service.path} className="inline-block group-hover:text-[#B2964D] transition-colors duration-300">
                   <h3 
                     style={serifStyle}
-                    className="mt-2 text-2xl lg:text-3xl text-[#2B2623] tracking-wide inherit-color"
+                    className="mt-2 text-xl lg:text-2xl text-[#2B2623] tracking-wide inherit-color hover:text-gold"
                   >
-                    {service.title}
+                    {service.title} 
                   </h3>
                 </Link>
 
                 <p 
                   style={sansStyle}
-                  className="mt-3 text-[#5A5450] text-sm md:text-base leading-relaxed"
+                  className="text-sm text-muted-foreground mt-3 leading-relaxed"
                 >
                   {service.description}
                 </p>

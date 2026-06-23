@@ -1,2 +1,23 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
+
+@theme {
+  /* Primary Colors */
+  --color-ivory: lab(98.2832% 0.458986 3.0148);
+  --color-espresso: lab(15.1856% 5.32977 5.10403);
+ --color-champagne: lab(91.9334% 1.86053 9.45435);
+
+  /* Create an explicit 40% opacity version */
+  --color-champagne-40: lab(91.9334% 1.86053 9.45435 / 0.4);
+  --color-gold: lab(69.9032% 8.98904 36.664);
+
+  /* Supporting Colors */
+  --color-blush: lab(85.7088% 12.286 6.64362);
+  --color-sage: lab(67.9473% -8.3749 9.48415);
+
+  /* Utility Colors */
+  --color-muted-foreground: lab(41.8702% 5.24409 5.0228);
+  --color-luxury-border: lab(86.1203% 1.30636 6.783);
+  --color-destructive: lab(45.9853% 56.8958 34.8481);
+  --color-foreground: #2F231F;
+}

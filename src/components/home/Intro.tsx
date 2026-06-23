@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 
 const Intro = () => {
+   const serifStyle = {
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300,
+  };
+
   return (
-    <section className="bg-[#F8F6F2] py-24 lg:py-32">
+    <section className="bg-[#F8F6F2] py-24 lg:py-42">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
@@ -19,7 +24,7 @@ const Intro = () => {
               uppercase
               tracking-[8px]
               text-xs
-             text-[#7A5A2A]
+             text-[#B89150]
             ">
               — A Few Words
             </p>
@@ -34,13 +39,14 @@ const Intro = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
+              style={{ ...serifStyle, fontWeight: 350 }}  
               className="
                 font-serif
     text-[#352021]
-    text-3xl
+    text-4xl
     md:text-5xl
-    lg:text-6xl
-    leading-[1.2]
+    lg:text-5xl
+    leading-[1.03]
     font-light
               "
               initial={{ opacity: 0, y: 15 }}
@@ -48,7 +54,9 @@ const Intro = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              We design a dozen weddings each year —
+              We design <span className="italic text-[#B89150] font-light">
+    a dozen
+  </span>{" "} weddings each year —
               no more — for couples who value craft
               over spectacle, and presence over
               performance.
@@ -57,9 +65,9 @@ const Intro = () => {
             <motion.p 
               className="
                 mt-10
-                text-[#795757]
-                italic
-                text-lg
+                text-[#808080]
+                text-sm
+                
               "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

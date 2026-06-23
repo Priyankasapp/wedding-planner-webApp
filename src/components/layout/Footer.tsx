@@ -1,7 +1,4 @@
-import {
-  FaInstagram,
-  FaFacebookF,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -21,48 +18,44 @@ const Footer = () => {
     threshold: 0.1,
   });
 
- //image
+  //image
   const imageContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08, 
+        staggerChildren: 0.08,
         delayChildren: 0.2,
       },
     },
   };
 
-const imageItemVariants = {
-  hidden: { opacity: 0, scale: 0.95, rotate: -3 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: {
-    
+  const imageItemVariants = {
+    hidden: { opacity: 0, scale: 0.95, rotate: -3 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {},
     },
-  },
-};
+  };
 
   return (
-    <footer className="bg-[#2B2623] text-[#F7F1EB] overflow-hidden">
+    <footer className="bg-espresso text-[#F7F1EB] overflow-hidden">
       <div
         ref={ref}
         className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20"
       >
         {/* Top */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12">
-          
           {/* Newsletter */}
           <div className="md:col-span-2 lg:col-span-4">
-            <p className="text-[#C6A15B] uppercase tracking-[6px] text-xs">
+            <p className="text-gold uppercase tracking-[6px] text-xs">
               Maison Lior
             </p>
 
             <h3 className="font-serif text-2xl sm:text-3xl mt-4 sm:mt-6 leading-tight">
-              Letters from the atelier —
-              once a season, never more.
+              Letters from the atelier — once a season, never more.
             </h3>
 
             <div className="mt-6 sm:mt-8 flex border-b border-white/20 pb-3">
@@ -70,7 +63,7 @@ const imageItemVariants = {
                 Email address
               </label>
               <input
-               id="newsletter-email"
+                id="newsletter-email"
                 type="email"
                 placeholder="your@email.com"
                 className="flex-1 bg-transparent outline-none placeholder:text-white/40 text-sm sm:text-base"
@@ -84,9 +77,7 @@ const imageItemVariants = {
 
           {/* Studio */}
           <div className="md:col-span-1 lg:col-span-2">
-            <p className="uppercase tracking-[6px] text-xs text-[#C6A15B]">
-              Studio
-            </p>
+            <p className="uppercase tracking-[6px] text-xs text-gold">Studio</p>
 
             <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
               {["Our Story", "Services", "Portfolio", "Journal"].map((item) => (
@@ -115,9 +106,7 @@ const imageItemVariants = {
                 "+33 1 42 78 00 00",
                 "hello@maisonlior.com",
               ].map((text, index) => (
-                <p key={index}>
-                  {text}
-                </p>
+                <p key={index}>{text}</p>
               ))}
             </div>
 
@@ -171,7 +160,6 @@ const imageItemVariants = {
               ))}
             </motion.div>
           </div>
-
         </div>
 
         {/* Bottom */}
@@ -184,7 +172,6 @@ const imageItemVariants = {
             Paris · Como · Provence · Santorini
           </p>
         </div>
-
       </div>
     </footer>
   );
