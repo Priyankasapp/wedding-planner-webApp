@@ -267,9 +267,9 @@ export function ContactFormSection() {
             <div className="space-y-8 pl-1">
               {/* Studio Address */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   Studio
-                </h4>
+                </h2>
                 <div className="flex items-center gap-3 text-[#2B2623]">
                   <FiMapPin className="text-[#C2A677] text-sm shrink-0" />
                   <p style={{ ...serifStyle, fontStyle: "italic" }} className="text-xl md:text-2xl leading-none">
@@ -280,9 +280,9 @@ export function ContactFormSection() {
 
               {/* Telephone */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   By Telephone
-                </h4>
+                </h2>
                 <a 
                   href="tel:+33142780000" 
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
@@ -296,9 +296,9 @@ export function ContactFormSection() {
 
               {/* Email */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   By Letter
-                </h4>
+                </h2>
                 <a 
                   href="mailto:hello@maisonlior.com" 
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
@@ -312,9 +312,9 @@ export function ContactFormSection() {
 
               {/* Instagram */}
               <div>
-                <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
                   Follow
-                </h4>
+                </h2>
                 <a 
                   href="https://instagram.com/maisonlior" 
                   target="_blank" 

@@ -61,7 +61,7 @@ export function ContactFAQ() {
           <div className="mb-14">
             <p
               style={sansStyle}
-              className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-4 font-medium"
+              className="text-[10px] tracking-[0.25em] text-[#63502C] uppercase mb-4 font-medium"
             >
               — FREQUENTLY ASKED
             </p>
@@ -95,7 +95,7 @@ export function ContactFAQ() {
                     {/* Plus / Minus Indicator Icon */}
                     <span 
                       style={serifStyle} 
-                      className="text-xl md:text-2xl text-[#C2A677] font-light pl-4 select-none"
+                      className="text-xl md:text-2xl text-[#826A3A] font-light pl-4 select-none"
                     >
                       {isOpen ? "−" : "+"}
                     </span>
