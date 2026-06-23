@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { FiMapPin, FiPhone, FiMail, FiInstagram } from "react-icons/fi";
+import contactImg from "../../assets/images/photo_6.jpg"
 
-// Replace with your actual asset path matching the bride bouquet visual
-import contactImg from "../../assets/images/photo_6.jpg";
 
 const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -36,17 +35,52 @@ export function ContactFormSection() {
     aboutYourDay: "",
   });
 
+  // Track independent errors for the three required fields
+  const [errors, setErrors] = useState({
+    firstName: "",
+    email: "",
+    aboutYourDay: "",
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Clear specific field error as user types
+    if (name in errors && errors[name as keyof typeof errors]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    let valid = true;
+    const newErrors = { firstName: "", email: "", aboutYourDay: "" };
+
+    // Validate each required field individually to match the reference style
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "Your name is required.";
+      valid = false;
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Email address is required.";
+      valid = false;
+    }
+    if (!formData.aboutYourDay.trim()) {
+      newErrors.aboutYourDay = "Please write your details.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (!valid) return;
+
     console.log("Enquiry submitted:", formData);
   };
 
-  const inputClass = "w-full bg-transparent border-b border-[#D8D0C8] py-3 text-sm text-[#2B2623] focus:border-[#C2A677] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
+  // Base input styles (removed fixed border color and focus states to dynamic classes below)
+  const baseInputClass = "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
   const labelClass = "block text-[10px] tracking-[0.2em] text-[#8B6B2E] uppercase mb-1 font-medium";
 
   return (
@@ -62,24 +96,31 @@ export function ContactFormSection() {
         >
           
           {/* LEFT: MINIMALIST LUXURY FORM */}
-          <form onSubmit={handleSubmit} className="w-full lg:col-span-7 space-y-10">
+          <form onSubmit={handleSubmit} className="w-full lg:col-span-7 space-y-10" noValidate>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div>
+              <div className="flex flex-col">
                 <label htmlFor="firstName" style={sansStyle} className={labelClass}>First Name *</label>
                 <input
-                  id = "firstname"
+                  id="firstname"
                   type="text"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="Elena"
-                  required
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} ${
+                    errors.firstName 
+                      ? "border-red-400 focus:border-red-400" 
+                      : "border-[#D8D0C8] focus:border-[#C2A677]"
+                  }`}
                 />
+                {errors.firstName && (
+                  <p className="text-red-500 text-xs font-light mt-1.5">{errors.firstName}</p>
+                )}
               </div>
-              <div>
+              
+              <div className="flex flex-col">
                 <label htmlFor="partnerName" style={sansStyle} className={labelClass}>Partner's Name</label>
                 <input
                   id="partnerName"
@@ -89,97 +130,111 @@ export function ContactFormSection() {
                   onChange={handleChange}
                   placeholder="Marco"
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div>
-                <label htmlFor="email"  style={sansStyle} className={labelClass}>Email *</label>
+              <div className="flex flex-col">
+                <label htmlFor="email" style={sansStyle} className={labelClass}>Email *</label>
                 <input
-                id="email"
+                  id="email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  required
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} ${
+                    errors.email 
+                      ? "border-red-400 focus:border-red-400" 
+                      : "border-[#D8D0C8] focus:border-[#C2A677]"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-xs font-light mt-1.5">{errors.email}</p>
+                )}
               </div>
-              <div>
+
+              <div className="flex flex-col">
                 <label htmlFor="phone" style={sansStyle} className={labelClass}>Phone</label>
                 <input
-                id="phone"
+                  id="phone"
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+44 ..."
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div>
+              <div className="flex flex-col">
                 <label htmlFor="dateOrSeason" style={sansStyle} className={labelClass}>Wedding Date or Season</label>
                 <input
-                id="dateOrSeason"
+                  id="dateOrSeason"
                   type="text"
                   name="dateOrSeason"
                   value={formData.dateOrSeason}
                   onChange={handleChange}
                   placeholder="June 2027"
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
-              <div>
+
+              <div className="flex flex-col">
                 <label htmlFor="estimatedGuests" style={sansStyle} className={labelClass}>Estimated Guests</label>
                 <input
-                id="estimatedGuests"
+                  id="estimatedGuests"
                   type="text"
                   name="estimatedGuests"
                   value={formData.estimatedGuests}
                   onChange={handleChange}
                   placeholder="80"
                   style={sansStyle}
-                  className={inputClass}
+                  className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col">
               <label htmlFor="celebrationLocation" style={sansStyle} className={labelClass}>Where would you like to celebrate?</label>
               <input
-              id="celebractionLoction"
+                id="celebractionLoction"
                 type="text"
                 name="celebrationLocation"
                 value={formData.celebrationLocation}
                 onChange={handleChange}
                 placeholder="Lake Como, the Cotswolds, somewhere we haven't dreamt of yet..."
                 style={sansStyle}
-                className={inputClass}
+                className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
               />
             </div>
 
-            <div>
+            <div className="flex flex-col">
               <label htmlFor="aboutYourDay" style={sansStyle} className={labelClass}>Tell us about your day *</label>
               <textarea
-              id="aboutYourDay"
+                id="aboutYourDay"
                 name="aboutYourDay"
                 value={formData.aboutYourDay}
                 onChange={handleChange}
                 placeholder="The feeling, the people, what you've already decided, what you're still wondering..."
-                required
                 rows={4}
                 style={sansStyle}
-                className={`${inputClass} resize-none`}
+                className={`${baseInputClass} resize-none ${
+                  errors.aboutYourDay 
+                    ? "border-red-400 focus:border-red-400" 
+                    : "border-[#D8D0C8] focus:border-[#C2A677]"
+                }`}
               />
+              {errors.aboutYourDay && (
+                <p className="text-red-500 text-xs font-light mt-1.5">{errors.aboutYourDay}</p>
+              )}
             </div>
 
             <div className="pt-4">
@@ -210,7 +265,6 @@ export function ContactFormSection() {
 
             {/* Meta Information List Rows */}
             <div className="space-y-8 pl-1">
-              
               {/* Studio Address */}
               <div>
                 <h4 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
