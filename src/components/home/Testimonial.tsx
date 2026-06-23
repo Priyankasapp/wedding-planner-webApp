@@ -34,7 +34,7 @@ const Testimonial = () => {
           {[...Array(5)].map((_, index) => (
             <FaStar
               key={index}
-              className="text-[#C6A15B]"
+              className="text-gold"
               size={18}
             />
           ))}
@@ -65,7 +65,7 @@ const Testimonial = () => {
           uppercase
           tracking-[5px]
           text-xs
-          text-[#8B6B2E]
+          text-gold
         ">
           — Elena & Marco, Lake Como
         </p>
