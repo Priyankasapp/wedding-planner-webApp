@@ -137,36 +137,23 @@ const Moments = () => {
             >
               — Moments
             </p>
-            <h2 
-              style={serifStyle}
-              className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide mt-5"
-            >
-              From the <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#7A5A2A]">lens.</span>
-            </h2>
+             
+
+              <h2
+              style={{...serifStyle}}
+               className="display text-5xl md:text:6xl mt-4">
+                <span className="block">From the lens.</span>
+              </h2>
           </div>
 
+         
           <Link
             to="/"
             style={sansStyle}
             className="
-              mt-8
-              lg:mt-0
-              inline-flex
-              items-center
-              gap-3
-              border
-              border-[#2B2623]
-              px-10
-              py-5
-              uppercase
-              tracking-[0.15em]
-              text-xs
-              bg-white
-              hover:bg-[#2B2623]
-              hover:text-white
-              transition-colors
-              duration-300
-              group
+             text-xs
+tracking-[0.25em] uppercase border-b border-forground pb-1 hover:text-gold hover:border-gold transition-colors
+
             "
           >
             Follow on Instagram 
