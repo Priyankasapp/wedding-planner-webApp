@@ -3,6 +3,10 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
 const Header = () => {
+ const serifStyle = { 
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300 
+  };
   const [open, setOpen] = useState(false);
   const location = useLocation(); // Hook to monitor the current URL path
 
@@ -25,22 +29,26 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8F6F2]/80 backdrop-contrast-50 border-b border-[#DDD8D2]/40">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#FAF6EE]/70 backdrop-contrast-50 border-b border-[#EAE3DA]/40">
+      <div className="max-w-[1200px] mx-auto px-20 ">
+        <div className="h-15 flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/">
-            <h1 className="font-serif text-xl text-[#43342F]">
+          <Link to="/" className="flex flex-col leading-none">
+            <h1
+             style={{ ...serifStyle, fontWeight: 400 }}  
+            className="font-serif text-xl text-[#43342F] font-extralight ">
               Maison Lior
             </h1>
-            <p className="uppercase tracking-[5px] text-[11px] text-[#8B6B2E]">
+            <span className="uppercase tracking-[3px] text-[10px] text-[#B89154]">
               Wedding Atelier
-            </p>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex gap-12">
+          <nav
+          // style={{fontWeight: 200}}  
+          className="hidden lg:flex gap-8 text-xs   font-light">
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
@@ -60,9 +68,16 @@ const Header = () => {
           <Link
             to="/contact"
             onClick={handleEnquireClick}
-            className="hidden lg:block border border-[#43342F] px-8 py-3 uppercase tracking-[4px] text-xs hover:bg-[#43342F] hover:text-white transition"
+            className="hidden lg:inline-flex items-center border border-[#43342F]
+             px-3 py-1.5
+             text-[10px]
+             tracking-[0.3em]
+             uppercase
+             hover:bg-[#43342F]
+             hover:text-white
+             transition"
           >
-            Enquire
+            ENQUIRE
           </Link>
 
           {/* Mobile Menu Button */}
@@ -110,11 +125,11 @@ const Header = () => {
             ))}
 
             {/* Mobile Enquire Button */}
-            <div className="px-8 mt-6">
+            <div className="px-6 mt-4">
               <Link
                 to="/contact"
                 onClick={handleEnquireClick}
-                className="block text-center border border-[#43342F] py-4 uppercase tracking-[4px] text-xs hover:bg-[#43342F] hover:text-white transition"
+                className="block text-center border border-[#43342F] py-4 uppercase tracking-[4px] text-sm hover:bg-[#43342F] hover:text-white transition"
               >
                 Enquire
               </Link>
