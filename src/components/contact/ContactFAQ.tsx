@@ -34,7 +34,7 @@ const faqData: FAQItem[] = [
 ];
 
 export function ContactFAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default like the screenshot
+  const [openIndex, setOpenIndex] = useState<number | null>(0); 
 
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
