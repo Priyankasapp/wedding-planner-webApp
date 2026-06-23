@@ -102,7 +102,7 @@ export function ContactFormSection() {
               <div className="flex flex-col">
                 <label htmlFor="firstName" style={sansStyle} className={labelClass}>First Name *</label>
                 <input
-                  id="firstname"
+                  id="firstName"
                   type="text"
                   name="firstName"
                   value={formData.firstName}
@@ -205,7 +205,7 @@ export function ContactFormSection() {
             <div className="flex flex-col">
               <label htmlFor="celebrationLocation" style={sansStyle} className={labelClass}>Where would you like to celebrate?</label>
               <input
-                id="celebractionLoction"
+                id="celebrationLocation"
                 type="text"
                 name="celebrationLocation"
                 value={formData.celebrationLocation}
