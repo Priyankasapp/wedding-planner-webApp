@@ -1,4 +1,4 @@
-User-agents: *
+User-agent: *
 Allow: /
 
 Sitemap: https://wedding-planner-web-app-virid.vercel.app/sitemap.xml
