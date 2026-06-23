@@ -134,12 +134,12 @@ const JournalDetails = () => {
       <header className="max-w-4xl mx-auto px-6 pt-24 pb-12 text-center md:pt-32 md:pb-16">
         <Link 
           to="/journal" 
-          className="uppercase tracking-[4px] text-xs  text-[#8B6B2E]  transition-colors duration-300"
+          className="uppercase tracking-[4px] text-xs  text-gold  transition-colors duration-300"
         >
           ← The Journal
         </Link>
 
-        <p className="text-xs uppercase tracking-[3px] text-[#8B6B2E] mt-8 mb-4">
+        <p className="text-xs uppercase tracking-[3px] text-gold mt-8 mb-4">
           {article.category} · {article.date} · {article.readTime}
         </p>
 
@@ -207,7 +207,7 @@ const JournalDetails = () => {
 
         {/* Share Section */}
         <div className="border-t border-stone-200 pt-12 mt-16 flex flex-col sm:flex-row justify-between items-center gap-6">
-          <p className="text-xs uppercase tracking-[3px] text-[#8B6B2E]">
+          <p className="text-xs uppercase tracking-[3px] text-gold">
             Share this piece
           </p>
           <div className="flex items-center gap-6">

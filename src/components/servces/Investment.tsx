@@ -90,7 +90,7 @@ const Investment = () => {
         <div className="mb-16 lg:mb-20">
           <p
             style={{ ...sansStyle, fontWeight: 400 }}
-            className="text-xs tracking-[0.25em] text-[#8B6B2E] uppercase mb-4"
+            className="text-xs tracking-[0.25em] text-gold uppercase mb-4"
           >
             — Investment
           </p>
@@ -128,7 +128,7 @@ const Investment = () => {
                   <span
                     style={{ ...sansStyle, fontWeight: 400 }}
                     className={`text-xs tracking-widest block mb-6 ${
-                      tier.isDarkHighlighted ? "text-[#C2A677]" : "text-[#8B6B2E]"
+                      tier.isDarkHighlighted ? "text-[#C2A677]" : "text-gold"
                     }`}
                   >
                     {tier.number}

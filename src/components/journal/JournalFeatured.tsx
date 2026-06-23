@@ -92,8 +92,8 @@ export function JournalFeatured() {
               style={sansStyle}
               className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-4 flex items-center gap-2.5 font-medium"
             >
-              <span className="text-[#8B6B2E]">{post.category}</span>
-              <span className="opacity-40 text-[#8B6B2E]">—</span>
+              <span className="text-gold">{post.category}</span>
+              <span className="opacity-40 text-gold">—</span>
               <span className="text-[#795757]">{post.date}</span>
             </div>
 
@@ -122,7 +122,7 @@ export function JournalFeatured() {
                 style={sansStyle}
                 className="
                   inline-flex items-center gap-2.5
-                  text-[10px] font-normal uppercase tracking-[0.25em] text-[#8B6B2E]
+                  text-[10px] font-normal uppercase tracking-[0.25em] text-gold
                   hover:text-[#2B2623] transition-colors duration-300 group
                 "
               >

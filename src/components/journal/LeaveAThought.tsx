@@ -60,7 +60,7 @@ const LeaveAThought = () => {
     <section className="bg-[#FAF8F5] py-24 px-6 md:px-12 border-t border-stone-100">
       <div className="max-w-2xl mx-auto text-left">
         {/* Header Section */} 
-        <p className="text-xs uppercase tracking-[4px] text-[#8B6B2E] mb-3">
+        <p className="text-xs uppercase tracking-[4px] text-gold mb-3">
           — A Note
         </p>
         <h2 

@@ -65,7 +65,7 @@ const Atelier = () => {
             {/* Kicker styled with Montserrat */}
             <p 
               style={{ ...sansStyle, fontWeight: 400 }} 
-              className="text-xs md:text-sm tracking-[0.25em] text-[#8B6B2E] uppercase mb-6"
+              className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
             >
               — THE ATELIER
             </p>
@@ -78,7 +78,7 @@ const Atelier = () => {
               An atelier of <br />
               <span 
                 style={{ ...serifStyle, fontStyle: 'italic' }} 
-                className="text-[#8B6B2E]"
+                className="text-gold"
               >
                 attentive
               </span> <br />

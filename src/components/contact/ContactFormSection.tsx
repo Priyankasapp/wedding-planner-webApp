@@ -81,7 +81,7 @@ export function ContactFormSection() {
 
   // Base input styles (removed fixed border color and focus states to dynamic classes below)
   const baseInputClass = "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
-  const labelClass = "block text-[10px] tracking-[0.2em] text-[#8B6B2E] uppercase mb-1 font-medium";
+  const labelClass = "block text-[10px] tracking-[0.2em] text-gold uppercase mb-1 font-medium";
 
   return (
     <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32">
@@ -267,7 +267,7 @@ export function ContactFormSection() {
             <div className="space-y-8 pl-1">
               {/* Studio Address */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
                   Studio
                 </h2>
                 <div className="flex items-center gap-3 text-[#2B2623]">
@@ -280,7 +280,7 @@ export function ContactFormSection() {
 
               {/* Telephone */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
                   By Telephone
                 </h2>
                 <a 
@@ -296,7 +296,7 @@ export function ContactFormSection() {
 
               {/* Email */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
                   By Letter
                 </h2>
                 <a 
@@ -312,7 +312,7 @@ export function ContactFormSection() {
 
               {/* Instagram */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-[#8B6B2E] uppercase mb-2.5 font-medium">
+                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
                   Follow
                 </h2>
                 <a 

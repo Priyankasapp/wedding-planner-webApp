@@ -99,7 +99,7 @@ const Process = () => {
         >
           <motion.p 
             style={{ ...sansStyle, fontWeight: 400 }}
-            className="uppercase tracking-[0.25em] text-xs text-[#8B6B2E]"
+            className="uppercase tracking-[0.25em] text-xs text-gold"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -116,7 +116,7 @@ const Process = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Five movements, gently <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-[#8B6B2E]">composed.</span>
+            Five movements, gently <span style={{ ...serifStyle, fontStyle: 'italic' }} className="text-gold">composed.</span>
           </motion.h2>
 
           <motion.div 
@@ -129,7 +129,7 @@ const Process = () => {
 
         {/* Timeline Matrix Layout */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 border-y border-[#D8D0C8] relative"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5  relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -152,8 +152,8 @@ const Process = () => {
                 p-8
                 last:border-r-0
                 relative
-                border-r border-[#D8D0C8]
                 hover:bg-[#F2EEE8]
+                
                 transition-all
                 duration-300
               "
@@ -174,7 +174,7 @@ const Process = () => {
                 />
                 <i 
                   style={serifStyle}
-                  className="text-[#8B6B2E] text-3xl relative z-10 not-italic block px-3 py-1"
+                  className="text-gold text-3xl relative z-10 not-italic block px-3 py-1"
                 >
                   {step.number}
                 </i>

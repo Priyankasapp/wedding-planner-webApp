@@ -175,9 +175,9 @@ export function PortfolioGrid() {
                       style={sansStyle}
                       className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-2 flex items-center gap-2"
                     >
-                      <span className="text-[#8B6B2E]">{item.category}</span>
-                      <span className=" text-[#8B6B2E]">•</span>
-                      <span className="text-[#8B6B2E]">{item.year}</span>
+                      <span className="text-gold">{item.category}</span>
+                      <span className=" text-gold">•</span>
+                      <span className="text-gold">{item.year}</span>
                     </div>
 
                     {/* Couple Names */}

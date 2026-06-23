@@ -45,7 +45,7 @@ export function ContactHero() {
             <motion.p
               variants={itemVariants}
               style={{ ...sansStyle, fontWeight: 400 }}
-              className="text-xs md:text-sm tracking-[0.25em] text-[#8B6B2E] uppercase mb-6"
+              className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
             >
               — ENQUIRIES
             </motion.p>
@@ -58,7 +58,7 @@ export function ContactHero() {
               We'd{" "}
               <span
                 style={{ ...serifStyle, fontStyle: "italic" }}
-                className="text-[#8B6B2E]"
+                className="text-gold"
               >
                 love
               </span>{" "}

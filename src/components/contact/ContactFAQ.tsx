@@ -51,8 +51,8 @@ export function ContactFAQ() {
   };
 
   return (
-    <section className="bg-[#FAF6EE] text-[#2B2623] pb-32 w-full">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 w-full">
+    <section className="bg-champagne/40 py-32 px-45">
+      <div className="max-auto max-w-4xl px-6">
         
         {/* Left Spacing Grid Block matching editorial indentation */}
         <div className="w-full lg:col-span-8 lg:col-start-4">

@@ -149,7 +149,7 @@ const ServiceSections = () => {
                   {/* Service Number Accent */}
                   <span
                     style={{ ...sansStyle, fontWeight: 400 }}
-                    className="text-sm tracking-[0.25em] text-[#8B6B2E] mb-6 block"
+                    className="text-sm tracking-[0.25em] text-gold mb-6 block"
                   >
                     {service.number}
                   </span>
