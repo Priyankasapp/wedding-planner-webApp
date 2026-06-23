@@ -21,7 +21,7 @@ interface GridPost {
 const journalGridPosts: GridPost[] = [
   {
     id: "destination-planning",
-    slug: "planning-a-destination-wedding-without-losing-yourself",
+    slug: "planning-a-destination-wedding",
     category: "GUIDES",
     date: "MARCH 2026",
     title: "Planning a Destination Wedding Without Losing Yourself",
@@ -30,7 +30,7 @@ const journalGridPosts: GridPost[] = [
   },
   {
     id: "garden-florals",
-    slug: "florals-that-feel-like-a-garden-not-a-showroom",
+    slug: "florals-that-feel-like-a-garden",
     category: "DESIGN",
     date: "APRIL 2026",
     title: "Florals That Feel Like a Garden, Not a Showroom",
@@ -39,7 +39,7 @@ const journalGridPosts: GridPost[] = [
   },
   {
     id: "brides-letter",
-    slug: "a-brides-letter-to-herself-the-morning-of",
+    slug: "a-brides-letter-to-herself",
     category: "INSPIRATION",
     date: "DECEMBER 2025",
     title: "A Bride's Letter to Herself the Morning Of",
@@ -57,12 +57,12 @@ const journalGridPosts: GridPost[] = [
   },
   {
     id: "elena-marco-real",
-    slug: "real-wedding-elena-marco-at-villa-del-balbianello",
+    slug: "real-wedding-elena-marco",
     category: "REAL WEDDINGS",
     date: "FEBRUARY 2026",
     title: "Real Wedding — Elena & Marco at Villa del Balbianello",
     excerpt: "Three days at Lake Como, cypress lanterns, and the most romantic first dance we've ever witnessed.",
-    image: gridImg5, // Bride in wind near water
+    image: gridImg5, 
   },
 ];
 

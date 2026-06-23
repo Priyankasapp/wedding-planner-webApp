@@ -39,7 +39,7 @@ const portfolioData: PortfolioItem[] = [
   },
   {
     id: "Sophia & James",
-    slug: "Sophia & James",
+    slug: "Sophia-James",
     couple: "Sophia & James",
     location: "Provence, France",
     category: "chateau",
@@ -48,7 +48,7 @@ const portfolioData: PortfolioItem[] = [
   },
   {
     id: "Isla & Rhys",
-    slug: "Isla & Rhys",
+    slug: "Isla-Rhys",
     couple: "Isla & Rhys",
     location: "Cotswolds, England",
     category: "garden",
