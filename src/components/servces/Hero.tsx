@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import SectionKicker from "../sections/SectionKicker";
 
 function Hero() {
   const serifStyle = {
@@ -6,10 +7,7 @@ function Hero() {
     fontWeight: 300,
   };
 
-  const sansStyle = {
-    fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300,
-  };
+ 
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -30,7 +28,7 @@ function Hero() {
 
   return (
     // FIX: Added a semantic wrapper section with padding and a centered max-width constraint
-    <section className="bg-[#FAF6EE] min-h-[60vh] flex items-center py-20">
+    <section className="bg-[#FAF6EE] min-h-[60vh] flex items-center mt-20 py-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div
@@ -39,18 +37,12 @@ function Hero() {
           animate="visible"
           className="select-none "
         >
-          <motion.p
-            variants={itemVariants}
-            style={{ ...sansStyle, fontWeight: 400 }}
-            className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
-          >
-            — Services
-          </motion.p>
+          <SectionKicker title='services'/>
           
           <motion.h1
             variants={itemVariants}
             style={serifStyle}
-            className="text-6xl md:text-[6.5rem] leading-[1.05] tracking-wide text-[#2B2623]"
+            className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide text-[#2B2623]"
           >
             From the first{" "}
             <span

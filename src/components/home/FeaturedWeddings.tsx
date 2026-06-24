@@ -68,14 +68,7 @@ const FeaturedWeddings = () => {
             </h2>
           </div>
 
-          <Link
-            to="/portfolio"
-            style={sansStyle}
-            className="group mt-8 lg:mt-0 flex items-center gap-4 uppercase tracking-[0.15em] text-xs font-normal"
-          >
-            <span className="w-10 h-px bg-[#2B2623] group-hover:w-16 transition-all duration-300"></span>
-            The Full Portfolio
-          </Link>
+         
         </motion.div>
 
         {/* Cards Grid Layout */}
@@ -91,8 +84,8 @@ const FeaturedWeddings = () => {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true, margin: "-40px" }}
             >
-              {/* Image Frame Wrapper linked dynamically */}
-              <Link to={wedding.path} className="overflow-hidden rounded-sm relative block w-full aspect-[4/3] md:aspect-[1.37/1]">
+              {/* Image Frame Wrapper linked dynamicall y */}
+              <Link to={wedding.path} className="overflow-hidden rounded-sm relative block w-full aspect-[4/3] md:aspect-[1.37/1] h-[800px]">
                 <motion.img
                   src={wedding.image}
                   alt={wedding.title}
@@ -147,14 +140,17 @@ const FeaturedWeddings = () => {
 
         {/* Global Bottom Section Entry Anchor Button */}
         <div className="flex justify-center mt-24 md:mt-32">
-          <Link
-            to="/portfolio"
-            style={sansStyle}
-            className="group border border-[#2B2623] px-12 py-4 uppercase tracking-[0.2em] text-xs transition-colors duration-300 hover:bg-[#2B2623] hover:text-[#FAF6EE] rounded-sm"
-          >
-            The Full Portfolio
-          </Link>
-        </div>
+  <Link
+    to="/portfolio"
+    style={sansStyle}
+    className="inline-flex items-center gap-3 border border-foreground px-8 py-4 uppercase tracking-[0.2em] text-xs transition-all duration-300 hover:bg-[#2B2623] hover:text-[#FAF6EE] rounded-sm"
+  >
+    <span>The Full Portfolio</span>
+    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+      →
+    </span>
+  </Link>
+</div>
 
       </div>
     </section>

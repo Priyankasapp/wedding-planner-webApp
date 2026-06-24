@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import SectionKicker from "../sections/SectionKicker";
 
 export function ContactHero() {
   const serifStyle = {
@@ -29,7 +30,7 @@ export function ContactHero() {
   };
 
   return (
-    <section className="bg-[#FAF6EE] text-[#2B2623] pt-24 pb-16 lg:pt-32 lg:pb-20 select-none">
+    <section className="bg-[#FAF6EE] text-[#2B2623] pt-24 pb-16 lg:pt-32 mt-10 lg:pb-20 select-none">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         {/* Asymmetrical Layout Split Grid */}
@@ -42,13 +43,14 @@ export function ContactHero() {
           
           {/* Left Block: Heading and Tag */}
           <div className="w-full lg:col-span-8">
-            <motion.p
+            {/* <motion.p
               variants={itemVariants}
               style={{ ...sansStyle, fontWeight: 400 }}
               className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
             >
               — ENQUIRIES
-            </motion.p>
+            </motion.p> */}
+            <SectionKicker title='ENQUIRIES'/>         
             
             <motion.h1
               variants={itemVariants}

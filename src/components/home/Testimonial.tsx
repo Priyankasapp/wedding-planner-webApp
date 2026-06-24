@@ -22,7 +22,7 @@ const Testimonial = () => {
 
       {/* Blur Layer */}
 
-      <div className="absolute inset-0 backdrop-blur-none bg-[#F8F6F2]/70" />
+      <div className="absolute inset-0 backdrop-blur-none bg-[#F8F6F2]/80" />
 
       {/* Content */}
 

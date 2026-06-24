@@ -16,7 +16,7 @@ const fadeUpVariants: Variants = {
 export function ContactFormSection() {
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
+    fontWeight: 400,
   };
 
   const sansStyle = {
@@ -81,7 +81,7 @@ export function ContactFormSection() {
 
   // Base input styles (removed fixed border color and focus states to dynamic classes below)
   const baseInputClass = "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
-  const labelClass = "block text-[10px] tracking-[0.2em] text-gold uppercase mb-1 font-medium";
+  const labelClass = "block text-[10px] tracking-[0.3em] text-gold uppercase mb-1 font-medium";
 
   return (
     <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32">
@@ -100,7 +100,7 @@ export function ContactFormSection() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="flex flex-col">
-                <label htmlFor="firstName" style={sansStyle} className={labelClass}>First Name *</label>
+                <label htmlFor="firstName" style={{...sansStyle}} className={labelClass}>First Name *</label>
                 <input
                   id="firstName"
                   type="text"
@@ -121,7 +121,7 @@ export function ContactFormSection() {
               </div>
               
               <div className="flex flex-col">
-                <label htmlFor="partnerName" style={sansStyle} className={labelClass}>Partner's Name</label>
+                <label htmlFor="partnerName" style={{...sansStyle}} className={labelClass}>Partner's Name</label>
                 <input
                   id="partnerName"
                   type="text"
