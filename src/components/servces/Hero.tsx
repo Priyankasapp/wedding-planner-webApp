@@ -7,8 +7,6 @@ function Hero() {
     fontWeight: 300,
   };
 
- 
-
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,31 +25,35 @@ function Hero() {
   };
 
   return (
-    // FIX: Added a semantic wrapper section with padding and a centered max-width constraint
-    <section className="bg-[#FAF6EE] min-h-[60vh] flex items-center mt-20 py-20">
+    // Changed mt-20 to safe padding blocks to prevent layout overlaps with your sticky navbar
+    <section className="bg-[#FAF6EE] min-h-[50vh] sm:min-h-[60vh] flex items-center pt-28 pb-16 md:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="select-none "
+          className="select-none text-left"
         >
-          <SectionKicker title='services'/>
+          {/* Reusable Section Kicker */}
+          <motion.div variants={itemVariants}>
+            <SectionKicker title='services' className="mb-6 md:mb-8" />
+          </motion.div>
           
+          {/* Fluid responsive text scaling from text-4xl up to text-7xl / 8xl */}
           <motion.h1
             variants={itemVariants}
             style={serifStyle}
-            className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide text-[#2B2623]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.2] sm:leading-[1.15] md:leading-[1.1] tracking-wide text-[#2B2623]"
           >
             From the first{" "}
             <span
               style={{ ...serifStyle, fontStyle: "italic" }}
-              className="text-gold"
+              className="text-[#C2A677]"
             >
               spark
             </span>{" "}
-            to <br /> the last dance.
+            to <br className="hidden sm:block" /> the last dance.
           </motion.h1>
         </motion.div>
 

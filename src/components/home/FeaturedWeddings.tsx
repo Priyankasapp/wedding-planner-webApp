@@ -110,17 +110,18 @@ const FeaturedWeddings = () => {
                 {/* Wedding Title context */}
                 <Link to={wedding.path} className="inline-block">
                   <h3 
-                    style={serifStyle} 
+                    style={{ ...serifStyle, fontStyle: "italic" }}  
                     className="text-3xl md:text-4xl text-[#2B2623] tracking-wide transition-colors duration-300 group-hover:text-[#B2964D]"
                   >
                     {wedding.title}
+                    
                   </h3>
                 </Link>
 
                 {/* Description subhead snippet */}
                 <p 
-                  style={sansStyle} 
-                  className="mt-2 text-[#6E615A] text-sm font-light leading-relaxed max-w-md"
+                  
+                  className="text-muted-foreground text-sm  mt-3 max-w-md"
                 >
                   {wedding.description}
                 </p>

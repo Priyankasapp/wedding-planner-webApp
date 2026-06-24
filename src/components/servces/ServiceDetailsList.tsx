@@ -149,7 +149,7 @@ const ServiceSections = () => {
                   {/* Service Number Accent */}
                   <span
                     style={{ ...sansStyle, fontWeight: 400 }}
-                    className="text-sm tracking-[0.25em] text-gold mb-6 block"
+                    className="text-xs tracking-[0.25em] text-gold mb-6 block"
                   >
                     {service.number}
                   </span>
@@ -157,7 +157,7 @@ const ServiceSections = () => {
                   {/* Primary Heading */}
                   <h2
                     style={serifStyle}
-                    className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#352021] tracking-wide mb-8 font-light"
+                    className="text-4xl md:text-5xl lg:text-5xl leading-[1.1] text-[#352021] tracking-wide mb-4 font-light"
                   >
                     {service.title}
                   </h2>
@@ -165,7 +165,7 @@ const ServiceSections = () => {
                   {/* Tagline / Sub-description */}
                   <p
                     style={sansStyle}
-                    className="text-[#795757] text-base md:text-lg leading-relaxed mb-6 font-normal opacity-90 max-w-xl"
+                    className="mt-6 text-muted-foreground leading-relaxed max-w-xl"
                   >
                     {service.tagline}
                   </p>
@@ -173,7 +173,7 @@ const ServiceSections = () => {
                   {/* Secondary Body Paragraph */}
                   <p
                     style={sansStyle}
-                    className="text-[#795757] text-sm md:text-base leading-relaxed max-w-xl"
+                    className="mt-6 text-muted-foreground leading-relaxed max-w-xl"
                   >
                     {service.description}
                   </p>

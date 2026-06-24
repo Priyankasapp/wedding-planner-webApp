@@ -74,7 +74,7 @@ const Team = () => {
   };
 
   return (
-    <section className="bg-[#f7f2f0] py-24 lg:py-32 overflow-hidden">
+    <section className="py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* Heading Area */}
@@ -153,7 +153,7 @@ const Team = () => {
                 {/* Member Name */}
                 <h3 
                   style={serifStyle}
-                  className="text-3xl lg:text-4xl text-[#2B2623] tracking-wide"
+                  className="text-2xl lg:text-2xl text-[#2B2623] tracking-wide"
                 >
                   {member.title}
                 </h3>
@@ -161,7 +161,7 @@ const Team = () => {
                 {/* Subtitle / Role Tag */}
                 <p 
                   style={{ ...sansStyle, fontWeight: 400 }}
-                  className="mt-1.5 text-[#C2A677] tracking-[0.15em] text-xs uppercase"
+                  className="mt-1.5 text-gold tracking-[0.15em] text-xs uppercase"
                 >
                   {member.role}
                 </p>
@@ -169,7 +169,7 @@ const Team = () => {
                 {/* Description info */}
                 <p 
                   style={sansStyle}
-                  className="mt-4 text-[#5A5450] text-sm md:text-base leading-relaxed max-w-sm"
+                  className="mt-4 text-[#5A5450] text-sm md:text-base leading-relaxed "
                 >
                   {member.description}
                 </p>

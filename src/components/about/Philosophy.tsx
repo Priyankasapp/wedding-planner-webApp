@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-// import Services from "../home/Services"
+import { useEffect, useRef, useState } from 'react';
+import SectionKicker from '../sections/SectionKicker'; // Adjust path based on your folder structure
 
 const Philosophy = () => {
   const serifStyle = { 
@@ -12,7 +12,6 @@ const Philosophy = () => {
     fontWeight: 300
   };
 
-  // State and ref for the scroll animation trigger
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -24,13 +23,12 @@ const Philosophy = () => {
         }
       },
       {
-        threshold: 0.1,
+        threshold: 0.05,
         rootMargin: '0px 0px -50px 0px'
       }
     );
 
     const section = sectionRef.current;
-
     if (section) {
       observer.observe(section);
     }
@@ -45,84 +43,79 @@ const Philosophy = () => {
   return (
     <section 
       ref={sectionRef}
-      className="bg-[#f7f2f0] py-24 lg:py-32 min-h-screen flex flex-col justify-center text-[#2B2623] px-6 md:px-16 overflow-hidden"
+      className="bg-[#f7f2f0]  py-24 lg:py-36 flex flex-col justify-center text-[#2B2623] px-6 md:px-16 overflow-hidden select-none"
     >
-      <div className='max-w-6xl mx-auto w-full flex flex-col gap-16 md:gap-24'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24'>
+      {/* Container wrapper matching luxury width metrics */}
+      <div className='max-w-[1400px] mx-auto w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start'>
             
-          {/* Left Column: Animates instantly on visibility */}
+          {/* Left Column: Heading Block (Spans 5 of 12 columns) */}
           <div 
-            className={`transform transition-all duration-1000 ease-out ${
-              isVisible 
-                ? 'translate-y-0 opacity-100' 
-                : 'translate-y-16 opacity-0'
+            className={`lg:col-span-5 transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
-            style={{ transitionDelay: '0ms' }}
           >
-            <p 
-              style={{ ...sansStyle, fontWeight: 400 }} 
-              className="text-xs md:text-sm tracking-[0.25em] text-[#C2A677] uppercase mb-6"
-            >
-              — Philosophy
-            </p>
+            {/* Reusable SectionKicker component */}
+            <SectionKicker title="PHILOSOPHY" className="mb-8" />
 
             <h2
               style={serifStyle} 
-              className="text-5xl md:text-[5.5rem] leading-[1.05] tracking-wide max-w-lg"
+              className="text-4xl md:text-5xl lg:text-5xl tracking-wide text-[#2B2623] leading-tight"
             >
-              What we <br /> believe.
+              What we believe.
             </h2>
           </div>
 
-          {/* Right Column: Animates with a slight 300ms delay */}
+          {/* Right Column: Key Pillars List (Spans 7 of 12 columns) */}
           <div 
-            className={`space-y-12 transform transition-all duration-1000 ease-out ${
-              isVisible 
-                ? 'translate-y-0 opacity-100' 
-                : 'translate-y-16 opacity-0'
+            className={`lg:col-span-7 space-y-10 lg:pt-16 transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
-            style={{ transitionDelay: '300ms' }}
+            style={{ transitionDelay: '200ms' }}
           >
-            <div>
-              <h2   
-                style={serifStyle} 
-                className="text-3xl leading-[1.05] tracking-wide mb-4 max-w-lg"
+            {/* Pillar 1 */}
+            <div className="group">
+              <h3   
+                style={{ ...serifStyle, fontStyle: "italic" }} 
+                className="text-2xl md:text-3xl text-[#2B2623] tracking-wide mb-3"
               >
                 Restraint over spectacle
-              </h2>
+              </h3>
               <p 
-                style={sansStyle} 
-                className="text-base md:text-lg leading-relaxed text-[#5A5450] max-w-md"
+                style={sansStyle}
+                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
               >
                 The most luxurious thing in a room is space. We design with breathing room — empty chairs, quiet corners, candles allowed to burn down.
               </p>
             </div>
 
-            <div>
-              <h2   
-                style={serifStyle} 
-                className="text-3xl leading-[1.05] tracking-wide mb-4 max-w-lg"
+            {/* Pillar 2 */}
+            <div className="group">
+              <h3   
+                style={{ ...serifStyle, fontStyle: "italic" }} 
+                className="text-2xl md:text-3xl text-[#2B2623] tracking-wide mb-3"
               >
                 Couples first, always
-              </h2>
+              </h3>
               <p 
-                style={sansStyle} 
-                className="text-base md:text-lg leading-relaxed text-[#5A5450] max-w-md"
+                style={sansStyle}
+                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
               >
                 Our work is never about us. It is shaped entirely around the two people getting married, and the world they want to gather around them.
               </p>
             </div>
 
-            <div>
-              <h2   
-                style={serifStyle} 
-                className="text-3xl leading-[1.05] tracking-wide mb-4 max-w-lg"
+            {/* Pillar 3 */}
+            <div className="group">
+              <h3   
+                style={{ ...serifStyle, fontStyle: "italic" }} 
+                className="text-2xl md:text-3xl text-[#2B2623] tracking-wide mb-3"
               >
                 Beauty earned slowly
-              </h2>
+              </h3>
               <p 
-                style={sansStyle} 
-                className="text-base md:text-lg leading-relaxed text-[#5A5450] max-w-md"
+                style={sansStyle}
+                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
               >
                 We resist the trend cycle. The aesthetic choices we make are built to feel as right in twenty years as they do on the day.
               </p>
@@ -132,7 +125,7 @@ const Philosophy = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Philosophy
+export default Philosophy;
