@@ -28,11 +28,11 @@ const Header = () => {
     }
   };
 
-  const isHomePage = location.pathname === "/";
+ 
  
   return (
-    <header className={`absolute top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isHomePage ? "bg-[#FAF6EE]/90  border-b border-[#EAE3DA]" : "bg-[#FAF6EE] border-b border-[#EAE3DA]"
+    <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+       "bg-[#FAF6EE]/90  border-b border-[#EAE3DA]" 
       }`}>
       <div className="max-w-[1200px] mx-auto  ">
         <div className="h-18 flex items-center justify-between">

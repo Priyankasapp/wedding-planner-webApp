@@ -1,14 +1,10 @@
 import { motion, type Variants } from "framer-motion";
+import SectionKicker from "../sections/SectionKicker";
 
 // FIX: Added 'export' right before the function declaration
 export function Hero() {
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
-  };
-
-  const sansStyle = {
-    fontFamily: '"Montserrat", sans-serif',
     fontWeight: 300,
   };
 
@@ -30,7 +26,7 @@ export function Hero() {
   };
 
   return (
-    <section className="bg-[#FAF6EE] min-h-[60vh] flex items-center py-20">
+    <section className="bg-[#FAF6EE] min-h-[60vh] flex mt-10 items-center py-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div
@@ -39,13 +35,14 @@ export function Hero() {
           animate="visible"
           className="select-none"
         >
-          <motion.p
+          {/* <motion.p
             variants={itemVariants}
             style={{ ...sansStyle, fontWeight: 400 }}
             className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
           >
             — PORTFOLIO
-          </motion.p>
+          </motion.p> */}
+          <SectionKicker title='PORTFOLIO'/>
           
           <motion.h1
             variants={itemVariants}

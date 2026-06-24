@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import img from "../../assets/images/photo_11.jpg"
-
+import SectionKicker from '../sections/SectionKicker';
 const Atelier = () => {
  
   const serifStyle = { 
@@ -45,7 +45,7 @@ const Atelier = () => {
   return (
     <section 
       ref={sectionRef}
-      className='min-h-screen flex flex-col justify-center bg-[#FAF6EE] text-[#2B2623] px-6 md:px-16 py-20 overflow-hidden'
+      className='min-h-screen flex flex-col justify-center bg-[#FAF6EE] text-[#2B2623] px-6 mt-20 md:px-16 py-20 overflow-hidden'
     >
       {/* Container wrapper for content flow */}
       <div className='max-w-6xl mx-auto w-full flex flex-col gap-16 md:gap-24'>
@@ -63,25 +63,26 @@ const Atelier = () => {
             style={{ transitionDelay: '0ms' }}
           >
             {/* Kicker styled with Montserrat */}
-            <p 
-              style={{ ...sansStyle, fontWeight: 400 }} 
-              className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
+            {/* <p 
+              className="uppercase tracking-[0.35em] font-normal mb-8 block"
+              style={{ 
+                fontSize: "0.7rem", 
+                color: "var(--gold, #C2A677)", 
+                fontFamily: "var(--font-sans), 'Montserrat', sans-serif', fontWeight: 400" 
+              }}
             >
               — THE ATELIER
-            </p>
+            </p> */}
+            <SectionKicker title='THE ATELIER'/>
 
             {/* Elegant Display Heading */}
             <h1 
               style={serifStyle} 
-              className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide max-w-lg"
-            >
+              className="text-5xl md:text-6xl lg:text-7xl text-[#2B2623] leading-[1.1] tracking-wide">
               An atelier of <br />
-              <span 
-                style={{ ...serifStyle, fontStyle: 'italic' }} 
-                className="text-gold"
-              >
+             <span className="italic text-[#C2A677] mr-2">
                 attentive
-              </span> <br />
+              </span> {" "}
               design.
             </h1>
           </div>
@@ -97,7 +98,7 @@ const Atelier = () => {
           >
             <p 
               style={sansStyle} 
-              className="text-base md:text-lg leading-relaxed text-[#5A5450] max-w-md"
+              className="text-sm md:text-base leading-[1.7] text-[#2B2623]/70 font-light max-w-md lg:max-w-[420px]"
             >
               Founded in 2008 by Lior Amari in a quiet Parisian courtyard, 
               Maison Lior is built on a single conviction: that a wedding 
