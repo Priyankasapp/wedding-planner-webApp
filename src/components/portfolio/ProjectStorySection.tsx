@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionKicker from "../sections/SectionKicker";
 
 interface ProjectStoryProps {
   tagline: string;
@@ -31,7 +32,7 @@ const ProjectStorySection = ({
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-12 xl:gap-x-24 items-start"
+          className="grid grid-cols-12 lg:grid-cols-12 gap-y-10 lg:gap-x-12 xl:gap-x-24 items-start"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -39,7 +40,7 @@ const ProjectStorySection = ({
         >
           
           {/* LEFT: Section Label Tag */}
-          <div className="lg:col-span-3 lg:pt-2">
+          {/* <div className="lg:col-span-3 lg:pt-2">
             <p 
               style={sansStyle} 
               className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase font-medium flex items-center gap-2"
@@ -47,15 +48,20 @@ const ProjectStorySection = ({
               <span className="inline-block w-4 h-px bg-[#8B6B2E]"></span>
               The Story
             </p>
-          </div>
+          </div> */}
+            <div className="lg:col-span-4">
+  <SectionKicker title="The Story" />
+</div>
+
 
           {/* RIGHT: Main Editorial Copy Blocks & Spec Grid Row */}
-          <div className="lg:col-span-9 flex flex-col space-y-12">
+          
+          <div className="lg:col-span-8 flex flex-col space-y-12">
             
             {/* Elegant Main Large Italic Tagline */}
             <h2 
-              style={{ ...serifStyle, fontStyle: "italic" }} 
-              className="text-3xl md:text-4xl lg:text-5xl text-[#2B2623] leading-snug tracking-wide max-w-4xl"
+              style={{ ...serifStyle }} 
+              className="text-3xl md:text-4xl lg:text-4xl text-[#2B2623] leading-snug tracking-wide max-w-4xl"
             >
               {tagline}
             </h2>

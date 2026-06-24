@@ -48,7 +48,7 @@ const ProjectHeroSection = ({ title, location, year, heroImage }: ProjectHeroPro
             className="text-[10px] tracking-[0.25em] uppercase font-medium text-white/80 hover:text-white transition-colors duration-300 flex items-center gap-2 w-fit group"
           >
             <span className="transform group-hover:-translate-x-1 transition-transform duration-300">←</span> 
-            All Weddings
+            All Wedding
           </Link>
         </motion.div>
 
@@ -68,8 +68,8 @@ const ProjectHeroSection = ({ title, location, year, heroImage }: ProjectHeroPro
 
           {/* Elegant Script Couple Name Display Title */}
           <motion.h1 
-            style={serifStyle}
-            className="text-5xl sm:text-7xl md:text-8xl tracking-wide leading-tight font-light"
+             style={{ ...serifStyle, fontStyle: "italic" }}
+            className="text-5xl sm:text-xl md:text-7xl tracking-wide leading-tight font-light"
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
