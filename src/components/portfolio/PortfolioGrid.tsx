@@ -193,7 +193,7 @@ export function PortfolioGrid() {
                     {/* Geographical Location */}
                     <span
                       style={sansStyle}
-                      className="text-xs text-[#6e605b] mt-1 font-light"
+                      className="text-sm text-[#6e605b] mt-1 font-light"
                     >
                       {item.location}
                     </span>

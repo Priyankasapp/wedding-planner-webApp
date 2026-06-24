@@ -160,7 +160,7 @@ export function JournalGrid() {
                 {/* Short Paragraph Description Excerpt */}
                 <p
                   style={sansStyle}
-                  className="text-[#6E615A] text-xs leading-relaxed font-light opacity-90 max-w-[95%]"
+                  className="text-[#6E615A] text-sm leading-relaxed font-light opacity-90 max-w-[95%]"
                 >
                   {post.excerpt}
                 </p>

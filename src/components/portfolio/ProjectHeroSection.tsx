@@ -58,7 +58,7 @@ const ProjectHeroSection = ({ title, location, year, heroImage }: ProjectHeroPro
           {/* Location & Vintage Metadata Labels */}
           <motion.p 
             style={sansStyle}
-            className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-white/90 font-light"
+            className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#fff] shadow"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
