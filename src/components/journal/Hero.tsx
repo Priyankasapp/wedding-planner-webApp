@@ -1,14 +1,11 @@
 import { motion, type Variants } from "framer-motion";
 import SectionKicker from "../sections/SectionKicker";
 
-// FIX: Added 'export' right before the function declaration
 export function Hero() {
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
     fontWeight: 300,
   };
-
-  
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -19,7 +16,7 @@ export function Hero() {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -28,42 +25,45 @@ export function Hero() {
   };
 
   return (
-    <section className="bg-[#FAF6EE] min-h-[60vh] mt-10 flex items-center py-20">
+    <section className="bg-[#FAF6EE] pt-24 pb-0 overflow-hidden mt-16 select-none">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="select-none"
+          className="pb-16" /* Adds clean spacing above the line */
         >
-          {/* <motion.p
-            variants={itemVariants}
-            style={{ ...sansStyle, fontWeight: 400 }}
-            className="text-xs md:text-sm tracking-[0.25em] text-gold uppercase mb-6"
-          >
-            — THE JOURNAL
-          </motion.p> */}
-          <SectionKicker title='THE JOURNAL'/>          
+          {/* Reusable SectionKicker component */}
+          <motion.div variants={itemVariants}>
+            <SectionKicker title='THE JOURNAL' className="mb-8" />
+          </motion.div>          
+          
+          {/* Main Heading scaled down slightly to look crisp on a single line */}
           <motion.h1
             variants={itemVariants}
             style={serifStyle}
-            className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide text-[#2B2623]"
+            className="text-5xl md:text-6xl lg:text-7xl tracking-wide text-[#2B2623] leading-none"
           >
-            Notes from the {" "}
+            Notes from the{" "}
             <span
               style={{ ...serifStyle, fontStyle: "italic" }}
-              className="text-gold"
+              className="text-[#C2A677]"
             >
               atelier.
-            </span>{" "}
-           
+            </span>
           </motion.h1>
         </motion.div>
         
       </div>
-      <hr />
-      
+     
+      {/* The full-width thin divider line matching the picture */}
+      <motion.hr 
+        initial={{ opacity: 0, scaleX: 0.98 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        className="border-[#2B2623]/10 w-full mb-9"
+      />
     </section>
   );
 }
