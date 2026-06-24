@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
 interface StatItem {
-  number: string;
   label: string;
   value: number;
   suffix: string;
@@ -9,25 +8,21 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    number: "240+",
     label: "Weddings Designed",
     value: 240,
     suffix: "+",
   },
   {
-    number: "32",
     label: "Countries",
     value: 32,
     suffix: "",
   },
   {
-    number: "18",
     label: "Years of Craft",
     value: 18,
     suffix: "",
   },
   {
-    number: "99%",
     label: "Couples Referred Us",
     value: 99,
     suffix: "%",
@@ -36,22 +31,10 @@ const stats: StatItem[] = [
 
 const Stats = () => {
   const [counts, setCounts] = useState<number[]>(stats.map(() => 0));
-  // FIX: Type the ref explicitly to satisfy TS signatures on elements
   const sectionRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const serifStyle = { 
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300 
-  };
-
-  const sansStyle = { 
-    fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300
-  };
-
   useEffect(() => {
-    // FIX: Snapshot the current ref to an internal mutable variable to satisfy react-hooks/exhaustive-deps
     const currentSection = sectionRef.current;
 
     const observer = new IntersectionObserver(
@@ -60,9 +43,8 @@ const Stats = () => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
             
-            // Animate each counter
             stats.forEach((stat, index) => {
-              const duration = 2000; // 2 seconds
+              const duration = 2000; 
               const steps = 60;
               const increment = stat.value / steps;
               let current = 0;
@@ -87,7 +69,7 @@ const Stats = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (currentSection) {
@@ -95,7 +77,6 @@ const Stats = () => {
     }
 
     return () => {
-      // FIX: Clean up using your local variable snapshot reference safely
       if (currentSection) {
         observer.unobserve(currentSection);
       }
@@ -105,25 +86,28 @@ const Stats = () => {
   return (
     <section 
       ref={sectionRef}
-      className="bg-[#2B2623] text-[#FAF6EE] py-24 lg:py-32"
+      className="bg-espresso text-[#FAF6EE] py-28 lg:py-36 overflow-hidden select-none"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-x-0 lg:divide-y-0 lg:divide-x divide-[#FAF6EE]/10 border-y border-[#FAF6EE]/10">
+      <div className="max-w-[1300px] mx-auto px-8 lg:px-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="py-12 text-center flex flex-col justify-center items-center px-4"
+              className="flex flex-col justify-start items-start"
             >
+              {/* Scaled down numbers to match the image */}
               <h2 
-                style={serifStyle}
-                className="text-5xl lg:text-7xl font-light tracking-wide text-[#E2D4BF]"
+                className="font-serif text-5xl md:text-6xl font-light tracking-wide text-[#FAF6EE] leading-none"
+                style={{ fontFamily: '"Cormorant Garamond", serif', fontWeight: 300 }}
               >
-                {counts[index]}{stat.suffix}
+                {counts[index]}
+                <span className="font-light italic ml-0.5">{stat.suffix}</span>
               </h2>
 
+              {/* Smaller labels with wide tracking */}
               <p 
-                style={sansStyle}
-                className="mt-4 uppercase tracking-[0.2em] text-xs text-[#FAF6EE]/70 leading-6 text-center"
+                className="mt-5 uppercase tracking-[0.25em] text-[10px] text-[#C2A677] font-medium leading-relaxed font-sans"
+                style={{ fontFamily: '"Montserrat", sans-serif' }}
               >
                 {stat.label}
               </p>
