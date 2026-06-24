@@ -75,7 +75,7 @@ export function ContactHero() {
           >
             <p
               style={sansStyle}
-              className="text-[#795757] text-sm md:text-base leading-relaxed opacity-90 max-w-sm"
+              className="text-[#6e605b] leading-relaxed"
             >
               Tell us a little about yourselves and your wedding. We respond to every enquiry personally, within three days.
             </p>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { FiMapPin, FiPhone, FiMail, FiInstagram } from "react-icons/fi";
-import contactImg from "../../assets/images/photo_6.jpg"
-
+import contactImg from "../../assets/images/photo_6.jpg";
 
 const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -16,12 +15,10 @@ const fadeUpVariants: Variants = {
 export function ContactFormSection() {
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 400,
   };
 
   const sansStyle = {
     fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300,
   };
 
   const [formData, setFormData] = useState({
@@ -42,7 +39,9 @@ export function ContactFormSection() {
     aboutYourDay: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
@@ -54,7 +53,7 @@ export function ContactFormSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     let valid = true;
     const newErrors = { firstName: "", email: "", aboutYourDay: "" };
 
@@ -80,13 +79,14 @@ export function ContactFormSection() {
   };
 
   // Base input styles (removed fixed border color and focus states to dynamic classes below)
-  const baseInputClass = "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
-  const labelClass = "block text-[10px] tracking-[0.3em] text-gold uppercase mb-1 font-medium";
+  const baseInputClass =
+    "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
+  const labelClass =
+    "font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold";
 
   return (
     <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-        
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -94,13 +94,21 @@ export function ContactFormSection() {
           variants={fadeUpVariants}
           className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 lg:gap-x-16 xl:gap-x-24 items-start"
         >
-          
           {/* LEFT: MINIMALIST LUXURY FORM */}
-          <form onSubmit={handleSubmit} className="w-full lg:col-span-7 space-y-10" noValidate>
-            
+          <form
+            onSubmit={handleSubmit}
+            className="w-full lg:col-span-7 space-y-10"
+            noValidate
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="flex flex-col">
-                <label htmlFor="firstName" style={{...sansStyle}} className={labelClass}>First Name *</label>
+                <label
+                  htmlFor="firstName"
+                  style={{ ...sansStyle }}
+                  className={labelClass}
+                >
+                  First Name *
+                </label>
                 <input
                   id="firstName"
                   type="text"
@@ -110,18 +118,26 @@ export function ContactFormSection() {
                   placeholder="Elena"
                   style={sansStyle}
                   className={`${baseInputClass} ${
-                    errors.firstName 
-                      ? "border-red-400 focus:border-red-400" 
+                    errors.firstName
+                      ? "border-red-400 focus:border-red-400"
                       : "border-[#D8D0C8] focus:border-[#C2A677]"
                   }`}
                 />
                 {errors.firstName && (
-                  <p className="text-red-500 text-xs font-light mt-1.5">{errors.firstName}</p>
+                  <p className="text-red-500 text-xs font-light mt-1.5">
+                    {errors.firstName}
+                  </p>
                 )}
               </div>
-              
+
               <div className="flex flex-col">
-                <label htmlFor="partnerName" style={{...sansStyle}} className={labelClass}>Partner's Name</label>
+                <label
+                  htmlFor="partnerName"
+                  style={{ ...sansStyle }}
+                  className={labelClass}
+                >
+                  Partner's Name
+                </label>
                 <input
                   id="partnerName"
                   type="text"
@@ -137,7 +153,9 @@ export function ContactFormSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="flex flex-col">
-                <label htmlFor="email" style={sansStyle} className={labelClass}>Email *</label>
+                <label htmlFor="email" style={sansStyle} className={labelClass}>
+                  Email *
+                </label>
                 <input
                   id="email"
                   type="email"
@@ -147,18 +165,22 @@ export function ContactFormSection() {
                   placeholder="you@example.com"
                   style={sansStyle}
                   className={`${baseInputClass} ${
-                    errors.email 
-                      ? "border-red-400 focus:border-red-400" 
+                    errors.email
+                      ? "border-red-400 focus:border-red-400"
                       : "border-[#D8D0C8] focus:border-[#C2A677]"
                   }`}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-xs font-light mt-1.5">{errors.email}</p>
+                  <p className="text-red-500 text-xs font-light mt-1.5">
+                    {errors.email}
+                  </p>
                 )}
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="phone" style={sansStyle} className={labelClass}>Phone</label>
+                <label htmlFor="phone" style={sansStyle} className={labelClass}>
+                  Phone
+                </label>
                 <input
                   id="phone"
                   type="tel"
@@ -174,7 +196,13 @@ export function ContactFormSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="flex flex-col">
-                <label htmlFor="dateOrSeason" style={sansStyle} className={labelClass}>Wedding Date or Season</label>
+                <label
+                  htmlFor="dateOrSeason"
+                  style={sansStyle}
+                  className={labelClass}
+                >
+                  Wedding Date or Season
+                </label>
                 <input
                   id="dateOrSeason"
                   type="text"
@@ -188,7 +216,13 @@ export function ContactFormSection() {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="estimatedGuests" style={sansStyle} className={labelClass}>Estimated Guests</label>
+                <label
+                  htmlFor="estimatedGuests"
+                  style={sansStyle}
+                  className={labelClass}
+                >
+                  Estimated Guests
+                </label>
                 <input
                   id="estimatedGuests"
                   type="text"
@@ -203,7 +237,13 @@ export function ContactFormSection() {
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="celebrationLocation" style={sansStyle} className={labelClass}>Where would you like to celebrate?</label>
+              <label
+                htmlFor="celebrationLocation"
+                style={sansStyle}
+                className={labelClass}
+              >
+                Where would you like to celebrate?
+              </label>
               <input
                 id="celebrationLocation"
                 type="text"
@@ -217,7 +257,13 @@ export function ContactFormSection() {
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="aboutYourDay" style={sansStyle} className={labelClass}>Tell us about your day *</label>
+              <label
+                htmlFor="aboutYourDay"
+                style={sansStyle}
+                className={labelClass}
+              >
+                Tell us about your day *
+              </label>
               <textarea
                 id="aboutYourDay"
                 name="aboutYourDay"
@@ -227,13 +273,15 @@ export function ContactFormSection() {
                 rows={4}
                 style={sansStyle}
                 className={`${baseInputClass} resize-none ${
-                  errors.aboutYourDay 
-                    ? "border-red-400 focus:border-red-400" 
+                  errors.aboutYourDay
+                    ? "border-red-400 focus:border-red-400"
                     : "border-[#D8D0C8] focus:border-[#C2A677]"
                 }`}
               />
               {errors.aboutYourDay && (
-                <p className="text-red-500 text-xs font-light mt-1.5">{errors.aboutYourDay}</p>
+                <p className="text-red-500 text-xs font-light mt-1.5">
+                  {errors.aboutYourDay}
+                </p>
               )}
             </div>
 
@@ -249,12 +297,10 @@ export function ContactFormSection() {
                 </span>
               </button>
             </div>
-
           </form>
 
           {/* RIGHT: EDITORIAL IMAGE & UPDATED METADATA CARD */}
           <div className="w-full lg:col-span-5 flex flex-col space-y-12">
-            
             <div className="w-full overflow-hidden rounded-sm aspect-[4/5] shadow-[0_4px_25px_rgba(0,0,0,0.02)]">
               <img
                 src={contactImg}
@@ -267,28 +313,40 @@ export function ContactFormSection() {
             <div className="space-y-8 pl-1">
               {/* Studio Address */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
+                <h2
+                  style={sansStyle}
+                   className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                >
                   Studio
                 </h2>
                 <div className="flex items-center gap-3 text-[#2B2623]">
                   <FiMapPin className="text-[#C2A677] text-sm shrink-0" />
-                  <p style={{ ...serifStyle, fontStyle: "italic" }} className="text-xl md:text-2xl leading-none">
-                    14 Fue de Sévigné, 75004 Paris
+                  <p
+                    style={{ ...serifStyle }}
+                    className="text-xl mt-2 italic text-[#6e605b]"
+                  >
+                    14 Rue de Sévigné, 75004 Paris
                   </p>
                 </div>
               </div>
 
               {/* Telephone */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
+                <h2
+                  style={sansStyle}
+                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                >
                   By Telephone
                 </h2>
-                <a 
-                  href="tel:+33142780000" 
+                <a
+                  href="tel:+33142780000"
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
                 >
                   <FiPhone className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
-                  <span style={{ ...serifStyle, fontStyle: "italic" }} className="text-xl md:text-2xl leading-none">
+                  <span
+                    style={{ ...serifStyle }}
+                    className="text-xl mt-2 italic text-[#6e605b]"
+                  >
                     +33 1 42 78 00 00
                   </span>
                 </a>
@@ -296,44 +354,48 @@ export function ContactFormSection() {
 
               {/* Email */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
+                <h2
+                  style={sansStyle}
+                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                >
                   By Letter
                 </h2>
-                <a 
-                  href="mailto:hello@maisonlior.com" 
+                <a
+                  href="mailto:hello@maisonlior.com"
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
                 >
                   <FiMail className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
-                  <span style={{ ...serifStyle, fontStyle: "italic" }} className="text-xl md:text-2xl leading-none">
-                    hello@maisonlior.com
-                  </span>
+                  <span  style={{ ...serifStyle }}
+                    className="text-xl mt-2 italic text-[#6e605b]">hello@maisonlior.com</span>
                 </a>
               </div>
 
               {/* Instagram */}
               <div>
-                <h2 style={sansStyle} className="text-[9px] tracking-[0.25em] text-gold uppercase mb-2.5 font-medium">
+                <h2
+                  style={sansStyle}
+                  className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                >
                   Follow
                 </h2>
-                <a 
-                  href="https://instagram.com/maisonlior" 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href="https://instagram.com/maisonlior"
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
                 >
                   <FiInstagram className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
-                  <span style={{ ...serifStyle, fontStyle: "italic" }} className="text-xl md:text-2xl leading-none">
+                  <span
+                    style={{ ...serifStyle }}
+                    className="text-xl mt-2 italic text-[#6e605b]"
+                  >
                     @maisonlior
                   </span>
                 </a>
               </div>
-
             </div>
-
           </div>
-
         </motion.div>
-        
       </div>
     </section>
   );

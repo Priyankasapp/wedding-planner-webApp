@@ -16,7 +16,7 @@
   --color-sage: lab(67.9473% -8.3749 9.48415);
 
   /* Utility Colors */
-  --color-muted-foreground: lab(41.8702% 5.24409 5.0228);
+  --color-muted-foreground: lab(41.8702% 5.24409 5.0228)
   --color-luxury-border: lab(86.1203% 1.30636 6.783);
   --color-destructive: lab(45.9853% 56.8958 34.8481);
   --color-foreground: #2F231F;

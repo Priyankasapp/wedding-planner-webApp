@@ -121,7 +121,7 @@ export function ContactFAQ() {
                         <div className="pb-8 pr-8">
                           <p
                             style={sansStyle}
-                            className="text-[#795757] text-xs md:text-sm leading-relaxed font-light opacity-90 max-w-2xl"
+                            className="text-[#6e605b] text-xs md:text-sm leading-relaxed font-light opacity-90 max-w-2xl"
                           >
                             {item.answer}
                           </p>

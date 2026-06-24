@@ -63,7 +63,7 @@ const ProjectStorySection = ({
             {/* Detailed Body Copy Narrative */}
             <p 
               style={sansStyle} 
-              className="text-[#795757] text-sm md:text-base leading-relaxed tracking-wide font-light max-w-3xl opacity-90"
+              className="text-[#6e605b] text-sm md:text-base leading-relaxed tracking-wide font-light max-w-3xl opacity-90"
             >
               {storyText}
             </p>

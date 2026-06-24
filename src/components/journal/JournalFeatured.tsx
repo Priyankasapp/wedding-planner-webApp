@@ -23,7 +23,7 @@ const journalFeaturedPost: JournalPost = {
   title: "The Quiet Luxury of Restraint",
   excerpt: "Why the most memorable weddings are often the ones that whisper.",
   readTime: "6 MIN",
-  image: postImg1, // The tablescape candle setting image from your screenshot
+  image: postImg1,
 };
 
 const fadeUpVariants: Variants = {
@@ -37,7 +37,7 @@ const fadeUpVariants: Variants = {
 
 const imageZoomVariants: Variants = {
   hover: {
-    scale: 1.04,
+    scale: 1.02, // Kept subtle to maintain the elegant luxury feel
     transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] },
   },
 };
@@ -56,8 +56,8 @@ export function JournalFeatured() {
   const post = journalFeaturedPost;
 
   return (
-    <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section className="bg-[#FAF6EE] text-[#2B2623] pt-12 pb-24 lg:pb-32 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         
         {/* Main Post Grid Layout */}
         <motion.div
@@ -65,43 +65,42 @@ export function JournalFeatured() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={fadeUpVariants}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 gap-x-12 lg:gap-x-16 items-center w-full"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-center w-full"
         >
           
-          {/* Left Column: Post Cover Image Frame (Spans 6 out of 12 columns) */}
+          {/* Left Column: Post Cover Image (Spans 6 out of 12 columns) */}
           <motion.div
             whileHover="hover"
-            className="w-full lg:col-span-6 overflow-hidden rounded-sm aspect-[4/3] cursor-pointer relative group"
+            className="w-full lg:col-span-6 overflow-hidden aspect-[4/3] cursor-pointer relative"
           >
             <Link to={`/journal/${post.slug}`} className="block w-full h-full">
               <motion.img
                 variants={imageZoomVariants}
                 src={post.image}
                 alt={post.title}
-                className="w-full h-full object-cover object-center shadow-[0_4px_25px_rgba(0,0,0,0.02)]"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.01] transition-colors duration-500 pointer-events-none" />
             </Link>
           </motion.div>
 
-          {/* Right Column: Text Content Block (Spans 5 out of 12 columns with 1-column layout gap) */}
-          <div className="w-full lg:col-span-5 lg:col-start-8 flex flex-col justify-center">
+          {/* Right Column: Text Content Block (Spans 6 out of 12 columns) */}
+          <div className="w-full lg:col-span-6 flex flex-col justify-center ">
             
             {/* Category and Date row */}
             <div
               style={sansStyle}
-              className="text-[10px] tracking-[0.25em] text-[#C2A677] uppercase mb-4 flex items-center gap-2.5 font-medium"
+              className="text-[11px] tracking-[0.25em] text-[#C2A677] uppercase mb-4 flex items-center gap-1 font-medium"
             >
-              <span className="text-gold">{post.category}</span>
-              <span className="opacity-40 text-gold">—</span>
-              <span className="text-[#795757]">{post.date}</span>
+              <span>{post.category}</span>
+              <span className="opacity-40">—</span>
+              <span className="text-[#8C827A]">{post.date}</span>
             </div>
 
             {/* Post Title */}
-            <Link to={`/journal/${post.slug}`} className="group inline-block">
+            <Link to={`/journal/${post.slug}`} className="group inline-block mb-4">
               <h2
                 style={serifStyle}
-                className="text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.15] text-[#352021] tracking-wide mb-5 group-hover:text-[#B2964D] transition-colors duration-300 font-light"
+                className="text-4xl md:text-5xl lg:text-5xl leading-[1.2] text-[#2B2623] tracking-wide font-light transition-colors duration-300"
               >
                 {post.title}
               </h2>
@@ -110,7 +109,7 @@ export function JournalFeatured() {
             {/* Excerpt / Subheading description */}
             <p
               style={sansStyle}
-              className="text-[#795757] text-sm md:text-base leading-relaxed mb-8 font-light max-w-md opacity-90"
+              className="text-[#6E645E] text-base md:text-lg leading-relaxed mb-8 font-light max-w-xl opacity-90"
             >
               {post.excerpt}
             </p>
@@ -121,17 +120,17 @@ export function JournalFeatured() {
                 to={`/journal/${post.slug}`}
                 style={sansStyle}
                 className="
-                  inline-flex items-center gap-2.5
-                  text-[10px] font-normal uppercase tracking-[0.25em] text-gold
+                  inline-flex items-center gap-2
+                  text-[11px] font-medium uppercase tracking-[0.25em] text-[#C2A677]
                   hover:text-[#2B2623] transition-colors duration-300 group
                 "
               >
-                Read
-                <span className="text-[#8B7A72] opacity-50 font-light">—</span>
-                <span className="text-[#352021] group-hover:text-[#2B2623] transition-colors duration-300">
+                <span>Read</span>
+                <span className="text-[#8C827A] opacity-40 font-light">•</span>
+                <span className="text-[#6E645E]">
                   {post.readTime}
                 </span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-xs">
+                <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs ml-0.5">
                   ↗
                 </span>
               </Link>
