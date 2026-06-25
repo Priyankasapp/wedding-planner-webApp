@@ -53,10 +53,12 @@ const Footer = () => {
             <p className="text-gold uppercase tracking-[6px] text-xs">
               Maison Lior
             </p>
-
-            <h3 className="font-serif text-2xl sm:text-3xl mt-4 sm:mt-6 leading-tight">
-              Letters from the atelier — once a season, never more.
-            </h3>
+<h3
+  style={{ fontFamily: '"Cormorant Garamond", serif' }}
+  className="text-3xl mt-4 leading-tight font-light"
+>
+  Letters from the atelier — once a season, never more.
+</h3>
 
             <div className="mt-6 sm:mt-8 flex border-b border-white/20 pb-3">
               <label htmlFor="newsletter-email" className="sr-only">
@@ -82,12 +84,12 @@ const Footer = () => {
             <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
               {["Our Story", "Services", "Portfolio", "Journal"].map((item) => (
                 <li key={item}>
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    className="hover:text-[#C6A15B] transition text-sm sm:text-base inline-block"
-                  >
-                    {item}
-                  </a>
+                <a
+  href={`/${item.toLowerCase()}`}
+  className="font-normal tracking-wide text-[#E2D8C9] hover:text-[#C6A15B] transition text-sm sm:text-base inline-block"
+>
+  {item}
+</a>
                 </li>
               ))}
             </ul>

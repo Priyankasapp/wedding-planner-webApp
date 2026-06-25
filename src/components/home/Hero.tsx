@@ -58,21 +58,21 @@ const Hero = () => {
 
           <h1
 
-           style={{ ...serifStyle, fontWeight: 400 }}
+           style={{ ...serifStyle, fontWeight: 300 }}
             className="
               font-serif
               text-white
               text-5xl
               sm:text-6xl
               md:text-7xl
-              lg:text-7xl
-              leading-[1.1]
+              lg:text-[6.5vw]
+              leading-[1]
               font-light
               max-w-10xl
-              tracking-wide
+              
             "
           >
-            Weddings, <span className="italic text-[#B89150] font-normal">composed</span> like a <br className="hidden md:inline" /> love letter.
+            Weddings, <span className="italic text-[#B89150] font-normal">composed</span> like a love letter.
           </h1>
 
           <div className="flex flex-wrap gap-5 mt-12 items-center">
