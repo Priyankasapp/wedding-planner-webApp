@@ -11,28 +11,40 @@ import gridImg4 from "../../assets/images/photo_4.jpg";
 import gridImg5 from "../../assets/images/photo_5.jpg";
 
 
-// 1. Centralized Editorial Data Fully Synced with JournalGrid Slugs
+// 1. Define the shared editorial body content ONCE (including the quote for all pages)
+const sharedArticleBody = {
+  paragraphs: [
+    "There is a question we ask every couple in our first meeting: what do you want your guests to feel when they walk in? The answers are almost never about a centerpiece or a color. They are about a memory, a holiday, a grandparent's kitchen, a song that played in a car twenty years ago.",
+    "We build celebrations backwards from those answers. The flowers come later, and they come naturally, because the feeling has already been decided. A wedding designed in this order — feeling first, finishes second — has a quality that no amount of budget can buy: it feels inevitable."
+  ],
+  sections: [
+    {
+      heading: "On restraint",
+      text: "The temptation, especially with a generous budget, is to fill every surface. But the most luxurious weddings we have ever designed have all shared one quality: they breathe. There are pauses. There are empty corners."
+    },
+    { 
+      quote: "The most luxurious thing in any room is space." 
+    },
+    {
+      heading: "On trust",
+      text: "We accept only twelve weddings per year. It means that when you hire us, you receive the entire attention of the studio. You also receive our honesty: if a vendor isn't right, we will say so."
+    }
+  ]
+};
+
+// 2. Centralized Editorial Data leveraging the shared content seamlessly
 const journalDatabase = {
-  "planning-a-destination-wedding-without-losing-yourself": {
+  "planning-a-destination-wedding": {
     category: "Guides",
     date: "March 2026",
-    readTime: "8 min",
+    readTime: "10 min",
     title: "Planning a Destination Wedding Without Losing Yourself",
-    subtitle: "A modern guide to keeping your peace and creative balance while planning across scenic international borders.",
+    subtitle: "Twelve gentle principles we share with every couple before they board the plane.",
     image: gridImg1,
     imageAlt: "Destination wedding altar overview overlooking the ocean sunset",
-    paragraphs: [
-      "Planning a celebration from thousands of miles away can feel abstract. The key is establishing local production roots early. Trusting regional textures, native floral landscapes, and seasonal Mediterranean lighting structures preserves your peace.",
-      "Rather than forcing external materials onto a pristine landscape, let the geography direct your finishes. It creates a seamless narrative loop for your arriving guests."
-    ],
-    sections: [
-      {
-        heading: "Logistics over looks",
-        text: "Design components are empty without functional structural backup. Micro-coordinate guest transport structures and culinary timing metrics before curating tabletop selections."
-      }
-    ]
+    ...sharedArticleBody
   },
-  "florals-that-feel-like-a-garden-not-a-showroom": {
+  "florals-that-feel-like-a-garden": {
     category: "Design",
     date: "April 2026",
     readTime: "10 min",
@@ -40,33 +52,17 @@ const journalDatabase = {
     subtitle: "A conversation with our lead floral designer on wildness, asymmetry, and trust.",
     image: gridImg2,
     imageAlt: "Organic wild floral design compositions",
-    paragraphs: [
-      "When flora is arranged too perfectly, it loses its heartbeat. We approach floral design as an extension of the local environment, letting branches bend how they naturally grew and prioritizing asymmetry over rigid round structures.",
-      "The secret lies in the spaces between the flowers. Allowing air into the installation gives each bloom room to tell its own dynamic seasonal story."
-    ],
-    sections: [
-      {
-        quote: "Let nature speak through its imperfections; that is where luxury hides."
-      }
-    ]
+    ...sharedArticleBody
   },
-  "a-brides-letter-to-herself-the-morning-of": {
+  "a-brides-letter-to-herself": {
     category: "Inspiration",
     date: "December 2025",
     readTime: "5 min",
     title: "A Bride's Letter to Herself the Morning Of",
-    subtitle: "A meditative moment of complete stillness captured before the celebratory chaos gracefully unfolds.",
+    subtitle: "Words to read with coffee in hand, before anyone else is awake.",
     image: gridImg3,
     imageAlt: "Bride preparing in morning sunlight wearing silk attire",
-    paragraphs: [
-      "The quiet moments right before stepping into your dress are incredibly fleeting. This visual and written journal study details the luxury of taking just fifteen solitary minutes alone with your own morning thoughts.",
-      "Write to remember who you were right before this threshold. Keep the sentence structures raw, genuine, and close to your heart."
-    ],
-    sections: [
-      {
-        quote: "Savor the quiet baseline before the symphony starts."
-      }
-    ]
+    ...sharedArticleBody
   },
   "the-rise-of-the-multi-day-celebration": {
     category: "Trends",
@@ -76,16 +72,7 @@ const journalDatabase = {
     subtitle: "Why couples are abandoning the single Saturday in favor of slow, layered weekends.",
     image: gridImg4,
     imageAlt: "Long candlelit outdoor reception feast tables",
-    paragraphs: [
-      "The classic single evening goes by in a flash. Couples are realizing that true connection with their family and guests requires time. By turning a wedding into a curated three-day weekend, you remove the rush.",
-      "From welcome beach bonfires to post-wedding lazy morning pool brunches, a multi-day timeline lets memories settle organically without strict schedule constraints."
-    ],
-    sections: [
-      {
-        heading: "The pacing architecture",
-        text: "The trick to multi-day events is avoiding exhaustion. Alternate high-energy group dinners with expansive periods of free time where guests can explore local areas independently."
-      }
-    ]
+    ...sharedArticleBody
   },
   "real-wedding-elena-marco-at-villa-del-balbianello": {
     category: "Real Weddings",
@@ -95,46 +82,28 @@ const journalDatabase = {
     subtitle: "Three days on Lake Como, cypress lanterns, and the most romantic first dance we've ever witnessed.",
     image: gridImg5,
     imageAlt: "Elena and Marco real wedding at Villa del Balbianello, Lake Como",
-    paragraphs: [
-      "There is a question we ask every couple in our first meeting: what do you want your guests to feel when they walk in? The answers are almost never about a centerpiece or a color. They are about a memory, a holiday, a grandparent's kitchen, a song that played in a car twenty years ago.",
-      "We build celebrations backwards from those answers. The flowers come later, and they come naturally, because the feeling has already been decided. A wedding designed in this order — feeling first, finishes second — has a quality that no amount of budget can buy: it feels inevitable."
-    ],
-    sections: [
-      {
-        heading: "On restraint",
-        text: "The temptation, especially with a generous budget, is to fill every surface. But the most luxurious weddings we have ever designed have all shared one quality: they breathe. There are pauses. There are empty corners."
-      },
-      {
-        quote: "The most luxurious thing in any room is space."
-      },
-      {
-        heading: "On trust",
-        text: "We accept only twelve weddings per year. It means that when you hire us, you receive the entire attention of the studio. You also receive our honesty: if a vendor isn't right, we will say so."
-      }
-    ]
+    ...sharedArticleBody
   },
 };
 
 const JournalDetails = () => {
-  // Grabs the route parameters from the URL slug dynamically
   const { slug } = useParams<{ slug?: string }>(); 
   
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
   };
 
-  // Safe type-guard check. Fallback cleanly to Elena & Marco if no slug matches
   const currentKey = slug && slug in journalDatabase ? (slug as keyof typeof journalDatabase) : "real-wedding-elena-marco-at-villa-del-balbianello";
   const article = journalDatabase[currentKey];
 
   return (
-    <main className="bg-[#FAF8F5] text-[#3B2A24] min-h-screen selection:bg-[#D4B06A]/20 selection:text-[#3B2A24]">
+    <main className="bg-[#FAF8F5] text-[#3B2A24] min-h-screen mt-10 selection:bg-[#D4B06A]/20 selection:text-[#3B2A24]">
       
       {/* Article Header */}
       <header className="max-w-4xl mx-auto px-6 pt-24 pb-12 text-center md:pt-32 md:pb-16">
         <Link 
           to="/journal" 
-          className="uppercase tracking-[4px] text-xs  text-gold  transition-colors duration-300"
+          className="uppercase tracking-[4px] text-xs text-gold transition-colors duration-300"
         >
           ← The Journal
         </Link>
@@ -145,14 +114,15 @@ const JournalDetails = () => {
 
         <h1 
           style={serifStyle}
-          className="text-4xl md:text-6xl font-light leading-tight text-[#3B2A24] max-w-3xl mx-auto"
+          className="text-4xl md:text-6xl font-light leading-snug text-[#3B2A24] max-w-3xl mx-auto"
         >
           {article.title}
         </h1>
 
         <p
-        style={serifStyle} 
-        className="text-base md:text-lg text-[#706053] font-light max-w-xl mx-auto mt-6 leading-relaxed italic">
+          style={serifStyle} 
+          className="text-base md:text-lg text-[#706053] font-light max-w-xl mx-auto mt-6 leading-relaxed italic"
+        >
           {article.subtitle}
         </p>
       </header>
@@ -170,8 +140,9 @@ const JournalDetails = () => {
 
       {/* Dynamic Article Body Content */}
       <article
-      style={serifStyle} 
-      className="max-w-2xl mx-auto px-6 text-base md:text-lg font-light leading-relaxed text-[#54463C] space-y-8 pb-24">
+        style={serifStyle} 
+        className="max-w-2xl mx-auto px-6 text-base md:text-lg font-light leading-relaxed text-[#54463C] space-y-8 pb-24"
+      >
         {article.paragraphs.map((p, index) => (
           <p key={index}>{p}</p>
         ))}
@@ -211,35 +182,20 @@ const JournalDetails = () => {
             Share this piece
           </p>
           <div className="flex items-center gap-6">
-            <a 
-              href="#" 
-              aria-label="Share on Facebook"
-              className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full"
-            >
+            <a href="#" aria-label="Share on Facebook" className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full">
               <FaFacebookF className="w-4 h-4" />
             </a>
-            <a 
-              href="#" 
-              aria-label="Share on X (formerly Twitter)"
-              className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full"
-            >
+            <a href="#" aria-label="Share on X (formerly Twitter)" className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full">
               <FaXTwitter className="w-4 h-4" />
             </a>
-            <a 
-              href="#" 
-              aria-label="Share on Pinterest"
-              className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full"
-            >
+            <a href="#" aria-label="Share on Pinterest" className="text-stone-500 hover:text-[#D4B06A] transition-colors duration-300 p-2 hover:bg-stone-50 rounded-full">
               <FaPinterestP className="w-4 h-4" />
             </a>
           </div>
         </div>
       </article>
 
-      {/* Leave a Thought Section */}
       <LeaveAThought />
-
-      {/* Bottom Continue Reading Component Section */}
       <ContinueReading />
       
     </main>

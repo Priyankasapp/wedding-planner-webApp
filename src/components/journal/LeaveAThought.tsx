@@ -57,7 +57,7 @@ const LeaveAThought = () => {
   };
 
   return (
-    <section className="bg-[#FAF8F5] py-24 px-6 md:px-12 border-t border-stone-100">
+    <section className="bg-champagne/30 py-24 px-6 md:px-12 border-t border-stone-100">
       <div className="max-w-2xl mx-auto text-left">
         {/* Header Section */} 
         <p className="text-xs uppercase tracking-[4px] text-gold mb-3">
@@ -69,7 +69,7 @@ const LeaveAThought = () => {
         >
           Leave a thought.
         </h2>
-        <p className="text-xs md:text-sm text-[#A89276] font-light mb-12">
+        <p className="text-xs md:text-sm text-[#6e605b]  font-light mb-12">
           Thoughts are reviewed before appearing here.
         </p>
 
