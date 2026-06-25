@@ -2,16 +2,20 @@ import { useParams } from "react-router-dom";
 
 import elenaHero from "../../assets/images/photo_5.jpg";
 import sophiaHero from "../../assets/images/photo_4.jpg";
-import gallery1 from "../../assets/images/photo_1.jpg";
+import gallery1 from "../../assets/images/photo_6.jpg";
 import gallery2 from "../../assets/images/photo_2.jpg";
 import img1 from "../../assets/images/photo_3.jpg";
-import img2 from "../../assets/images/photo_11.jpg";
+import img2 from "../../assets/images/photo_10.jpg";
+import img3 from "../../assets/images/photo_11.jpg";
+  
 
 import type { TimelineItem } from "../../components/portfolio/ProjectTimelineSection";
 import ProjectHeroSection from "../../components/portfolio/ProjectHeroSection";
 import ProjectStorySection from "../../components/portfolio/ProjectStorySection";
 import ProjectTimelineSection from "../../components/portfolio/ProjectTimelineSection";
 import ProjectGallerySection from "../../components/portfolio/ProjectGallerySection";
+import PortfolioQuote from "../../components/portfolio/PortfolioQuote";
+import PortfolioNavigation from "../../components/portfolio/PortfolioNavigation";
 
 interface ProjectData {
   title: string;
@@ -25,6 +29,16 @@ interface ProjectData {
   duration: string;
   timeline: TimelineItem[];
   images: string[];
+
+  nextWedding?: {
+    title: string;
+    slug:string;
+  };
+
+  previousWedding?:{
+    title: string;
+    slug: string;
+  }
 }
 
 const projectMockDatabase: Record<string, ProjectData> = {
@@ -39,11 +53,24 @@ const projectMockDatabase: Record<string, ProjectData> = {
     guests: "86 invited",
     duration: "Three days",
     timeline: [
-      { time: "11:00", title: "Bridal preparations", description: "Champagne breakfast and quiet rituals at the villa." },
-      { time: "16:00", title: "Ceremony", description: "Vows under a cypress arch at the water’s edge." },
-      { time: "20:00", title: "Dinner", description: "Six-course tasting menu, candlelit long tables." }
+      { time: "08:00", title: "Bridal preparations", description: "Champagne breakfast and quiet rituals at the villa." },
+      { time: "14:00", title: "Guest arrival", description: "Aperitivo on the terrace, string trio playing." },
+      { time: "16:00", title: "Ceremony", description: "Vows under a cypress arch at the water's edge." },
+       { time: "18:30", title: "Golden hour portraits", description: "Couple shoots along the lakeside paths." },
+        { time: "20:00", title: "Dinner", description: "Six-course tasting menu, candlelit long tables." },
+         { time: "23:00", title: "First dance & celebration", description: "Live band, sparkler send-off at midnight." },
     ],
-    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
+    images: [ gallery2, elenaHero,img1,gallery1,sophiaHero, img2, img3 ],
+     previousWedding:{
+  title:"All Weddings",
+  slug:""
+},
+
+    nextWedding:{
+      title:"Sophia & James",
+      slug:"sophia-james"
+    },
+
   },
   "sophia-james": {
     title: "Sophia & James",
@@ -59,7 +86,15 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "12:00", title: "Pre-wedding pool lunch", description: "Fresh lavender cocktails and organic seasonal bites." },
       { time: "17:00", title: "Chateau vows courtyard", description: "Exchange of rings backed by historic classical masonry." }
     ],
-    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero],
+    previousWedding:{
+  title:"Elena & Marco",
+  slug:"elena-marco"
+},
+    nextWedding:{
+      title:"Amara & Noah",
+      slug:"amara-noah",  
+    },
   },
   // FIX: Converted key to URL slug match format "amara-noah"
   "amara-noah": {
@@ -76,7 +111,15 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "16:30", title: "Cliffside Guest Welcome", description: "Chilled signature mocktails with panoramic volcanic views." },
       { time: "18:00", title: "Sunset Vows", description: "An intimate dynamic exchange right against the horizon line." }
     ],
-    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero],
+    previousWedding: {
+    title: "Sophia & James",
+    slug: "sophia-james",
+  },
+  nextWedding: {
+    title: "Isla & Rhys",
+    slug: "isla-rhys",
+  },
   },
   // FIX: Converted key to URL slug match format "isla-rhys"
   "isla-rhys": {
@@ -93,7 +136,11 @@ const projectMockDatabase: Record<string, ProjectData> = {
       { time: "10:00", title: "Morning Garden Walk", description: "Earl grey tea reception amidst wild estate florals." },
       { time: "14:30", title: "Orangery Ceremony", description: "Exchanging rings under historic crystal chandeliers." }
     ],
-    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero]
+    images: [gallery1, gallery2,img1, img2, elenaHero, sophiaHero],
+    previousWedding: {
+    title: "Amara & Noah",
+    slug: "amara-noah",
+  },
   }
 };
 
@@ -129,6 +176,16 @@ const PortfolioDetails = () => {
 
       {/* 4. Fine Art Portfolio Layout Image Blocks */}
       <ProjectGallerySection images={project.images} />
+
+      {/* Quite  */}
+
+      <PortfolioQuote/>
+
+      {/* navigation section  */}
+     <PortfolioNavigation
+  previousWedding={project.previousWedding}
+  nextWedding={project.nextWedding}
+/>
     </main>
   );
 };
