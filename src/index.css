@@ -3,31 +3,43 @@
 
 @theme {
   /* Font Families */
- --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    
-    --spacing: .25rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-    /* Custom Color Tokens using LAB */
-    --ivory: lab(98.2832% .458986 3.0148);
-    --champagne: lab(91.9334% 1.86053 9.45435);
-    --blush: lab(85.7088% 12.286 6.64362);
-    --sage: lab(67.9473% -8.3749 9.48415);
-    --gold: lab(69.9032% 8.98904 36.664);
-    --espresso: lab(15.1856% 5.32977 5.10403);
- 
-/* Contextual Tokens */
-    --background: var(--ivory);
-    --foreground: var(--espresso);
-    --muted-foreground: lab(41.8702% 5.24409 5.0228);
+  --spacing: 0.25rem;
 
-    body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  /* Brand Colors */
+  --ivory: lab(98.2832% 0.458986 3.0148);
+  --champagne: lab(91.9334% 1.86053 9.45435);
+  --blush: lab(85.7088% 12.286 6.64362);
+  --sage: lab(67.9473% -8.3749 9.48415);
+  --gold: lab(69.9032% 8.98904 36.664);
+  --espresso: lab(15.1856% 5.32977 5.10403);
+
+  /* Contextual Tokens */
+  --background: var(--ivory);
+  --foreground: var(--espresso);
+  --muted-foreground: lab(41.8702% 5.24409 5.0228);
+
+  /* Additional Colors */
+  --color-champagne-40: lab(91.9334% 1.86053 9.45435 / 0.4);
+  --color-gold: var(--gold);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --color-luxury-border: lab(86.1203% 1.30636 6.783);
+  --color-destructive: lab(45.9853% 56.8958 34.8481);
+
+  --color-foreground: #2f231f;
+  --color-ivory: var(--ivory);
+  --color-espresso: var(--espresso);
+  --color-champagne: var(--champagne);
 }
 
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

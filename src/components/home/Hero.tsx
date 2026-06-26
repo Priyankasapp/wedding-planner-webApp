@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import hero from "../../assets/images/photo_1.jpg";
 import { useEffect, useState } from "react";
-
+import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
@@ -74,43 +74,21 @@ const Hero = () => {
           </h1>
 
           <div className="flex flex-wrap gap-5 mt-12 items-center">
-            <Link
-              to="/contact"
-              className="
-                bg-white
-                text-[#2B2623]
-                px-8
-                py-4
-                uppercase
-                tracking-[3px]
-                text-[11px]
-                font-light
-                hover:bg-[#2B2623]
-                hover:text-white
-                transition-all
-                duration-300
-                rounded-sm
-              "
-            >
-              Begin Your Story
-
-               <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-4 w-4"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-            </Link>
+          
+    <a
+   
+      className="
+        inline-flex items-center gap-3 
+        px-8 py-4 
+        bg-[#fdfcf0] text-[#1a1916] 
+        text-xs tracking-[0.25em] uppercase 
+        hover:bg-[#f2eecb] 
+        transition-colors duration-150
+      "
+    >
+     begin yojur story
+      <ArrowRight className="h-4 w-4" />
+    </a>
 
             <Link
               to="/portfolio"
@@ -136,25 +114,14 @@ const Hero = () => {
       </div>
 
       {/* Bottom Scroll Indicator from screenshot */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
-  <p className="text-[9px] uppercase tracking-[6px] text-white/60 font-light mb-2">
+     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+  <p className="inline-flex items-center gap-3   font-light px-8 py-4 text-white text-foreground text-[11px] tracking-[0.25em] uppercase hover:bg-champagne transition-colors">
     Scroll
+
+  
   </p>
 
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-white/70 rotate-90"
-  >
-   
-  </svg>
+  
 </div>
     </section>
   );

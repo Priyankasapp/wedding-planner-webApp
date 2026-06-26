@@ -1,162 +1,95 @@
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Atelier', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Journal', href: '/journal' },
+  { name: 'Contact', href: '/contact', active: true },
+];
 
-import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-
-const Header = () => {
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
-  };
-  const [open, setOpen] = useState(false);
-  const location = useLocation();
-
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Atelier", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Journal", path: "/journal" },
-    { name: "Contact", path: "/contact" },
-  ];
-
-  const handleEnquireClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setOpen(false);
-    if (location.pathname === "/contact") {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-[#FAF6EE]/90 border-b border-[#EAE3DA] ">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="h-18 flex items-center justify-between">
-          
+    <div className="fixed top-0 left-0 right-0 z-44">
+      <header className=" border-b py-3 backdrop-saturate-[160%] bg-[#FAF6EE]/90">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
-            <h1
-              style={{ ...serifStyle, fontWeight: 400 }}
-              className="font-serif text-2xl text-[#43342F] font-extralight"
-            >
-              Maison Lior
-            </h1>
-            <span className="uppercase tracking-[3px] text-[12px] text-[#B89154] font-light mt-1">
-              Wedding Atelier
-            </span>
-          </Link>
+          <a className="flex flex-col leading-none" href="/">
+            <span className="font-serif text-2xl tracking-tight text-slate-900">Maison Lior</span>
+            <span className="mt-1 text-xs uppercase tracking-[0.2em] text-[#B89154]">Wedding Atelier</span>
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex gap-11 text-sm font-light">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  `transition-colors hover:text-[#C6A15B] ${
-                    isActive ? "text-[#C6A15B]" : "text-[#5E514C]"
-                  }`
-                }
+          <nav className="hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm tracking-wide transition-colors hover:text-[#B89154] ${
+                  link.active ? 'text-[#B89154]' : 'text-slate-600'
+                }`}
               >
-                {item.name}
-              </NavLink>
+                {link.name}
+              </a>
             ))}
           </nav>
 
-          {/* Desktop Enquire Button */}
-          <Link
-            to="/contact"
-            onClick={handleEnquireClick}
-            className="hidden lg:inline-flex items-center border border-[#43342F] px-5 py-2.5 text-[12px] tracking-[0.3em] uppercase hover:bg-[#43342F] hover:text-white transition"
+          {/* Enquire Button */}
+          <a
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-[0.25em] uppercase border border-slate-900 transition-colors hover:bg-slate-900 hover:text-white"
+            href="/contact"
           >
-            ENQUIRE
-          </Link>
+            Enquire
+          </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-[#43342F] p-2 focus:outline-none"
-            onClick={() => setOpen(!open)}
-            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden p-2 text-slate-900" 
+            onClick={() => setIsOpen(true)}
+            aria-label="Open menu"
           >
-            {open ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6"
-              >
-                <path d="M18 6 6 18"></path>
-                <path d="m6 6 12 12"></path>
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6"
-                aria-hidden="true"
-              >
-                <path d="M4 5h16"></path>
-                <path d="M4 12h16"></path>
-                <path d="M4 19h16"></path>
-              </svg>
-            )}
+            <Menu className="h-6 w-6" />
           </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu Dropdown */}
-      <div
-        id="mobile-menu"
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+      {/* Mobile Overlay Menu */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-[60] bg-[#fdfcf8] transition-all duration-300 ease-in-out ${
+          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
         }`}
       >
-        <div className="bg-[#FAF6EE]/95 backdrop-blur-xl border-t border-[#DDD8D2]/40 px-6 py-6">
-          <nav className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `py-3 text-center transition-colors tracking-wide ${
-                    isActive ? "text-[#C6A15B] font-medium" : "text-[#43342F] hover:text-[#C6A15B]"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
-
-            {/* Mobile Enquire Button */}
-            <div className="mt-4">
-              <Link
-                to="/contact"
-                onClick={handleEnquireClick}
-                className="block text-center border border-[#43342F] py-3.5 uppercase tracking-[4px] text-xs hover:bg-[#43342F] hover:text-white transition"
-              >
-                Enquire
-              </Link>
-            </div>
-          </nav>
+        <div className="flex items-center justify-between px-6 py-6">
+          <span className="font-serif text-2xl">Maison Lior</span>
+          <button onClick={() => setIsOpen(false)} aria-label="Close menu">
+            <X className="h-6 w-6" />
+          </button>
         </div>
+        
+        <nav className="flex flex-col items-center justify-center gap-8 mt-16">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              className="font-serif text-4xl text-slate-900 hover:text-amber-600 transition-colors"
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <a 
+            className="mt-8 inline-flex items-center px-8 py-3 text-xs tracking-[0.25em] uppercase border border-slate-900"
+            href="/contact"
+          >
+            Enquire
+          </a>
+        </nav>
       </div>
-    </header>
+    </div>
   );
 };
 
