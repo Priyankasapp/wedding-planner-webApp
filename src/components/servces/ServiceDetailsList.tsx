@@ -105,10 +105,9 @@ const ServiceSections = () => {
     fontWeight: 300,
   };
 
-  return (
-    <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden">
-      
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+  return (// grid lg:grid-cols-12 gap-8 lg:gap-16 items-center py-16 border-t border-border"
+    <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden gap-8 items-center py-16 border-t border-border ">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 ">
         <div className="flex flex-col gap-28 lg:gap-40">
           {servicesData.map((service, index) => {
             const isEven = index % 2 === 0;

@@ -278,7 +278,7 @@ const Process = () => {
 
           <motion.h2
           style={serifStyle}
-            className="text-4xl md:text-6xl  mt-4 text-[#352021]"
+            className="text-5xl md:text-6xl  mt-4 text-[#352021]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -307,7 +307,7 @@ const Process = () => {
 
               <div>
                 {/* Roman Numeral */}
-                <span className="font-serif italic text-xl text-[#C2A677] font-light block mb-5">
+                <span className="font-serif italic text-2xl text-[#C2A677] font-light block mb-5">
                   {step.number}
                 </span>
 
@@ -317,7 +317,7 @@ const Process = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#2B2623]/70 text-[14px] leading-relaxed font-light font-sans max-w-[240px] md:max-w-none">
+                <p className=" text-[#2B2623]/70 text-[14px]  font-light font-sans ">
                   {step.description}
                 </p>
               </div>

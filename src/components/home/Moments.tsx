@@ -60,39 +60,41 @@ const Moments = () => {
   }, []);
 
   return (
-    <section className="bg-[#FAF6EE] py-24 lg:py-32 text-[#2B2623] select-none">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section className="bg-[#FAF6EE] pb-24 lg:pb-32 text-[#2B2623] select-none">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
 
-        {/* Header Area */}
+        {/* Header Block configured exactly matching the Vercel layout geometry */}
         <div 
           ref={headerRef}
-          className={`flex flex-col sm:flex-row sm:justify-between sm:items-end mb-16 transition-all duration-1000 ease-out ${
+          className={`grid grid-cols-1 lg:grid-cols-12 gap-y-6 items-end mb-16 transition-all duration-1000 ease-out ${
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
-          <div>
-            <p style={{ ...sansStyle, fontWeight: 400 }} className="uppercase tracking-[0.3em] text-[10px] sm:text-xs text-[#C2A677]">
-              — Moments
+          <div className="lg:col-span-7">
+            <p style={{ ...sansStyle, fontWeight: 400 }} className="uppercase tracking-[0.35em] text-[0.7rem] text-[#C2A677]">
+              Moments
             </p>
-            <h2 style={serifStyle} className="text-4xl sm:text-5xl md:text-6xl mt-4 text-[#2B2623] tracking-wide">
+            <h2 style={serifStyle} className="text-[2.5rem] md:text-[3.5rem] mt-3 text-[#2B2623] leading-tight font-light">
               From the lens.
             </h2>
           </div>
 
-          <Link
-            to="/"
-            style={sansStyle}
-            className="group text-[10px] sm:text-xs tracking-[0.25em] uppercase border-b border-[#2B2623]/30 pb-1 mt-6 sm:mt-0 hover:text-[#C2A677] hover:border-[#C2A677] transition-all inline-flex items-center gap-1 self-start sm:self-auto"
-          >
-            Follow on Instagram 
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
+          <div className="lg:col-span-5 lg:text-left flex items-end">
+            <Link
+              to="/"
+              style={sansStyle}
+              className="group text-[10px] sm:text-xs tracking-[0.25em] uppercase border-b border-[#2B2623]/20 pb-1.5 hover:text-[#C2A677] hover:border-[#C2A677] transition-all inline-flex  "
+            >
+              Follow on Instagram 
+              <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs font-light">→</span>
+            </Link>
+          </div>
         </div>
 
-        {/* Asymmetric Luxury Grid Layout mimicking Screenshot exactly */}
+        {/* Asymmetric Luxury Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 items-start">
           
-          {/* Column 1: Holds image 0 as a tall banner, and image 7 underneath it */}
+          {/* Column 1 */}
           <div className="flex flex-col gap-4 lg:gap-6 md:col-span-1 col-span-1">
             {moments.filter((_, i) => i === 0 || i === 7).map((moment, idx) => {
               const realIndex = idx === 0 ? 0 : 7;
@@ -114,7 +116,7 @@ const Moments = () => {
             })}
           </div>
 
-          {/* Column 2: Holds image 1 (Square-ish top) and image 4 (Square-ish bottom) */}
+          {/* Column 2 */}
           <div className="flex flex-col gap-4 lg:gap-6 md:col-span-1 col-span-1">
             {moments.filter((_, i) => i === 1 || i === 4).map((moment, idx) => {
               const realIndex = idx === 0 ? 1 : 4;
@@ -134,7 +136,7 @@ const Moments = () => {
             })}
           </div>
 
-          {/* Column 3: Holds image 2 (Square-ish top) and image 5 (Tall dramatic vertical bottom) */}
+          {/* Column 3 */}
           <div className="flex flex-col gap-4 lg:gap-6 md:col-span-1 col-span-1">
             {moments.filter((_, i) => i === 2 || i === 5).map((moment, idx) => {
               const realIndex = idx === 0 ? 2 : 5;
@@ -156,7 +158,7 @@ const Moments = () => {
             })}
           </div>
 
-          {/* Column 4: Holds image 3 (Landscape/Square top) and image 6 (Vertical bottom) */}
+          {/* Column 4 */}
           <div className="flex flex-col gap-4 lg:gap-6 md:col-span-1 col-span-1">
             {moments.filter((_, i) => i === 3 || i === 6).map((moment, idx) => {
               const realIndex = idx === 0 ? 3 : 6;

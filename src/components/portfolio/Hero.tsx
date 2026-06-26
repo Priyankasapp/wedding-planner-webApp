@@ -26,7 +26,7 @@ export function Hero() {
   };
 
   return (
-    <section className="bg-[#FAF6EE] min-h-[60vh] flex mt-10 items-center py-20">
+    <section className="bg-[#FAF6EE] min-h-[60vh] flex mt-5 items-center py-20">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         <motion.div
@@ -47,7 +47,7 @@ export function Hero() {
           <motion.h1
             variants={itemVariants}
             style={serifStyle}
-            className="text-6xl md:text-[5.5rem] leading-[1.05] tracking-wide text-[#2B2623]"
+            className=" text-6xl md:text-8xl  leading-[1.02] tracking-[-0.02em] font-serif font-light "
           >
             A quiet archive of {" "}
             <span

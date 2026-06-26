@@ -43,7 +43,7 @@ export function Hero() {
           <motion.h1
             variants={itemVariants}
             style={serifStyle}
-            className="text-5xl md:text-6xl lg:text-7xl tracking-wide text-[#2B2623] leading-none"
+            className="text-6xl md:text-8xl mt-6 leading-[1.02] tracking-[-0.02em] font-serif font-light "
           >
             Notes from the{" "}
             <span
