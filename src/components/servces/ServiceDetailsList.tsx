@@ -107,6 +107,7 @@ const ServiceSections = () => {
 
   return (
     <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden">
+      
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col gap-28 lg:gap-40">
           {servicesData.map((service, index) => {
