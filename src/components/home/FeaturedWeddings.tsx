@@ -121,7 +121,7 @@ const FeaturedWeddings = () => {
                 {/* Description subhead snippet */}
                 <p 
                   
-                  className="text-muted-foreground text-sm  mt-3 max-w-md"
+                  className="text-[#6e605b] text-sm  mt-3 max-w-md"
                 >
                   {wedding.description}
                 </p>

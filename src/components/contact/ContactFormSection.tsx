@@ -13,13 +13,9 @@ const fadeUpVariants: Variants = {
 };
 
 export function ContactFormSection() {
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-  };
+ 
 
-  const sansStyle = {
-    fontFamily: '"Montserrat", sans-serif',
-  };
+  
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -80,12 +76,12 @@ export function ContactFormSection() {
 
   // Base input styles (removed fixed border color and focus states to dynamic classes below)
   const baseInputClass =
-    "w-full bg-transparent border-b py-3 text-sm text-[#2B2623] outline-none transition-colors duration-300 placeholder-[#BDB1A8]";
+    "w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-serif text-lg italic placeholder:not-italic placeholder:font-sans placeholder:text-base placeholder:text-foreground/40 border-foreground/30 focus:border-gold";
   const labelClass =
-    "font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold";
+    "block  mb-3 text-gold font-sans tracking-[0.35em] uppercase text-[0.7em] font-normal mt-3";
 
   return (
-    <section className="bg-[#FAF6EE] text-[#2B2623] pb-24 lg:pb-32">
+    <section className="bg-[#FAF6EE] text-[#2B2623] pb-24  lg:pb-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         <motion.div
           initial="hidden"
@@ -104,7 +100,7 @@ export function ContactFormSection() {
               <div className="flex flex-col">
                 <label
                   htmlFor="firstName"
-                  style={{ ...sansStyle }}
+                 
                   className={labelClass}
                 >
                   First Name *
@@ -116,7 +112,7 @@ export function ContactFormSection() {
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="Elena"
-                  style={sansStyle}
+                
                   className={`${baseInputClass} ${
                     errors.firstName
                       ? "border-red-400 focus:border-red-400"
@@ -133,7 +129,7 @@ export function ContactFormSection() {
               <div className="flex flex-col">
                 <label
                   htmlFor="partnerName"
-                  style={{ ...sansStyle }}
+                 
                   className={labelClass}
                 >
                   Partner's Name
@@ -145,7 +141,7 @@ export function ContactFormSection() {
                   value={formData.partnerName}
                   onChange={handleChange}
                   placeholder="Marco"
-                  style={sansStyle}
+                 
                   className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
@@ -153,7 +149,7 @@ export function ContactFormSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="flex flex-col">
-                <label htmlFor="email" style={sansStyle} className={labelClass}>
+                <label htmlFor="email" className={labelClass}>
                   Email *
                 </label>
                 <input
@@ -163,7 +159,7 @@ export function ContactFormSection() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  style={sansStyle}
+                 
                   className={`${baseInputClass} ${
                     errors.email
                       ? "border-red-400 focus:border-red-400"
@@ -178,7 +174,7 @@ export function ContactFormSection() {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="phone" style={sansStyle} className={labelClass}>
+                <label htmlFor="phone" className={labelClass}>
                   Phone
                 </label>
                 <input
@@ -188,7 +184,7 @@ export function ContactFormSection() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+44 ..."
-                  style={sansStyle}
+                 
                   className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
@@ -198,7 +194,7 @@ export function ContactFormSection() {
               <div className="flex flex-col">
                 <label
                   htmlFor="dateOrSeason"
-                  style={sansStyle}
+                 
                   className={labelClass}
                 >
                   Wedding Date or Season
@@ -210,7 +206,7 @@ export function ContactFormSection() {
                   value={formData.dateOrSeason}
                   onChange={handleChange}
                   placeholder="June 2027"
-                  style={sansStyle}
+                  
                   className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
@@ -218,7 +214,7 @@ export function ContactFormSection() {
               <div className="flex flex-col">
                 <label
                   htmlFor="estimatedGuests"
-                  style={sansStyle}
+                  
                   className={labelClass}
                 >
                   Estimated Guests
@@ -230,7 +226,7 @@ export function ContactFormSection() {
                   value={formData.estimatedGuests}
                   onChange={handleChange}
                   placeholder="80"
-                  style={sansStyle}
+                  
                   className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
                 />
               </div>
@@ -239,7 +235,7 @@ export function ContactFormSection() {
             <div className="flex flex-col">
               <label
                 htmlFor="celebrationLocation"
-                style={sansStyle}
+                
                 className={labelClass}
               >
                 Where would you like to celebrate?
@@ -251,7 +247,7 @@ export function ContactFormSection() {
                 value={formData.celebrationLocation}
                 onChange={handleChange}
                 placeholder="Lake Como, the Cotswolds, somewhere we haven't dreamt of yet..."
-                style={sansStyle}
+                
                 className={`${baseInputClass} border-[#D8D0C8] focus:border-[#C2A677]`}
               />
             </div>
@@ -259,7 +255,7 @@ export function ContactFormSection() {
             <div className="flex flex-col">
               <label
                 htmlFor="aboutYourDay"
-                style={sansStyle}
+               
                 className={labelClass}
               >
                 Tell us about your day *
@@ -271,7 +267,7 @@ export function ContactFormSection() {
                 onChange={handleChange}
                 placeholder="The feeling, the people, what you've already decided, what you're still wondering..."
                 rows={4}
-                style={sansStyle}
+               
                 className={`${baseInputClass} resize-none ${
                   errors.aboutYourDay
                     ? "border-red-400 focus:border-red-400"
@@ -288,13 +284,25 @@ export function ContactFormSection() {
             <div className="pt-4">
               <button
                 type="submit"
-                style={sansStyle}
-                className="bg-[#2B2623] hover:bg-[#B2964D] text-[#FAF6EE] px-8 py-4 text-xs font-normal tracking-[0.2em] uppercase transition-colors duration-300 flex items-center gap-4 group rounded-sm shadow-sm"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-ivory text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-foreground transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 Send Enquiry
-                <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-                  →
-                </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
               </button>
             </div>
           </form>
@@ -314,15 +322,15 @@ export function ContactFormSection() {
               {/* Studio Address */}
               <div>
                 <h2
-                  style={sansStyle}
-                   className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                 
+                   className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-[#B89154]"
                 >
                   Studio
                 </h2>
                 <div className="flex items-center gap-3 text-[#2B2623]">
                   <FiMapPin className="text-[#C2A677] text-sm shrink-0" />
                   <p
-                    style={{ ...serifStyle }}
+                    
                     className="text-xl mt-2 italic text-[#6e605b]"
                   >
                     14 Rue de Sévigné, 75004 Paris
@@ -333,8 +341,8 @@ export function ContactFormSection() {
               {/* Telephone */}
               <div>
                 <h2
-                  style={sansStyle}
-                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                  
+                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-[#B89154]"
                 >
                   By Telephone
                 </h2>
@@ -344,7 +352,7 @@ export function ContactFormSection() {
                 >
                   <FiPhone className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
                   <span
-                    style={{ ...serifStyle }}
+                    
                     className="text-xl mt-2 italic text-[#6e605b]"
                   >
                     +33 1 42 78 00 00
@@ -355,8 +363,8 @@ export function ContactFormSection() {
               {/* Email */}
               <div>
                 <h2
-                  style={sansStyle}
-                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                  
+                 className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-[#B89154]"
                 >
                   By Letter
                 </h2>
@@ -365,7 +373,7 @@ export function ContactFormSection() {
                   className="flex items-center gap-3 text-[#2B2623] hover:text-[#B2964D] transition-colors group"
                 >
                   <FiMail className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
-                  <span  style={{ ...serifStyle }}
+                  <span  
                     className="text-xl mt-2 italic text-[#6e605b]">hello@maisonlior.com</span>
                 </a>
               </div>
@@ -373,8 +381,8 @@ export function ContactFormSection() {
               {/* Instagram */}
               <div>
                 <h2
-                  style={sansStyle}
-                  className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-gold"
+                  
+                  className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-normal text-[#B89154]"
                 >
                   Follow
                 </h2>
@@ -386,7 +394,7 @@ export function ContactFormSection() {
                 >
                   <FiInstagram className="text-[#C2A677] group-hover:text-[#B2964D] transition-colors text-sm shrink-0" />
                   <span
-                    style={{ ...serifStyle }}
+                   
                     className="text-xl mt-2 italic text-[#6e605b]"
                   >
                     @maisonlior

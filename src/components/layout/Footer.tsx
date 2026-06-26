@@ -40,6 +40,16 @@ const Footer = () => {
     },
   };
 
+   const serifStyle = { 
+    fontFamily: '"Cormorant Garamond", serif',
+    fontWeight: 300 
+  };
+
+  const sansStyle = { 
+    fontFamily: '"ivory"',
+    fontWeight: 300
+  };
+
   return (
     <footer className="bg-espresso text-[#F7F1EB] overflow-hidden">
       <div
@@ -50,11 +60,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12">
           {/* Newsletter */}
           <div className="md:col-span-2 lg:col-span-4">
-            <p className="text-gold uppercase tracking-[6px] text-xs">
+            <p className="text-gold uppercase tracking-[3px] text-xs">
               Maison Lior
             </p>
 
-            <h3 className="font-serif text-2xl sm:text-3xl mt-4 sm:mt-6 leading-tight">
+            <h3
+            style={serifStyle}
+             className=" text-2xl sm:text-3xl  mt-4 sm:mt-6 leading-tight">
               Letters from the atelier — once a season, never more.
             </h3>
 
@@ -79,12 +91,14 @@ const Footer = () => {
           <div className="md:col-span-1 lg:col-span-2">
             <p className="uppercase tracking-[6px] text-xs text-gold">Studio</p>
 
-            <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
+            <ul
+            // style={sansStyle} 
+            className="mt-6 space-y-3 text-sm text-ivory/80">
               {["Our Story", "Services", "Portfolio", "Journal"].map((item) => (
                 <li key={item}>
                   <a
                     href={`/${item.toLowerCase()}`}
-                    className="hover:text-[#C6A15B] transition text-sm sm:text-base inline-block"
+                    className="hover:text-[#C6A15B] text-white/70 text-geremon  sm:space-y-4 transition text-sm inline-block"
                   >
                     {item}
                   </a>
@@ -99,7 +113,9 @@ const Footer = () => {
               Contact
             </p>
 
-            <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base">
+            <div
+            // style={sansStyle} 
+            className="mt-6 space-y-3 text-sm text-ivory/60">
               {[
                 "14 Rue de Sévigné",
                 "75004 Paris, France",
@@ -142,19 +158,13 @@ const Footer = () => {
                 <motion.div
                   key={index}
                   variants={imageItemVariants}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 3,
-                    zIndex: 10,
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
+                  
                   className="aspect-square overflow-hidden rounded-sm shadow-lg"
                 >
                   <img
                     src={img}
                     alt={`Maison Lior ${index + 1}`}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full  object-cover  brightness-75 hover:brightness-100"
                   />
                 </motion.div>
               ))}
@@ -163,12 +173,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 sm:mt-14 lg:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
-          <p className="text-white/50 text-xs sm:text-sm text-center sm:text-left">
+        <div
+        style={sansStyle} 
+        className="mt-16 pt-8 border-t border-ivory/15  flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/50">
+          <p >
             © {year} Maison Lior. All rights reserved.
           </p>
 
-          <p className="uppercase tracking-[3px] sm:tracking-[5px] text-[10px] sm:text-xs text-white/50 text-center">
+          <p className="uppercase tracking-[0.10em] sm:tracking-[0.20em] text-[10px] sm:text-xs text-white/50 text-center">
             Paris · Como · Provence · Santorini
           </p>
         </div>

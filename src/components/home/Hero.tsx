@@ -20,7 +20,6 @@ const Hero = () => {
 
   return (
     <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FAF6EE]">
-
       {/* 1. Pure Background Image Stage */}
       <div className="absolute inset-0 overflow-hidden">
         <img
@@ -29,36 +28,33 @@ const Hero = () => {
           className={`
             h-full w-full object-cover
             transition-transform duration-[4000ms] ease-out
-            ${isLoaded ? 'scale-100' : 'scale-[1.05]'}
+            ${isLoaded ? "scale-100" : "scale-[1.05]"}
           `}
           style={{
-            transformOrigin: 'center 60%', 
+            transformOrigin: "center 60%",
           }}
         />
       </div>
 
       {/* 2. Natural Visual Overlay Layer */}
-      {/* Removed the heavy black gradients. Added a minimal bright overlay just to soften the image slightly like the screenshot */}
-      <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />
+
+      <div className="absolute inset-0 bg-black/40 mix-blend-multiply" />
 
       {/* 3. Content Layout Layer */}
-      {/* Moved content to the bottom-left of the screen to precisely match the screenshot placement */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-end pb-2 md:pb-32">
+
+      <div className="relative z-0 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-end pb-24 md:pb:48">
         <div
           className={`
             transition-all duration-[1500ms] ease-out
-            ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
           `}
         >
-        
-          <p 
-          className="uppercase tracking-[6px] text-[#B89150] text-[10px] md:text-xs mb-6 font-medium mix-blend-difference">
+          <p className="uppercase tracking-[6px] text-[#B89150] text-[10px] md:text-xs mb-6 font-medium mix-blend-difference">
             Wedding Atelier · Est. 2008
           </p>
 
           <h1
-
-           style={{ ...serifStyle, fontWeight: 400 }}
+            style={{ ...serifStyle, fontWeight: 400 }}
             className="
               font-serif
               text-white
@@ -72,7 +68,9 @@ const Hero = () => {
               tracking-wide
             "
           >
-            Weddings, <span className="italic text-[#B89150] font-normal">composed</span> like a <br className="hidden md:inline" /> love letter.
+            Weddings,{" "}
+            <span className="italic text-[#B89150] font-normal">composed</span>{" "}
+            like a <br className="hidden md:inline" /> love letter.
           </h1>
 
           <div className="flex flex-wrap gap-5 mt-12 items-center">
@@ -95,6 +93,23 @@ const Hero = () => {
               "
             >
               Begin Your Story
+
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
             </Link>
 
             <Link
@@ -121,12 +136,26 @@ const Hero = () => {
       </div>
 
       {/* Bottom Scroll Indicator from screenshot */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:block">
-        <p className="text-[9px] uppercase tracking-[6px] text-white/60 font-light">
-          Scroll
-        </p>
-      </div>
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+  <p className="text-[9px] uppercase tracking-[6px] text-white/60 font-light mb-2">
+    Scroll
+  </p>
 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-white/70 rotate-90"
+  >
+   
+  </svg>
+</div>
     </section>
   );
 };

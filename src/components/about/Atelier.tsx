@@ -63,20 +63,15 @@ const Atelier = () => {
             style={{ transitionDelay: '0ms' }}
           >
             {/* Kicker styled with Montserrat */}
-            {/* <p 
-              style={{ ...sansStyle, fontWeight: 400 }} 
-              className="text-xs  tracking-[0.25em] text-gold uppercase mb-6"
-            >
-              — THE ATELIER
-            </p>  */}
+          
             <SectionKicker title='THE ATELIER'/>
 
             {/* Elegant Display Heading */}
             <h1 
               style={serifStyle} 
-              className="text-5xl md:text-6xl lg:text-7xl text-[#2B2623] leading-[1.1] tracking-wide">
-              An atelier of <br />
-             <span className="italic text-[#C2A677] mr-2">
+              className="text-5xl md:text-6xl lg:text-7xl text-[#2B2623] leading-[1.2] tracking-[2px]">
+              An atelier of {" "}
+             <span className="italic text-[#C2A677] text-gold mr-2">
                 attentive
               </span> {" "}
               design.
@@ -94,7 +89,7 @@ const Atelier = () => {
           >
             <p 
               style={sansStyle} 
-              className="text-sm md:text-base leading-[1.7] text-[#2B2623]/70 font-light max-w-md lg:max-w-[420px]"
+              className=" leading-[1.7] text-[#2B2623]/70 font-light max-w-lg lg:max-w-[420px]"
             >
               Founded in 2008 by Lior Amari in a quiet Parisian courtyard, 
               Maison Lior is built on a single conviction: that a wedding 

@@ -26,7 +26,7 @@ const journalGridPosts: GridPost[] = [
     date: "MARCH 2026",
     title: "Planning a Destination Wedding Without Losing Yourself",
     excerpt: "Twelve gentle principles we share with every couple before they board the plane.",
-    image: gridImg1, // Floral arch sunset
+    image: gridImg1, // Floral arch sunse
   },
   {
     id: "garden-florals",

@@ -84,7 +84,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-champagne-40 py-24 lg:py-32 text-[#2B2623]">
+    <section className="bg-champagne-40 py-27 lg:py-32 text-[#2B2623]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* Heading Area */}
@@ -109,13 +109,13 @@ const Services = () => {
 
             <motion.h2 
               style={{...serifStyle}}
-              className="text-xl md:text-5xl leading-[1.05] tracking-wide mt-5"
+              className="display text-5xl md:text-6xl mt-4 mb-6 max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Services tailored to your <br /> story.
+              Services tailored to your story.
             </motion.h2>
           </div>
 
@@ -137,7 +137,7 @@ const Services = () => {
                 pb-1
                 transition-all
                 duration-300
-                ml-2"
+                ml-2 " 
             >
               
               All Services
@@ -162,11 +162,11 @@ const Services = () => {
               transition={{ duration: 0.3 }}
             >
               {/* Card Image Wrapper wrapped inside Link anchor context */}
-              <Link to={service.path} className="block overflow-hidden relative rounded-sm shadow-sm cursor-pointer">
+              <Link to={service.path} className="block overflow-hidden relative  shadow-sm cursor-pointer">
                 <motion.img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-[450px] object-cover object-center"
+                  className="w-full h-[600px] object-cover object-centers "
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 />
@@ -195,7 +195,7 @@ const Services = () => {
                 <Link to={service.path} className="inline-block group-hover:text-[#B2964D] transition-colors duration-300">
                   <h3 
                     style={serifStyle}
-                    className="mt-2 text-xl lg:text-2xl text-[#2B2623] tracking-wide inherit-color hover:text-gold"
+                    className="mt-2 text-2xl lg:text-2xl text-[#2B2623] tracking-wide inherit-color hover:text-gold"
                   >
                     {service.title} 
                   </h3>
@@ -203,7 +203,7 @@ const Services = () => {
 
                 <p 
                   style={sansStyle}
-                  className="text-sm text-muted-foreground mt-3 leading-relaxed"
+                  className="text-sm text-[#808080] mt-3 leading-relaxed "
                 >
                   {service.description}
                 </p>
