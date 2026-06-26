@@ -1,82 +1,76 @@
-import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
-import { divIcon } from "leaflet";
-import { motion } from "framer-motion";
-import { renderToStaticMarkup } from "react-dom/server";
-import { FiMapPin } from "react-icons/fi";
+// or use simple text strings if you prefer
 
-// Paris, 4e Arrondissement Studio coordinates
-const STUDIO_COORDINATES: [number, number] = [48.8562, 2.3614];
+import { useState } from "react";
 
-// Custom luxury pin marker setup
-const customMarkerIcon = divIcon({
-  html: renderToStaticMarkup(
-    <div className="relative flex items-center justify-center w-10 h-10 bg-[#2B2623] rounded-full border-2 border-[#FAF6EE] shadow-lg">
-      <FiMapPin className="text-[#FAF6EE] text-lg" />
-      <div className="absolute -bottom-1.5 w-3 h-3 bg-[#2B2623] rotate-45 border-r border-b border-[#FAF6EE]" />
-    </div>
-  ),
-  className: "custom-div-icon",
-  iconSize: [40, 40],
-  iconAnchor: [20, 40],
-});
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-export function ContactMap() {
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-    fontStyle: "italic",
-  };
+const faqData: FAQItem[] = [
+  { question: "How far in advance should we book?", answer: "Detail goes here..." },
+  { question: "Do you travel internationally?", answer: "Detail goes here..." },
+  { question: "What is your typical investment?", answer: "Detail goes here..." },
+  { question: "Do you offer partial planning?", answer: "Detail goes here..." },
+];
 
-  const sansStyle = {
-    fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300,
-  };
+export default function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#FAF6EE] pb-24 lg:pb-32 w-full">
+    <section className="bg-[var(--ivory)] text-[var(--foreground)] pb-24 lg:pb-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, margin: "-40px" }}
-          className="w-full h-[450px] md:h-[550px] rounded-sm overflow-hidden border border-[#D8D0C8]/40 shadow-[0_8px_30px_rgba(0,0,0,0.02)] relative z-10"
-        >
-          <MapContainer
-            center={STUDIO_COORDINATES}
-            zoom={15}
-            zoomControl={false} // Turn off default left-side control layout
-            touchZoom={true}    // Enables natural mobile pinch gestures
-            doubleClickZoom={true}
-            scrollWheelZoom={false} // Keeps scrolling the page smooth unless clicked
-            className="w-full h-full"
-          >
-            {/* High quality map layout tile layer configuration */}
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            
-            {/* Repositioned Zoom Control explicitly to the top right */}
-            <ZoomControl position="topright" />
+        
+        {/* EYEBROW HEADER */}
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-4 h-[1px] bg-[var(--gold)] opacity-60"></span>
+          <span className="font-sans tracking-[0.35em] uppercase text-[0.7rem] font-light text-[var(--gold)]">
+            Frequently Asked
+          </span>
+        </div>
 
-            {/* Studio location pinpoint drops */}
-            <Marker position={STUDIO_COORDINATES} icon={customMarkerIcon}>
-              <Popup className="custom-luxury-popup">
-                <div className="p-2 text-center">
-                  <h3 style={serifStyle} className="text-lg text-[#2B2623] font-normal mb-0.5">
-                    Maison Lior
-                  </h3>
-                  <p style={sansStyle} className="text-[10px] uppercase tracking-wider text-[#C2A677]">
-                    Wedding Atelier
+        {/* MAIN HEADING */}
+        <h2 className="font-serif text-[2.5rem] md:text-[3.5rem] font-light italic leading-tight text-[var(--foreground)]/90 tracking-wide mb-16">
+          Questions, gently answered.
+        </h2>
+
+        {/* ACCORDION LIST */}
+        <div className="w-full border-t border-[var(--foreground)]/10">
+          {faqData.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div 
+                key={index} 
+                className="border-b border-[var(--foreground)]/10"
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex justify-between items-center py-7 text-left group"
+                >
+                  <span className="font-serif text-lg md:text-xl font-light text-[var(--foreground)]/80 group-hover:text-[var(--gold)] transition-colors duration-300">
+                    {item.question}
+                  </span>
+                  <span className="text-[var(--gold)] opacity-70 text-lg font-light pl-4">
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
+                
+                {/* Smooth Expandable Answer */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-40 pb-6" : "max-h-0"
+                  }`}
+                >
+                  <p className="font-sans text-sm font-light text-[var(--foreground)]/70 max-w-2xl leading-relaxed">
+                    {item.answer}
                   </p>
                 </div>
-              </Popup>
-            </Marker>
-          </MapContainer>
-        </motion.div>
+              </div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );
 }
-
-export default ContactMap;
