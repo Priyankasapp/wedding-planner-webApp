@@ -52,7 +52,7 @@ export function ContactFAQ() {
 
   return (
     <section className="bg-champagne/40 py-32 px-45">
-      <div className="max-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-5xl ">
         
         {/* Left Spacing Grid Block matching editorial indentation */}
         <div className="w-full lg:col-span-8 lg:col-start-4">
@@ -61,7 +61,7 @@ export function ContactFAQ() {
           <div className="mb-14">
             <p
               style={sansStyle}
-              className="text-[10px] tracking-[0.25em] text-[#63502C] uppercase mb-4 font-medium"
+              className="text-[0.7rem] tracking-[0.35em] text-gold uppercase mb-4 font-sans font-normal"
             >
               — FREQUENTLY ASKED
             </p>
@@ -69,7 +69,7 @@ export function ContactFAQ() {
               style={serifStyle}
               className="text-4xl md:text-5xl lg:text-6xl text-[#2B2623] font-light tracking-wide"
             >
-              Questions, gently answered.
+               Questions,gently answered.
             </h2>
           </div>
 
@@ -83,7 +83,7 @@ export function ContactFAQ() {
                   {/* Interactive Header Row */}
                   <button
                     onClick={() => toggleAccordion(index)}
-                    className="w-full py-6 md:py-8 flex justify-between items-center text-left group transition-colors duration-300 focus:outline-none"
+                    className="w-full flex items-center justify-between py-7 text-left gap-6"
                   >
                     <span
                       style={serifStyle}
@@ -91,14 +91,29 @@ export function ContactFAQ() {
                     >
                       {item.question}
                     </span>
-                    
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={24}
+  height={24}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth={2}
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="h-5 w-5 text-[var(--gold)] shrink-0"
+  aria-hidden="true"
+>
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</svg>
                     {/* Plus / Minus Indicator Icon */}
-                    <span 
+                    {/* <span 
                       style={serifStyle} 
                       className="text-xl md:text-2xl text-[#826A3A] font-light pl-4 select-none"
                     >
                       {isOpen ? "−" : "+"}
-                    </span>
+                    </span> */}
                   </button>
 
                   {/* Smooth Collapsible Body Panel */}

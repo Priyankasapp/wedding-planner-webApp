@@ -3,11 +3,7 @@ import hero from "../../assets/images/photo_1.jpg";
 import { useEffect, useState } from "react";
 import { ArrowRight } from 'lucide-react';
 const Hero = () => {
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
-  };
-
+ 
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -19,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FAF6EE]">
+    <section className="relative h-[100svh] min-h-[680px]  w-full overflow-hidden bg-[#FAF6EE]">
       {/* 1. Pure Background Image Stage */}
       <div className="absolute inset-0 overflow-hidden">
         <img
@@ -54,7 +50,7 @@ const Hero = () => {
           </p>
 
           <h1
-            style={{ ...serifStyle, fontWeight: 400 }}
+            
             className="
               font-serif
               text-white
