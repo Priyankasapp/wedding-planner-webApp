@@ -144,7 +144,7 @@ const Footer = () => {
 
           {/* Gallery - Images appear one by one quickly */}
           <div className="md:col-span-2 lg:col-span-3">
-            <p className="uppercase tracking-[6px] text-xs text-[#C6A15B]">
+            <p className="uppercase tracking-[0.35em] text-[0.7rem] text-[var(--gold)] font-normal">
               @MaisonLior
             </p>
 
@@ -176,13 +176,11 @@ const Footer = () => {
         <div
         style={sansStyle} 
         className="mt-16 pt-8 border-t border-ivory/15  flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/50">
-          <p >
+          <p className="font-sans text-[0.8rem]">
             © {year} Maison Lior. All rights reserved.
           </p>
 
-          <p className="uppercase tracking-[0.10em] sm:tracking-[0.20em] text-[10px] sm:text-xs text-white/50 text-center">
-            Paris · Como · Provence · Santorini
-          </p>
+          <p className="uppercase font-sans tracking-[0.35em] font-normal" >Paris · Como · Provence · Santorini</p>
         </div>
       </div>
     </footer>
