@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <a className="flex flex-col leading-none" href="/">
             <span className="font-serif text-2xl tracking-tight text-slate-900">Maison Lior</span>
-            <span className="mt-1 text-xs uppercase tracking-[0.2em] text-[#B89154]">Wedding Atelier</span>
+            <span className="font-sans mt-1 text-[0.7rem] uppercase tracking-[0.35em] text-[var(--gold)] font-normal">Wedding Atelier</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -20,10 +20,12 @@ const Intro = () => {
           >
             <p
               className="
+              font-sans
               uppercase
-              tracking-[5px]
-              text-xs
-             text-[#B89150]
+              tracking-[0.35em]
+              text-[0.7rem]
+             font-normal
+             text-[var(--gold)]
             "
             >
               — A Few Words
