@@ -93,7 +93,7 @@ const Moments = () => {
               className="group text-[10px] sm:text-xs tracking-[0.25em] uppercase border-b border-[#2B2623]/20 pb-1.5 hover:text-[#C2A677] hover:border-[#C2A677] transition-all inline-flex  "
             >
               Follow on Instagram 
-              <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs font-light">→</span>
+              {/* <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs font-light">→</span> */}
             </Link>
           </div>
         </div>

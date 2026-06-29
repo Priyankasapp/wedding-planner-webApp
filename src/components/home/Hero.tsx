@@ -1,3 +1,5 @@
+
+
 import { Link } from "react-router-dom";
 import hero from "../../assets/images/photo_1.jpg";
 import { useEffect, useState } from "react";
@@ -15,22 +17,20 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[100svh] min-h-[680px]  w-full overflow-hidden bg-[#FAF6EE]">
+    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">
       {/* 1. Pure Background Image Stage */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={hero}
-          alt="Maison Lior Wedding Scene"
-          className={`
-            h-full w-full object-cover
-            transition-transform duration-[4000ms] ease-out
-            ${isLoaded ? "scale-100" : "scale-[1.05]"}
-          `}
-          style={{
-            transformOrigin: "center 60%",
-          }}
-        />
-      </div>
+      
+       <img
+  src={hero}
+  alt="Cinematic outdoor wedding at golden hour"
+  className={`
+    absolute inset-0 h-full w-full object-cover
+    transition-transform duration-[4000ms] ease-out
+    ${isLoaded ? "scale-100" : "scale-[1.05]"}
+  `}
+  style={{ transformOrigin: "center 60%" }}
+/>
+     
 
       {/* 2. Natural Visual Overlay Layer */}
 
@@ -38,36 +38,25 @@ const Hero = () => {
 
       {/* 3. Content Layout Layer */}
 
-      <div className="relative z-0 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex items-end pb-24 md:pb:48">
-        <div
-          className={`
-            transition-all duration-[1500ms] ease-out
-            ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-          `}
-        >
-          <p className="uppercase tracking-[6px] text-[#B89150] text-[10px] md:text-xs mb-6 font-medium mix-blend-difference">
+      <div className="relative z-10 mx-auto max-w-[1400px] h-full px-6 lg:px-12 flex flex-col justify-end pb-24 lg:pb-32 ">
+        <div >
+          <p className="font-sans text-gold uppercase text-[0.7rem] text-4xl tracking-[0.35em] text-champagne">
             Wedding Atelier · Est. 2008
           </p>
 
           <h1
             
             className="
-              font-serif
-              text-white
-              text-[12vw]
-              sm:text-6xl
-              md:text-7xl
-              lg:text-[6.5vw]
-              leading-[1]
-              font-light
-              max-w-5xl
+              text-ivory text-[12vw] md:text-[8vw] lg:text-[6.5vw] mt-6 font-serif tracking-[-0.02em] font-light leading-[1.02] max-w-5xl
               
             "
+            
           >
-            {/* display text-ivory text-[12vw] md:text-[8vw] lg:text-[6.5vw] mt-6 max-w-5xl */}
-            Weddings,{" "}
-            <span className="italic text-[#B89150] font-normal">composed</span>{" "}
-            like a <br className="hidden md:inline" /> love letter.
+           <span className="block">
+             Weddings,{" "}
+            <em className="italic text-[#B89154] ">composed</em>{" "}
+            like a love letter.
+           </span>
           </h1>
 
           <div className="flex flex-wrap gap-5 mt-12 items-center">

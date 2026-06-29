@@ -4,7 +4,7 @@ import img1 from "../../assets/images/photo_5.jpg";
 import img2 from "../../assets/images/photo_4.jpg";
 import img3 from "../../assets/images/photo_1.jpg";
 import img4 from "../../assets/images/photo_2.jpg";
-
+import { ArrowRight } from 'lucide-react';
 const weddings = [
   {
     title: "Elena & Marco",
@@ -121,7 +121,7 @@ const FeaturedWeddings = () => {
                 {/* Description subhead snippet */}
                 <p 
                   
-                  className="text-[#6e605b] text-sm  mt-3 max-w-md"
+                  className="text-[#808080] text-sm  mt-3 max-w-md"
                 >
                   {wedding.description}
                 </p>
@@ -147,9 +147,7 @@ const FeaturedWeddings = () => {
     className="inline-flex items-center gap-3 border border-foreground px-8 py-4 uppercase tracking-[0.2em] text-xs transition-all duration-300 hover:bg-[#2B2623] hover:text-[#FAF6EE] rounded-sm"
   >
     <span>The Full Portfolio</span>
-    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-      →
-    </span>
+     <ArrowRight className="h-4 w-4" />
   </Link>
 </div>
 

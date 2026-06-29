@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import { motion, type Transition, type Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+import { ArrowRight } from 'lucide-react';
 const Begin = () => {
  const serifStyle = { 
     fontFamily: '"Cormorant Garamond", serif',
@@ -72,7 +72,7 @@ const Begin = () => {
             >
               <motion.p
                 variants={slideUpWithDelay(0.4)}
-                className="font-sans text-ivory/60 text-sm md:text-base font-light leading-relaxed max-w-sm lg:text-right"
+                className="font-sans text-ivory/80 text-base md:text-base font-light leading-relaxed max-w-sm lg:text-right"
               >
                 We accept a small number of weddings each year. 
                 Tell us about yours.
@@ -113,9 +113,7 @@ const Begin = () => {
                   "
                 >
                   <span>Make an Enquiry</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
+                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </motion.div>
             </motion.div>
