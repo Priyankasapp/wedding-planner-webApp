@@ -76,7 +76,7 @@ const FeaturedWeddings = () => {
           {weddings.map((wedding, index) => (
             <motion.div
               key={index}
-              className={` flex flex-col w-full cursor-pointer ${
+              className={`group flex flex-col w-full cursor-pointer ${
                 index % 2 !== 0 ? "md:mt-28" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -89,11 +89,9 @@ const FeaturedWeddings = () => {
                 <motion.img
                   src={wedding.image}
                   alt={wedding.title}
-                  className="w-full h-full object-cover object-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#2B2623]/0  transition-colors duration-300" />
+                <div className="absolute inset-0 bg-[#2B2623]/0 transition-colors duration-300" />
               </Link>
 
               {/* Text Card Content & Bottom Minimal Arrow Container */}
@@ -102,16 +100,16 @@ const FeaturedWeddings = () => {
                 {/* Gold location tag header row */}
                 <p 
                   style={sansStyle} 
-                  className="text-[var(--gold)] text-[0.7rem] tracking-[0.35em] uppercase font-normal mb-2.5"
+                  className="text-[var(--gold)] text-[0.7rem] tracking-[0.35em] uppercase font-normal mb-2.5 transition-colors duration-300 group-hover:text-[#B2964D]"
                 >
                   {wedding.location}
                 </p>
 
                 {/* Wedding Title context */}
-                <Link to={wedding.path} className="inline-block">
+                <Link to={wedding.path} className="inline-block transition-colors duration-300 group-hover:text-[#B2964D]">
                   <h3 
                     style={{ ...serifStyle, fontStyle: "italic" }}  
-                    className="text-3xl md:text-4xl text-[#2B2623] tracking-wide transition-colors duration-300 "
+                    className="text-3xl md:text-4xl text-[#2B2623] tracking-wide transition-colors duration-300 group-hover:text-[#B2964D]"
                   >
                     {wedding.title}
                     
@@ -120,8 +118,7 @@ const FeaturedWeddings = () => {
 
                 {/* Description subhead snippet */}
                 <p 
-                  
-                  className="text-[#808080] text-sm  mt-3 max-w-md"
+                  className="text-[#808080] text-sm mt-3 max-w-md transition-colors duration-300 group-hover:text-[#2B2623]"
                 >
                   {wedding.description}
                 </p>
@@ -130,7 +127,7 @@ const FeaturedWeddings = () => {
                 <Link 
                   to={wedding.path}
                   style={serifStyle}
-                  className="absolute right-0 bottom-1 text-[#2B2623] opacity-40  text-lg transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="absolute right-0 bottom-1 text-[#2B2623] opacity-40 text-lg transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#B2964D]"
                 >
                   ↗
                 </Link>

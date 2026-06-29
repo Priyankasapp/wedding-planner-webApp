@@ -182,15 +182,15 @@ const Services = () => {
               <div className="mt-6">
                 <p 
                   style={{ ...sansStyle, fontWeight: 400 }}
-                  className="text-gold tracking-[0.15em] text-xs uppercase"
+                  className="text-gold tracking-[0.15em] text-xs uppercase transition-colors duration-300 group-hover:text-[#B2964D]"
                 >
                   {service.number}
                 </p>
 
-                <Link to={service.path} className="inline-block group-hover:text-[#B2964D] transition-colors duration-300">
+                <Link to={service.path} className="inline-block transition-colors duration-300 group-hover:text-[#B2964D]">
                   <h3 
                     style={serifStyle}
-                    className="mt-2 text-2xl lg:text-2xl text-[#2B2623] tracking-wide inherit-color hover:text-gold"
+                    className="mt-2 text-2xl lg:text-2xl text-[#2B2623] tracking-wide transition-colors duration-300 group-hover:text-[#B2964D]"
                   >
                     {service.title} 
                   </h3>
@@ -198,7 +198,7 @@ const Services = () => {
 
                 <p 
                   style={sansStyle}
-                  className="text-sm text-[#808080] mt-3 leading-relaxed "
+                  className="text-sm text-[#808080] mt-3 leading-relaxed transition-colors duration-300 group-hover:text-[#2B2623]"
                 >
                   {service.description}
                 </p>
