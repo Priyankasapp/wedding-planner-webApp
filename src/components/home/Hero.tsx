@@ -57,11 +57,11 @@ const Hero = () => {
               text-5xl
               sm:text-6xl
               md:text-7xl
-              lg:text-7xl
-              leading-[1.1]
+              lg:text-[6.5vw]
+              leading-[1]
               font-light
               max-w-10xl
-              tracking-wide
+              
             "
           >
             Weddings,{" "}
