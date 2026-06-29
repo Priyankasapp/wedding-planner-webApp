@@ -96,7 +96,7 @@ const Investment = () => {
           </p>
           <h2
             style={serifStyle}
-            className="text-4xl md:text-5xl lg:text-6xl text-[#3B2A24] tracking-wide"
+            className="text-5xl md:text-5xl lg:text-6xl text-[#3B2A24] tracking-wide"
           >
             Three ways to begin.
           </h2>

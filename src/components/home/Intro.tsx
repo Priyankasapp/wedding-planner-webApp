@@ -41,7 +41,7 @@ const Intro = () => {
             viewport={{ once: true }}
           >
             <motion.h2
-         sm     style={{ ...serifStyle }}
+              style={{ ...serifStyle }}
               className="
                 font-serif
     text-[#352021]
