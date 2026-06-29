@@ -7,10 +7,7 @@ const Philosophy = () => {
     fontWeight: 300 
   };
 
-  const sansStyle = { 
-    fontFamily: '"Montserrat", sans-serif',
-    fontWeight: 300
-  };
+
 
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -51,7 +48,7 @@ const Philosophy = () => {
             
           {/* Left Column: Heading Block (Spans 5 of 12 columns) */}
           <div 
-            className={`lg:col-span-5 transform transition-all duration-1000 ease-out ${
+            className={`lg:col-span-4 transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
           >
@@ -60,7 +57,7 @@ const Philosophy = () => {
 
             <h2
              
-              className="font-serif text-3xl md:text-3xl lg:text-3xl tracking-wide text-[#2B2623] leading-tight font-light"
+              className="font-serif text-[3.0rem] md:text-[3.0rem] lg:text-[3.0rem] xl tracking-wide text-[#2B2623] leading-tight font-light"
             >
               What we believe.
             </h2>
@@ -68,7 +65,7 @@ const Philosophy = () => {
 
           {/* Right Column: Key Pillars List (Spans 7 of 12 columns) */}
           <div 
-            className={`lg:col-span-7 space-y-10 lg:pt-16 transform transition-all duration-1000 ease-out ${
+            className={`lg:col-span-8 space-y-10 lg:pt-16 transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
             style={{ transitionDelay: '200ms' }}
@@ -83,7 +80,7 @@ const Philosophy = () => {
               </h3>
               <p 
                
-                className='text-[#2B2623]/70 text-base md:text-base leading-relaxed max-w-[580px] font-light font-sans'
+               className='text-[#2B2623]/70 text-base md:text-base leading-relaxed max-w-[580px] font-normal font-light'
               >
                 The most luxurious thing in a room is space. We design with breathing room — empty chairs, quiet corners, candles allowed to burn down.
               </p>
@@ -98,8 +95,8 @@ const Philosophy = () => {
                 Couples first, always
               </h3>
               <p 
-                style={sansStyle}
-                className='text-[#2B2623]/70 text-base md:text-3xl leading-relaxed max-w-[580px] font-normal font-light'
+          
+                className='text-[#2B2623]/70 text-base md:text-base leading-relaxed max-w-[580px] font-normal font-light'
               >
                 Our work is never about us. It is shaped entirely around the two people getting married, and the world they want to gather around them.
               </p>
@@ -114,8 +111,8 @@ const Philosophy = () => {
                 Beauty earned slowly
               </h3>
               <p 
-                style={sansStyle}
-                className='text-[#2B2623]/70 text-base md:text-3xl leading-relaxed max-w-[580px] font-normal font-light'
+               
+                className='text-[#2B2623]/70 text-base md:text-base leading-relaxed max-w-[580px] font-normal font-light'
               >
                 We resist the trend cycle. The aesthetic choices we make are built to feel as right in twenty years as they do on the day.
               </p>
