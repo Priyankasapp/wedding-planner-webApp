@@ -8,7 +8,14 @@ const Hero = () => {
             — Services
           </p>
 
-          <h1 className=" text-6xl md:text-8xl mt-6 leading-[1.02] tracking-[-0.02em] font-serif font-light ">
+          <h1 className="  text-6xl md:text-8xl mt-6 max-w-4xl leading-[0.95] font-serif"
+         
+    >
+
+       {/* style={{font-family: var(--font-serif);
+    letter-spacing: -.02em;
+    font-weight: 300;
+    line-height: 1.02;}} */}
             <span className="block">
               From the first{" "}
               <em className="font-serif italic font-normal text-[#b89154]">
