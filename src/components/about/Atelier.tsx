@@ -3,11 +3,7 @@ import img from "../../assets/images/photo_11.jpg"
 import SectionKicker from '../sections/SectionKicker';
 const Atelier = () => {
  
-  const serifStyle = { 
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300 
-  };
-  
+
   const sansStyle = { 
     fontFamily: '"Montserrat", sans-serif',
     fontWeight: 300
@@ -68,8 +64,8 @@ const Atelier = () => {
 
             {/* Elegant Display Heading */}
             <h1 
-              style={serifStyle} 
-              className="text-6xl md:text-6xl lg:text-6xl text-[#2B2623] leading-[1.2] tracking-[2px]">
+             
+              className="text-6xl font-serif md:text-8xl lg:text-6xl text-[#2B2623] leading-[1.2] tracking-[2px]">
               An atelier of {" "}
              <span className="italic text-[#C2A677] text-gold mr-2">
                 attentive

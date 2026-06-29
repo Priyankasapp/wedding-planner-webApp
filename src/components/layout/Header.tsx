@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -7,7 +8,7 @@ const navLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Journal', href: '/journal' },
-  { name: 'Contact', href: '/contact', active: true },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Header: React.FC = () => {
@@ -26,25 +27,28 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
-                href={link.href}
-                className={`text-sm tracking-wide transition-colors hover:text-[#B89154] ${
-                  link.active ? 'text-[#B89154]' : 'text-slate-600'
-                }`}
+                to={link.href}
+                end={link.href === '/'}
+                className={({ isActive }) =>
+                  `text-sm tracking-wide transition-colors hover:text-[#B89154] ${
+                    isActive ? 'text-[#B89154]' : 'text-slate-600'
+                  }`
+                }
               >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
           {/* Enquire Button */}
-          <a
+          <Link
             className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-xs tracking-[0.25em] uppercase border border-slate-900 transition-colors hover:bg-slate-900 hover:text-white"
-            href="/contact"
+            to="/contact"
           >
             Enquire
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -72,21 +76,27 @@ const Header: React.FC = () => {
         
         <nav className="flex flex-col items-center justify-center gap-8 mt-16">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              className="font-serif text-4xl text-slate-900 hover:text-amber-600 transition-colors"
-              href={link.href}
+              to={link.href}
+              end={link.href === '/'}
+              className={({ isActive }) =>
+                `font-serif text-4xl transition-colors ${
+                  isActive ? 'text-[#B89154]' : 'text-slate-900 hover:text-amber-600'
+                }`
+              }
               onClick={() => setIsOpen(false)}
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a 
+          <Link
             className="mt-8 inline-flex items-center px-8 py-3 text-xs tracking-[0.25em] uppercase border border-slate-900"
-            href="/contact"
+            to="/contact"
+            onClick={() => setIsOpen(false)}
           >
             Enquire
-          </a>
+          </Link>
         </nav>
       </div>
     </div>
