@@ -9,19 +9,23 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "How far in advance should we book?",
-    answer: "Most couples reserve us 12–18 months ahead, though we accept a small number of short-notice weddings each year.",
+    answer:
+      "Most couples reserve us 12–18 months ahead, though we accept a small number of short-notice weddings each year.",
   },
   {
     question: "Do you travel internationally?",
-    answer: "Yes, Roughly half of our weddings take place outside our home studio, primarilly across Europe and Mediterranean.",
+    answer:
+      "Yes, Roughly half of our weddings take place outside our home studio, primarilly across Europe and Mediterranean.",
   },
   {
     question: "What is your typical investment?",
-    answer: "Our full-service celebrations begin at €45,000 in planning fees, with total wedding budgets typically ranging from €150,000 upward.",
+    answer:
+      "Our full-service celebrations begin at €45,000 in planning fees, with total wedding budgets typically ranging from €150,000 upward.",
   },
   {
     question: "Do you offer partial planning?",
-    answer: "We offer a refined month-of coordination package for couples who have planned independently and need a steady hand for execution.",
+    answer:
+      "We offer a refined month-of coordination package for couples who have planned independently and need a steady hand for execution.",
   },
   {
     question: "How many weddings do you take per year?",
@@ -29,12 +33,13 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Can you work with our existing vendors?",
-    answer: "Absolutely. We collaborate with vendors you love and supplement with our trusted network where helpful.",
+    answer:
+      "Absolutely. We collaborate with vendors you love and supplement with our trusted network where helpful.",
   },
 ];
 
 export function ContactFAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); 
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const serifStyle = {
     fontFamily: '"Cormorant Garamond", serif',
@@ -53,10 +58,8 @@ export function ContactFAQ() {
   return (
     <section className="bg-champagne/40 py-32 px-10">
       <div className="mx-auto max-w-5xl ">
-        
         {/* Left Spacing Grid Block matching editorial indentation */}
         <div className="w-full lg:col-span-8 lg:col-start-4">
-          
           {/* Section Header */}
           <div className="mb-14">
             <p
@@ -69,7 +72,7 @@ export function ContactFAQ() {
               style={serifStyle}
               className="text-4xl md:text-5xl lg:text-6xl text-[#2B2623] font-light tracking-wide"
             >
-               Questions,gently answered.
+              Questions,gently answered.
             </h2>
           </div>
 
@@ -85,28 +88,31 @@ export function ContactFAQ() {
                     onClick={() => toggleAccordion(index)}
                     className="w-full flex items-center justify-between py-7 text-left gap-6"
                   >
-                    <span
-                      style={serifStyle}
-                      className="text-lg md:text-xl lg:text-2xl text-[#2B2623] tracking-wide font-light transition-colors duration-300 group-hover:text-[#B2964D]"
+                    {/* <span
+                      
+                      className="text-lg font-serif md:text-2xl lg:text-2xl text-[#2B2623] tracking-wide font-light transition-colors duration-300 group-hover:text-[#B2964D]"
                     >
                       {item.question}
+                    </span> */}
+                    <span className="font-serif text-xl md:text-2xl">
+                      {item.question}
                     </span>
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={24}
-  height={24}
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth={2}
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  className="h-5 w-5 text-[var(--gold)] shrink-0"
-  aria-hidden="true"
->
-  <path d="M5 12h14" />
-  <path d="M12 5v14" />
-</svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-5 w-5 text-[var(--gold)] shrink-0"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="M12 5v14" />
+                    </svg>
                     {/* Plus / Minus Indicator Icon */}
                     {/* <span 
                       style={serifStyle} 
@@ -121,22 +127,29 @@ export function ContactFAQ() {
                     {isOpen && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
-                        animate={{ 
-                          height: "auto", 
+                        animate={{
+                          height: "auto",
                           opacity: 1,
-                          transition: { height: { duration: 0.4, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.3 } }
+                          transition: {
+                            height: { duration: 0.4, ease: [0.25, 1, 0.5, 1] },
+                            opacity: { duration: 0.3 },
+                          },
                         }}
-                        exit={{ 
-                          height: 0, 
+                        exit={{
+                          height: 0,
                           opacity: 0,
-                          transition: { height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.2 } }
+                          transition: {
+                            height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] },
+                            opacity: { duration: 0.2 },
+                          },
                         }}
                         className="overflow-hidden"
                       >
                         <div className="pb-8 pr-8">
                           <p
                             style={sansStyle}
-                            className="text-[#6e605b] text-xs md:text-sm leading-relaxed font-light opacity-90 max-w-2xl"
+                            className="text-muted-foreground leading-relaxed
+                            text-[#6A605B]"
                           >
                             {item.answer}
                           </p>
@@ -148,9 +161,7 @@ export function ContactFAQ() {
               );
             })}
           </div>
-
         </div>
-        
       </div>
     </section>
   );
