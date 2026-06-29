@@ -7,7 +7,7 @@ const Intro = () => {
   };
 
   return (
-    <section className="bg-[#F8F6F2] py-30 lg:py-42">
+    <section className="bg-ivory py-30 lg:py-42">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           {/* Left */}
@@ -75,7 +75,7 @@ const Intro = () => {
               viewport={{ once: true }}
             >
               <motion.span
-                className="inline-block mr-2"
+                className="inline-block mr-2 text-[var(--gold)]"
                 initial={{ opacity: 0, x: -5 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 }}
@@ -83,7 +83,7 @@ const Intro = () => {
               >
                 ——
               </motion.span>
-              Lior Amari, Founder
+              {"  "}Lior Amari, Founder
             </motion.p>
           </motion.div>
         </div>
