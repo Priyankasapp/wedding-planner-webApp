@@ -60,13 +60,13 @@ export function JournalFeatured() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         
         {/* Main Post Grid Layout */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          variants={fadeUpVariants}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-center w-full"
-        >
+ <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: "-60px" }}
+  variants={fadeUpVariants}
+  className="group grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-center w-full"
+>
           
           {/* Left Column: Post Cover Image (Spans 6 out of 12 columns) */}
           <motion.div
@@ -97,19 +97,27 @@ export function JournalFeatured() {
             </div>
 
             {/* Post Title */}
-            <Link to={`/journal/${post.slug}`} className="group inline-block mb-4">
+            <Link to={`/journal/${post.slug}`} className=" inline-block mb-4">
               <h2
-                style={serifStyle}
-                className="text-4xl md:text-5xl lg:text-5xl leading-[1.2] text-[#2B2623] tracking-wide font-light transition-colors duration-300"
-              >
-                {post.title}
-              </h2>
+  style={serifStyle}
+  className="
+    text-4xl md:text-5xl lg:text-5xl
+    leading-[1.2]
+    text-[#2B2623]
+    tracking-wide
+    font-light
+    transition-colors duration-300
+    group-hover:text-[#C2A677]
+  "
+>
+  {post.title}
+</h2>
             </Link>
 
             {/* Excerpt / Subheading description */}
             <p
-              style={sansStyle}
-              className="text-[#6E645E] text-base md:text-lg leading-relaxed mb-8 font-light max-w-xl opacity-90"
+            
+              className="font-sans text-[#6E646E] text-base md:text-lg leading-relaxed mb-8 font-light max-w-xl opacity-90"
             >
               {post.excerpt}
             </p>
@@ -127,10 +135,10 @@ export function JournalFeatured() {
               >
                 <span>Read</span>
                 <span className="text-[#8C827A] opacity-40 font-light">•</span>
-                <span className="text-[#6E645E]">
+                <span className="text-[var(--gold)]">
                   {post.readTime}
                 </span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs ml-0.5">
+                <span className="transition-transform duration-300 group-hover:translate-x-1 text-xs ml-0.5 text[var(--gold)]">
                   ↗
                 </span>
               </Link>

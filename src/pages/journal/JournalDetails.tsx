@@ -108,7 +108,7 @@ const JournalDetails = () => {
           ← The Journal
         </Link>
 
-        <p className="text-xs uppercase tracking-[3px] text-gold mt-8 mb-4">
+        <p className="text-base uppercase tracking-[3px] text-gold mt-8 mb-4">
           {article.category} · {article.date} · {article.readTime}
         </p>
 

@@ -60,7 +60,7 @@ const Moments = () => {
   }, []);
 
   return (
-    <section className="bg-[#FAF6EE] pb-24 lg:pb-32 text-[#2B2623] select-none">
+    <section className="bg-[#FAF6EE] pb-24 lg:pb-32 pt-30 text-[#2B2623] select-none">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
 
         {/* Header Block configured exactly matching the Vercel layout geometry */}
@@ -71,8 +71,15 @@ const Moments = () => {
           }`}
         >
           <div className="lg:col-span-7">
-            <p style={{ ...sansStyle, fontWeight: 400 }} className="uppercase tracking-[0.35em] text-[0.7rem] text-[#C2A677]">
-              Moments
+            <p  className="
+              font-sans
+              uppercase
+              tracking-[0.35em]
+              text-[0.7rem]
+             font-normal
+             text-[var(--gold)]
+            ">
+              — Moments
             </p>
             <h2 style={serifStyle} className="text-[2.5rem] md:text-[3.5rem] mt-3 text-[#2B2623] leading-tight font-light">
               From the lens.

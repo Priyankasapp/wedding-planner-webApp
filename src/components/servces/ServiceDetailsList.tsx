@@ -106,7 +106,7 @@ const ServiceSections = () => {
   };
 
   return (// grid lg:grid-cols-12 gap-8 lg:gap-16 items-center py-16 border-t border-border"
-    <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden gap-8 items-center py-16 border-t border-border ">
+    <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden gap-8 items-center py-16 border-t border-border border-[#E5DDD1] ">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 ">
         <div className="flex flex-col gap-28 lg:gap-40">
           {servicesData.map((service, index) => {
@@ -164,16 +164,16 @@ const ServiceSections = () => {
 
                   {/* Tagline / Sub-description */}
                   <p
-                    style={sansStyle}
-                    className="mt-6 text-muted-foreground leading-relaxed max-w-xl"
+                    
+                    className="mt-6  text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg"
                   >
                     {service.tagline}
                   </p>
 
                   {/* Secondary Body Paragraph */}
                   <p
-                    style={sansStyle}
-                    className="mt-6 text-muted-foreground leading-relaxed max-w-xl"
+                   
+                    className="mt-6 text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg"
                   >
                     {service.description}
                   </p>

@@ -29,7 +29,7 @@ const tiersData: TierCard[] = [
     title: "Atelier",
     description: "Full design and planning for an editorial celebration.",
     priceText: "From €45,000",
-    isDarkHighlighted: true, // This enables the signature inverted dark theme
+    isDarkHighlighted: true, 
     features: [
       "Concept & creative direction",
       "Full vendor curation",
@@ -159,7 +159,7 @@ const Investment = () => {
                       fontStyle: "italic",
                     }}
                     className={`text-2xl tracking-wide mb-8 ${
-                      tier.isDarkHighlighted ? "text-[#E2D4BF]" : "text-[#3B2A24]"
+                      tier.isDarkHighlighted ? "text-[#FFFFFF]" : "text-[#3B2A24]"
                     }`}
                   >
                     {tier.priceText}
@@ -168,7 +168,7 @@ const Investment = () => {
                   {/* Checkbox Feature Blueprint Stack */}
                   <ul className="flex flex-col gap-3.5 mb-12">
                     {tier.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3.5 text-xs lg:text-sm">
+                      <li key={idx} className="flex items-start gap-3.5 text-sm lg:text-base">
                         <span
                           className={`mt-0.5 select-none text-xs ${
                             tier.isDarkHighlighted ? "text-[#C2A677]" : "text-[#C2A677]"

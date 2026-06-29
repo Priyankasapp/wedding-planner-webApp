@@ -69,7 +69,7 @@ const Atelier = () => {
             {/* Elegant Display Heading */}
             <h1 
               style={serifStyle} 
-              className="text-5xl md:text-6xl lg:text-7xl text-[#2B2623] leading-[1.2] tracking-[2px]">
+              className="text-6xl md:text-6xl lg:text-6xl text-[#2B2623] leading-[1.2] tracking-[2px]">
               An atelier of {" "}
              <span className="italic text-[#C2A677] text-gold mr-2">
                 attentive
@@ -89,7 +89,7 @@ const Atelier = () => {
           >
             <p 
               style={sansStyle} 
-              className=" leading-[1.7] text-[#2B2623]/70 font-light max-w-lg lg:max-w-[420px]"
+              className="text-lg leading-[1.8] text-[#2B2623]/70 font-normal max-w-lg lg:max-w-[420px] font-sans"
             >
               Founded in 2008 by Lior Amari in a quiet Parisian courtyard, 
               Maison Lior is built on a single conviction: that a wedding 
@@ -108,7 +108,7 @@ const Atelier = () => {
           }`}
           style={{ transitionDelay: '600ms' }} // Cascades beautifully after the text fades in
         >
-          <div className="w-full h-[100vh] md:h-[105vh] overflow-hidden  shadow-sm">
+          <div className="w-full h-[50vh] md:h-[105vh] overflow-hidden  shadow-sm">
             <img 
               src={img} 
               alt="Maison Lior Atelier Hero" 

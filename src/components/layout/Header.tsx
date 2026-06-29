@@ -15,7 +15,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-44">
-      <header className=" border-b py-3 backdrop-saturate-[160%] bg-[#FAF6EE]/90">
+      <header className=" border-b border-stone-200 py-3 backdrop-saturate-[160%] bg-[#FAF6EE]/90">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <a className="flex flex-col leading-none" href="/">

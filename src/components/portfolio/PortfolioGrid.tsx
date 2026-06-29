@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import { ArrowUpRight } from "lucide-react";
 // Mock image imports (Replace these with your actual portfolio image asset paths)
 import img1 from "../../assets/images/photo_5.jpg";
 import img2 from "../../assets/images/photo_1.jpg";
@@ -26,7 +26,7 @@ const portfolioData: PortfolioItem[] = [
     location: "Lake Como, Italy",
     category: "destination",
     year: "2025",
-    image: img1, // The bride looking towards the sea from the screenshot
+    image: img1, 
   },
   {
     id: "amara-noah",
@@ -80,10 +80,7 @@ const cardVariants: Variants = {
 export function PortfolioGrid() {
   const [activeFilter, setActiveFilter] = useState("ALL");
 
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
-  };
+  
 
   const sansStyle = {
     fontFamily: '"Montserrat", sans-serif',
@@ -113,7 +110,7 @@ export function PortfolioGrid() {
                 onClick={() => setActiveFilter(category)}
                 style={sansStyle}
                 className={`
-                  text-[10px] tracking-[0.2em] uppercase px-4 py-1.5 transition-all duration-300 rounded-[1px] border
+                  px-5 py-2 text-xs tracking-[0.2em] uppercase border transition-colors border-border hover:border-foreground
                   ${
                     isSelected
                       ? "bg-[#33241F] text-[#FAF6EE] border-[#33241F]"
@@ -181,19 +178,21 @@ export function PortfolioGrid() {
                     </div>
 
                     {/* Couple Names */}
-                    <Link to={`/portfolio/${item.slug}`}>
-                      <h3
-                        style={serifStyle}
-                        className="text-2xl lg:text-3xl text-[#352021] tracking-wide hover:text-[#B2964D] transition-colors duration-300 inline-block font-light"
-                      >
-                        {item.couple}
-                      </h3>
-                    </Link>
+                   <Link
+  to={`/portfolio/${item.slug}`}
+  className="group flex items-center justify-between mt-3"
+>
+  <h3 className="font-serif text-3xl md:text-4xl italic transition-colors duration-300 group-hover:text-[#C2A677]">
+    {item.couple}
+  </h3>
+
+  <ArrowUpRight className="h-5 w-5 text-[#2B2623] transition-colors duration-300 group-hover:text-[#C2A677]" />
+</Link>
 
                     {/* Geographical Location */}
                     <span
-                      style={sansStyle}
-                      className="text-sm text-[#6e605b] mt-1 font-light"
+                      
+                      className="text-sm text-[#6e605b] mt-1 font-light font-sans "
                     >
                       {item.location}
                     </span>

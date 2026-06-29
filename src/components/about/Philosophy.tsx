@@ -56,11 +56,11 @@ const Philosophy = () => {
             }`}
           >
             {/* Reusable SectionKicker component */}
-            <SectionKicker title="PHILOSOPHY" className="mb-8" />
+            <SectionKicker title="PHILOSOPHY" className="mb-6" />
 
             <h2
-              style={serifStyle} 
-              className="text-4xl md:text-5xl lg:text-5xl tracking-wide text-[#2B2623] leading-tight"
+             
+              className="font-serif text-3xl md:text-3xl lg:text-3xl tracking-wide text-[#2B2623] leading-tight font-light"
             >
               What we believe.
             </h2>
@@ -82,8 +82,8 @@ const Philosophy = () => {
                 Restraint over spectacle
               </h3>
               <p 
-                style={sansStyle}
-                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
+               
+                className='text-[#2B2623]/70 text-base md:text-base leading-relaxed max-w-[580px] font-light font-sans'
               >
                 The most luxurious thing in a room is space. We design with breathing room — empty chairs, quiet corners, candles allowed to burn down.
               </p>
@@ -99,7 +99,7 @@ const Philosophy = () => {
               </h3>
               <p 
                 style={sansStyle}
-                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
+                className='text-[#2B2623]/70 text-base md:text-3xl leading-relaxed max-w-[580px] font-normal font-light'
               >
                 Our work is never about us. It is shaped entirely around the two people getting married, and the world they want to gather around them.
               </p>
@@ -115,7 +115,7 @@ const Philosophy = () => {
               </h3>
               <p 
                 style={sansStyle}
-                className='text-[#2B2623]/70 text-sm md:text-base leading-relaxed max-w-[580px] font-light'
+                className='text-[#2B2623]/70 text-base md:text-3xl leading-relaxed max-w-[580px] font-normal font-light'
               >
                 We resist the trend cycle. The aesthetic choices we make are built to feel as right in twenty years as they do on the day.
               </p>

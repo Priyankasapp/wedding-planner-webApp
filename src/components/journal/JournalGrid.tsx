@@ -91,10 +91,7 @@ const imageZoomVariants: Variants = {
 };
 
 export function JournalGrid() {
-  const serifStyle = {
-    fontFamily: '"Cormorant Garamond", serif',
-    fontWeight: 300,
-  };
+ 
 
   const sansStyle = {
     fontFamily: '"Montserrat", sans-serif',
@@ -144,14 +141,14 @@ export function JournalGrid() {
                 >
                   <span>{post.category}</span>
                   <span className="opacity-40 font-light">•</span>
-                  <span className="text-[#8B7A72]">{post.date}</span>
+                  <span className="text-[var(--gold)] font-sans tracking-[0.35em] text-[0.7rem] font-normal">{post.date}</span>
                 </div>
 
                 {/* Article Title */}
                 <Link to={`/journal/${post.slug}`} className="inline-block mb-3">
                   <h3
-                    style={serifStyle}
-                    className="text-xl lg:text-2xl leading-[1.25] text-[#2B2623] tracking-wide font-light group-hover:text-[#B2964D] transition-colors duration-300"
+                    
+                    className="text-2xl lg:text-2xl font-serif  font-light group-hover:text-[#B2964D] transition-colors duration-300"
                   >
                     {post.title}
                   </h3>
@@ -160,7 +157,7 @@ export function JournalGrid() {
                 {/* Short Paragraph Description Excerpt */}
                 <p
                   style={sansStyle}
-                  className="text-[#6E615A] text-sm leading-relaxed font-light opacity-90 max-w-[95%]"
+                  className="text-[#6e605b] text-sm leading-relaxed font-light opacity-90 max-w-[95%]"
                 >
                   {post.excerpt}
                 </p>

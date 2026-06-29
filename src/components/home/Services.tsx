@@ -175,12 +175,7 @@ const Services = () => {
                 <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.03] transition-colors duration-300 pointer-events-none" />
                 
                 {/* Graphic absolute number signature overlay */}
-                <span 
-                  style={serifStyle}
-                  className="absolute bottom-4 right-4 text-gold text-7xl select-none pointer-events-none"
-                >
-                  {service.number}
-                </span>
+               
               </Link>
 
               {/* Meta Content Metadata area */}

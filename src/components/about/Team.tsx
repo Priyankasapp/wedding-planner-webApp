@@ -87,8 +87,13 @@ const Team = () => {
         >
           <div>
             <motion.p 
-              style={{ ...sansStyle, fontWeight: 400 }}
-              className="uppercase tracking-[0.25em] text-[#C2A677]"
+              
+              className="font-sans
+              uppercase
+              tracking-[0.35em]
+              text-[0.7rem]
+             font-normal
+             text-[var(--gold)]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -99,7 +104,7 @@ const Team = () => {
 
             <motion.h2 
               style={serifStyle}
-              className="text-[#2B2623] text-4xl md:text-[4.0rem] leading-[1.05] tracking-wide mt-5"
+              className="text-[#2B2623] text-5xl md:text-[4.0rem] leading-[1.05] tracking-wide mt-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -160,8 +165,13 @@ const Team = () => {
 
                 {/* Subtitle / Role Tag */}
                 <p 
-                  style={{ ...sansStyle, fontWeight: 400 }}
-                  className="mt-1.5 text-gold tracking-[0.15em] text-xs uppercase"
+                 
+                  className="font-sans
+              uppercase
+              tracking-[0.40em]
+              text-[0.7rem]
+             font-normal
+             text-[var(--gold)]"
                 >
                   {member.role}
                 </p>
@@ -169,7 +179,7 @@ const Team = () => {
                 {/* Description info */}
                 <p 
                   style={sansStyle}
-                  className="mt-4 text-[#5A5450] text-sm md:text-base leading-relaxed "
+                  className="mt-4 text-[#6e605b] text-sm md:text-base font-light  leading-relaxed "
                 >
                   {member.description}
                 </p>

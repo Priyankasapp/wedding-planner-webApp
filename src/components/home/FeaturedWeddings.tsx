@@ -72,11 +72,11 @@ const FeaturedWeddings = () => {
         </motion.div>
 
         {/* Cards Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-16">
           {weddings.map((wedding, index) => (
             <motion.div
               key={index}
-              className={`group flex flex-col w-full cursor-pointer ${
+              className={` flex flex-col w-full cursor-pointer ${
                 index % 2 !== 0 ? "md:mt-28" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -90,10 +90,10 @@ const FeaturedWeddings = () => {
                   src={wedding.image}
                   alt={wedding.title}
                   className="w-full h-full object-cover object-center"
-                  whileHover={{ scale: 1.03 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 />
-                <div className="absolute inset-0 bg-[#2B2623]/0 group-hover:bg-[#2B2623]/[0.02] transition-colors duration-300" />
+                <div className="absolute inset-0 bg-[#2B2623]/0  transition-colors duration-300" />
               </Link>
 
               {/* Text Card Content & Bottom Minimal Arrow Container */}
@@ -102,7 +102,7 @@ const FeaturedWeddings = () => {
                 {/* Gold location tag header row */}
                 <p 
                   style={sansStyle} 
-                  className="text-[#B89154] text-[10px] tracking-[0.2em] uppercase font-medium mb-2.5"
+                  className="text-[var(--gold)] text-[0.7rem] tracking-[0.35em] uppercase font-normal mb-2.5"
                 >
                   {wedding.location}
                 </p>
@@ -111,7 +111,7 @@ const FeaturedWeddings = () => {
                 <Link to={wedding.path} className="inline-block">
                   <h3 
                     style={{ ...serifStyle, fontStyle: "italic" }}  
-                    className="text-3xl md:text-4xl text-[#2B2623] tracking-wide transition-colors duration-300 group-hover:text-[#B2964D]"
+                    className="text-3xl md:text-4xl text-[#2B2623] tracking-wide transition-colors duration-300 "
                   >
                     {wedding.title}
                     
@@ -130,7 +130,7 @@ const FeaturedWeddings = () => {
                 <Link 
                   to={wedding.path}
                   style={serifStyle}
-                  className="absolute right-0 bottom-1 text-[#2B2623] opacity-40 group-hover:opacity-100 group-hover:text-[#B2964D] text-lg transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="absolute right-0 bottom-1 text-[#2B2623] opacity-40  text-lg transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 >
                   ↗
                 </Link>
