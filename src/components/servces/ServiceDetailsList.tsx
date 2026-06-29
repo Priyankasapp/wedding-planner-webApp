@@ -22,57 +22,72 @@ const servicesData: ServiceBlock[] = [
   {
     number: "01",
     title: "Bridal Assistance",
-    tagline: "Personal styling, fittings, and day-of attention from a dedicated lead.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "Personal styling, fittings, and day-of attention from a dedicated lead.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img1,
   },
   {
     number: "02",
     title: "Catering Curation",
-    tagline: "Menus designed with Michelin-trained chefs and seasonal sourcing.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "Menus designed with Michelin-trained chefs and seasonal sourcing.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img2,
   },
   {
     number: "03",
     title: "Decor & Floral Styling",
-    tagline: "Bespoke design direction with editorial florals and tactile textures.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "Bespoke design direction with editorial florals and tactile textures.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img3,
   },
   {
     number: "04",
     title: "Destination Weddings",
-    tagline: "Curated celebrations in Europe's most romantic estates and coastlines.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "Curated celebrations in Europe's most romantic estates and coastlines.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img4,
   },
   {
     number: "05",
     title: "Entertainment & Music",
-    tagline: "From string quartets to headline DJs — every cue, perfectly timed.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "From string quartets to headline DJs — every cue, perfectly timed.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img5,
   },
   {
     number: "06",
     title: "Full Wedding Planning",
-    tagline: "End-to-end orchestration of every detail, from concept to last dance.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "End-to-end orchestration of every detail, from concept to last dance.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img6,
   },
   {
-    number: "07", 
+    number: "07",
     title: "Photography Coordination",
     tagline: "We pair you with photographers whose eye matches your story.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img7,
   },
   {
-    number: "08", 
+    number: "08",
     title: "Venue Management",
-    tagline: "Sourcing, negotiation, and stewardship of unforgettable settings.",
-    description: "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
+    tagline:
+      "Sourcing, negotiation, and stewardship of unforgettable settings.",
+    description:
+      "Every engagement is custom. We share preliminary direction within two weeks of our discovery call, then iterate until the vision is unmistakably yours.",
     image: img8,
   },
 ];
@@ -90,8 +105,8 @@ const fadeUpVariants: Variants = {
 const imageZoomVariants: Variants = {
   hover: {
     scale: 1.05,
-    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
-  }
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
+  },
 };
 
 const ServiceSections = () => {
@@ -105,10 +120,11 @@ const ServiceSections = () => {
     fontWeight: 300,
   };
 
-  return (// grid lg:grid-cols-12 gap-8 lg:gap-16 items-center py-16 border-t border-border"
-    <section className="bg-[#FAF6EE] text-[#2B2623] py-16 lg:py-24 overflow-hidden gap-8 items-center py-16 border-t border-border border-[#E5DDD1] ">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 ">
-        <div className="flex flex-col gap-28 lg:gap-40">
+  return (
+   
+    <section className=" text-[#2B2623] py-0  overflow-hidden gap-8 items-center  ">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12  ">
+        <div className="flex flex-col gap-16 lg:gap-18">
           {servicesData.map((service, index) => {
             const isEven = index % 2 === 0;
 
@@ -119,13 +135,14 @@ const ServiceSections = () => {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-80px" }}
                 variants={fadeUpVariants}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 items-center w-full"
+                className="w-full border-t border-[#D8D0C8] pt-12 "
               >
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 mt-5 items-center">
                 {/* Image Wrap Side — using whileHover context trigger */}
                 <motion.div
                   whileHover="hover"
                   className={`
-                    w-full lg:col-span-5 overflow-hidden rounded-sm aspect-[4/5] cursor-pointer relative group
+                    w-full lg:col-span-5 border-t border-[#D8D0C8] overflow-hidden rounded-sm aspect-[4/5] cursor-pointer relative group
                     ${isEven ? "lg:order-1" : "lg:order-2 lg:col-start-8"}
                   `}
                 >
@@ -163,20 +180,15 @@ const ServiceSections = () => {
                   </h2>
 
                   {/* Tagline / Sub-description */}
-                  <p
-                    
-                    className="mt-6  text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg"
-                  >
+                  <p className="mt-6  text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg">
                     {service.tagline}
                   </p>
 
                   {/* Secondary Body Paragraph */}
-                  <p
-                   
-                    className="mt-6 text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg"
-                  >
+                  <p className="mt-6 text-[#6e605b] leading-relaxed max-w-xl font-sans font-light text-lg">
                     {service.description}
                   </p>
+                </div>
                 </div>
               </motion.div>
             );
