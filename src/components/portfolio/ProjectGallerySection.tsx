@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import GalleryLightbox from "./GalleryLightbox"; // 1. Imported Lightbox
 
 interface ProjectGalleryProps {
   images: string[];
@@ -13,6 +15,22 @@ const ProjectGallerySection = ({ images }: ProjectGalleryProps) => {
   const sansStyle = {
     fontFamily: '"Montserrat", sans-serif',
     fontWeight: 300,
+  };
+
+  // 2. Added state to track selected image index
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  // 3. Navigation handlers
+  const handleNext = () => {
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => (prev !== null && prev < images.length - 1 ? prev + 1 : 0));
+    }
+  };
+
+  const handlePrevious = () => {
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => (prev !== null && prev > 0 ? prev - 1 : images.length - 1));
+    }
   };
 
   return (
@@ -38,52 +56,58 @@ const ProjectGallerySection = ({ images }: ProjectGalleryProps) => {
 
         {/* Gallery Grid */}
         <div className="w-full">
-          {/* Changed from sm:grid-cols-2 to md:grid-cols-3 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
-              {images.map((src, index) => {
-                let gridClasses = "aspect-[3/4]"; // Default elegant portrait proportion
-                
-                // Row 1 matches:
-                if (index === 0) {
-                  gridClasses = "md:col-span-2 aspect-[4/3]"; // First image spans 2 columns (Wide)
-                } else if (index === 1) {
-                  gridClasses = "md:col-span-1 aspect-[3/4]"; // Second image takes 1 column (Tall)
-                } 
-                // Row 2 matches (3 individual items):
-                else if (index === 2 || index === 3 || index === 4) {
-                  gridClasses = "md:col-span-1 aspect-[1/1] sm:aspect-[3/4]"; 
-                } 
-                // Row 3 matches:
-                else if (index === 5) {
-                  gridClasses = "md:col-span-2 aspect-[16/10]"; // Wide dancing shot spanning 2 columns
-                } else if (index === 6) {
-                  gridClasses = "md:col-span-1 aspect-[3/4]"; // Portrait solo window shot next to it
-                }
-                // Row 4 matches:
-                else if (index === 7) {
-                  gridClasses = "md:col-span-1 md:col-start-2 aspect-[3/4]"; // Bottom center image
-                }
+            {images.map((src, index) => {
+              let gridClasses = "aspect-[3/4]"; 
+              
+              if (index === 0) {
+                gridClasses = "md:col-span-2 aspect-[4/3]"; 
+              } else if (index === 1) {
+                gridClasses = "md:col-span-1 aspect-[3/4]"; 
+              } 
+              else if (index === 2 || index === 3 || index === 4) {
+                gridClasses = "md:col-span-1 aspect-[1/1] sm:aspect-[3/4]"; 
+              } 
+              else if (index === 5) {
+                gridClasses = "md:col-span-2 aspect-[16/10]"; 
+              } else if (index === 6) {
+                gridClasses = "md:col-span-1 aspect-[3/4]"; 
+              }
+              else if (index === 7) {
+                gridClasses = "md:col-span-1 md:col-start-2 aspect-[3/4]"; 
+              }
 
-                return (
-                  <motion.div
-                    key={index}
-                    className={`overflow-hidden rounded-xs bg-neutral-100 relative w-full ${gridClasses}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.04 }}
-                  >
-                    <img
-                      src={src}
-                      alt={`Gallery moment ${index + 1}`}
-                      className="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                );
-              })}
-            </div>
+              return (
+                <motion.div
+                  key={index}
+                  // Added cursor-pointer to let users know it's clickable
+                  className={`overflow-hidden rounded-xs bg-neutral-100 relative w-full cursor-pointer ${gridClasses}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.04 }}
+                  onClick={() => setSelectedImage(index)} // 4. Updates state on click
+                >
+                  <img
+                    src={src}
+                    alt={`Gallery moment ${index + 1}`}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
+        {/* 5. Lightbox Component Placement */}
+        <GalleryLightbox
+          images={images}
+          selectedImage={selectedImage}
+          onClose={() => setSelectedImage(null)}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+        />
 
       </div>
     </section>
