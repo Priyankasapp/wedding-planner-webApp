@@ -8,10 +8,12 @@ import Hero from "../../components/home/Hero";
 import FeaturedWeddings from "../../components/home/FeaturedWeddings";
 import Moments from "../../components/home/Moments";
 import Begin from "../../components/home/Begin";
+import PageTitle from "../../components/PageTitle";
 
 const Home = () => {
   return (
      <>
+     <PageTitle title="Home"/>
       <Hero />
       <Intro />
       <Services />

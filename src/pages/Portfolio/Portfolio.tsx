@@ -1,12 +1,14 @@
-import { Hero } from "../../components/portfolio/Hero"
-import { PortfolioGrid } from "../../components/portfolio/PortfolioGrid"
+import PageTitle from "../../components/PageTitle";
+import { Hero } from "../../components/portfolio/Hero";
+import { PortfolioGrid } from "../../components/portfolio/PortfolioGrid";
 const Portfolio = () => {
   return (
     <div>
-      <Hero/>
-      <PortfolioGrid/>
+      <PageTitle title="Portfolio" />
+      <Hero />
+      <PortfolioGrid />
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

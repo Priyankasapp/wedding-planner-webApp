@@ -44,7 +44,7 @@ const journalGridPosts: GridPost[] = [
     date: "DECEMBER 2025",
     title: "A Bride's Letter to Herself the Morning Of",
     excerpt: "Words to read with coffee in hand, before anyone else arrives.",
-    image: gridImg3, // Bride by the window
+    image: gridImg3, 
   },
   {
     id: "multi-day-celebration",

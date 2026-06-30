@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-
+import PageTitle from "../../components/PageTitle";
 import elenaHero from "../../assets/images/photo_5.jpg";
 import sophiaHero from "../../assets/images/photo_4.jpg";
 import gallery1 from "../../assets/images/photo_6.jpg";
@@ -154,6 +154,7 @@ const PortfolioDetails = () => {
 
   return (
     <main className="bg-[#FAF6EE] min-h-screen antialiased">
+      <PageTitle title={project.title}/>
       {/* 1. Dynamic Hero Stage Section Header */}
       <ProjectHeroSection 
         title={project.title}
